@@ -5,6 +5,7 @@ import SearchBox from '../components/SearchBox'
 import TopCategories from '../components/topCategories'
 import MostVisited from '../components/mostVisited'
 import RecommendedHome from '../components/recommendedHome'
+import Footer from '../components/footer'
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <TopCategories/>
       <MostVisited/>
       <RecommendedHome/>
+      <Footer/>
     </div>
   )
 }

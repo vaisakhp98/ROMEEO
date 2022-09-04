@@ -29,12 +29,12 @@
   display: flex;
   justify-content: space-between;
 }
+
 .searchMain{
   display: flex;
   width: 100%;
   justify-content: center;
   margin-top: -25px;
-  
 }
 .searchInput{
   width: 80%;
@@ -45,6 +45,24 @@
   box-shadow: 10px 5px 4px #888888;
  
 }
+
+
+.searchMain2{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: 25px;
+}
+.searchInput2{
+  width: 80%;
+  height: 60px;
+  border-color: white;
+  border: 0.5px solid;
+  padding: 10px;
+  box-shadow: 10px 5px 4px #888888;
+ 
+}
+
 
 .topCatMain{
   margin-top: 50px;
@@ -61,6 +79,8 @@
 .topCatButtons:hover{
   cursor: pointer;
 }
+
+
 .mostVisitedMain{
   width: 100%;
   display: flex;
@@ -88,6 +108,10 @@
   align-items: center;
   margin-top: 20px;
 }
+.mostVisitedTiles :hover{
+  cursor: pointer;
+}
+
 .mostVisitedTilesImages{
   border-radius: 5px;
   width: 50%;
@@ -96,4 +120,40 @@
   display: flex;
   justify-content: space-around;
   width: 70%;
+}
+/* footer */
+.footerMain{
+  display: flex;
+  justify-content: center;
+  height: 30vh;
+  width: 100%;
+  background-color: cadetblue;
+  margin-top: 30px;
+  align-items: center;
+
+}
+
+
+/* Destination Page */
+
+.sliderMain{
+  height: 35vh;
+  background-color: aqua;
+  min-height: 15vh;
+  margin-top: 15px;
+  margin-left: 80px;
+  margin-right: 80px;
+}
+.destDetail{
+  width: 100%;
+  margin-top: 20px;
+}
+.destDetailsMain{
+display: flex;
+justify-content: space-between;
+margin-left: 75px;
+margin-right: 75px;
+}
+.destDetailsLeft{
+  width: 50%;
 }
