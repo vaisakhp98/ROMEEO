@@ -12,18 +12,20 @@ export default function DestHero() {
         slidesToScroll: 1
       };
       return (
+        <div>
+          <hr className="horiLine"/>
         <Slider className="sliderMain" {...settings}>
           <div>
-            <h3>1</h3>
+            <h3>Slide 1</h3>
           </div>
           <div>
-            <h3>2</h3>
+            <h3>Slide 2</h3>
           </div>
           <div>
-            <h3>3</h3>
+            <h3>SLide 3</h3>
           </div>
           <div>
-            <h3>4</h3>
+            <h3>Slide 4</h3>
           </div>
           <div>
             <h3>5</h3>
@@ -32,6 +34,7 @@ export default function DestHero() {
             <h3>6</h3>
           </div>
         </Slider>
+        </div>
       );
     }
   

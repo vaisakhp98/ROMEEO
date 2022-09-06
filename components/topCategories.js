@@ -3,6 +3,7 @@ import Link from 'next/link'
 export default function TopCategories() {
     return (
       <div className="topCatMain">
+
         <Link href="/selectedCategory">
         <button className="topCatButtons"> Category One </button>
         </Link>

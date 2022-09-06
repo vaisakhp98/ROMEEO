@@ -156,4 +156,54 @@ margin-right: 75px;
 }
 .destDetailsLeft{
   width: 50%;
+  max-height: 25%;
+}
+.horiLine{
+  
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: 150px;
+  margin-right: 150px;
+  color: gray;
+  border-width: 1;
+}
+
+.destReviewsSection{
+  margin-left: 80px;
+  margin-right:80px ;
+  margin-top: 30px;
+}
+.destReviewsMain{
+margin-top: 30px;
+}
+.destReviewsContainer{
+display: flex;
+height:140px ;
+border: solid 0.5px rgb(156, 156, 156) ;
+border-radius: 5px;
+margin-top: 15px;
+
+}
+.destReviewsContainerImageContainer{
+  width: 15%;
+  min-width: 15%;
+  background-color: skyblue;
+  padding: 5px;
+  display: inline-block;
+  min-width: 100px;
+  min-height: 100px;
+  
+}
+
+.destReviewsContainerReview{
+  width: 70%;
+  padding: 15px;
+ 
+}
+.destReviewsContainerRating{
+  width: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
 }

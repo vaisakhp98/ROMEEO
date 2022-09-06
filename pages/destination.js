@@ -5,6 +5,7 @@ import Footer from '../components/footer'
 import DestHero from '../components/destHero'
 import TopCategories from '../components/topCategories'
 import DestDetails from '../components/destDetails'
+import DestReviews from '../components/destReviews'
 
 
 
@@ -16,6 +17,7 @@ export default function destination() {
       <TopCategories/>
       <DestHero/>
       <DestDetails/>
+      <DestReviews/>
       <Footer/>
     </div>
   )
