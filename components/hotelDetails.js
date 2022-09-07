@@ -1,6 +1,10 @@
 import { useRouter } from "next/router";
+import { useState } from "react";
 
-export default function DestDetails() {
+export default function HotelDetails() {
+
+  const[isHidden,setisHidden] = useState(false)
+
   const router = useRouter()
 
   const handleClick = (e)=>{
@@ -26,14 +30,34 @@ export default function DestDetails() {
                          the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
                          and more recently with desktop publishi</p>
 
+                         <h4><i>Number of guests : 3 Max</i></h4>
+
                          <div>
-                            <button type="button" onClick={handleClick}>Hotels Nearby</button>
-                            <button>Add Review</button>
+                            <button type="button" onClick={()=>setisHidden(!isHidden)}>Book Now</button>
+                            <button type="button" >Add Review</button>
+                            
                          </div>
                     </div>
                     <div>
                         <button>Share</button>
                         <button>Like</button>
+                        
+                        {isHidden && 
+                        
+                        <div>
+                            <div>
+                                Booked
+                            </div>
+                            <div>
+                                15/09/2023
+                            </div>
+                            <div>
+                                2 Rooms
+                            </div>
+                        </div>
+                        
+                        }
+                        
                     </div>
                </div>
             </div>
