@@ -8,7 +8,12 @@ export default function Navigation() {
       </Link>
       <div className="navRight">
          <div> Nav Links </div>
-         <div> Buttons </div>
+         <div> 
+          <div>
+            <button>Login</button>
+            <button>Register</button>
+          </div>
+         </div>
       </div>
     </div>
   )

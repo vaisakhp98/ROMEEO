@@ -39,21 +39,26 @@ export default function HotelDetails() {
                          </div>
                     </div>
                     <div>
-                        <button>Share</button>
-                        <button>Like</button>
+                        <div className="hotelMediaButtons">
+                            <button>Share</button>
+                            <button>Like</button>
+                        </div>
+                        
                         
                         {isHidden && 
                         
-                        <div>
-                            <div>
-                                Booked
-                            </div>
-                            <div>
-                                15/09/2023
-                            </div>
-                            <div>
-                                2 Rooms
-                            </div>
+                        <div className="hotelDetailsBooked">
+                            <div className="hotelDetailsBookedMain">
+                                <div>
+                                    Booked
+                                </div>
+                                <div>
+                                    15/09/2023
+                                </div>
+                                <div>
+                                    2 Rooms
+                                </div>
+                            </div>    
                         </div>
                         
                         }
