@@ -11,6 +11,7 @@ export default function Navigation() {
          <div> Nav Links </div>
          <div> 
           <div>
+            <button>Profile</button>
             <button>Login</button>
             <button>Register</button>
           </div>

@@ -4,10 +4,10 @@ import Login from '../components/login'
 import Navigation from '../components/Navigation'
 
 
-export default function hotelsList() {
+export default function login() {
   return (
     <div className={styles.container}>
-        <Navigation/>
+      <Navigation/>
       <Login/>
       <Footer/>
     </div>

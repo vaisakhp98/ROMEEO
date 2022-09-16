@@ -1,14 +1,14 @@
 import styles from '../styles/Home.module.css'
 import Footer from '../components/footer'
 import Navigation from '../components/Navigation'
-import SignUp from '../components/signUp'
+import ProfileTabs from '../components/profileTabs'
 
 
-export default function signUp() {
+export default function profile() {
   return (
     <div className={styles.container}>
-        <Navigation/>
-      <SignUp/>
+      <Navigation/>
+      <ProfileTabs/>
       <Footer/>
     </div>
   )
