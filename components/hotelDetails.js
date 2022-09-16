@@ -6,7 +6,6 @@ export default function HotelDetails() {
   const[isHidden,setisHidden] = useState(false)
 
   const router = useRouter()
-
   const handleClick = (e)=>{
       e.preventDefault()
       router.push('/hotelsList')

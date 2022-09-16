@@ -231,7 +231,7 @@ margin-top: 15px;
 /* Users  Profile Page*/
 
 .ProfileTabsSection{
-  display: flex;
+  margin: 50px;
   justify-content: center;
   margin-top: 30px;
 }
