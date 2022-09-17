@@ -81,8 +81,14 @@ const Tabs=()=> {
             <div className="tabsContentBookingsMain">
               <div className="tabsContentBookingsMain-Image">Image</div>
               <div className="tabsContentBookingsMain-Details">
-                <div>Name</div>
-                <div>Location</div>
+                <div>
+                  <p>Hotel Name</p>
+                  <h4>Vishwas Nagar</h4>
+                </div>
+                <div>
+                  <p>Location</p>
+                  <h4>Munnar</h4>
+                </div>
                 <div>Date and Room</div>
               </div>
               <div className="tabsContentBookingsMain-Buttons">
