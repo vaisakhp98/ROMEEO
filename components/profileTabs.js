@@ -77,8 +77,24 @@ const Tabs=()=> {
         >
           <h2>Your Bookings</h2>
           <hr />
+          <div className="tabsContentBookingsSection">
+            <div className="tabsContentBookingsMain">
+              <div className="tabsContentBookingsMain-Image">Image</div>
+              <div className="tabsContentBookingsMain-Details">
+                <div>Name</div>
+                <div>Location</div>
+                <div>Date and Room</div>
+              </div>
+              <div className="tabsContentBookingsMain-Buttons">
+                <button>View Hotel</button>
+                <button>Cancel</button>
+              </div>
+            </div>
+          </div>
+          
           
         </div>
+        
       </div>
     </div>
   );

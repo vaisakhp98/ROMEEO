@@ -341,3 +341,22 @@ button {
   color: blue;
   cursor: pointer;
 }
+
+.tabsContentBookingsSection{
+  padding: 5px;
+  border: #222 1px solid;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+.tabsContentBookingsMain{
+  display: flex; 
+  height: 15vh;
+}
+.tabsContentBookingsMain-Image{
+  width: 12%;
+  background-color: #222;
+}
+.tabsContentBookingsMain-Details{
+  margin-left: 20px;
+  width: 75%;
+}
