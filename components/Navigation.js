@@ -1,7 +1,24 @@
 import Link from 'next/link'
+import { useRouter } from 'next/router';
 import { FaBeer } from 'react-icons/fa';
 
 export default function Navigation() {
+
+  const router = useRouter()
+
+  const handleProfileClick = (e)=>{
+      e.preventDefault()
+      router.push('/profile')
+  }
+  const handleLoginClick = (e)=>{
+    e.preventDefault()
+    router.push('/login')
+}
+const handleSignupClick = (e)=>{
+  e.preventDefault()
+  router.push('/signUp')
+}
+
   return (
     <div className="navMain">
       <Link href="/">
@@ -11,9 +28,9 @@ export default function Navigation() {
          <div> Nav Links </div>
          <div> 
           <div>
-            <button>Profile</button>
-            <button>Login</button>
-            <button>Register</button>
+            <button onClick={handleProfileClick}>Profile</button>
+            <button onClick={handleLoginClick}>Login</button>
+            <button onClick={handleSignupClick}>Register</button>
           </div>
          </div>
       </div>

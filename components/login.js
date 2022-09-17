@@ -1,9 +1,9 @@
 import Image from 'next/image'
 import thumbnail from '../assets/thumbnail.jpg'
-
+import { useRouter } from 'next/router';
 
 export default function Login() {
-  
+
     return (
       <div className="loginSection">
           <div className="loginMain"> 
