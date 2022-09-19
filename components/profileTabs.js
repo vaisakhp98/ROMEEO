@@ -77,6 +77,7 @@ const Tabs=()=> {
         >
           <h2>Your Bookings</h2>
           <hr />
+          {[...Array(2)].map((e,i)=> 
           <div className="tabsContentBookingsSection">
             <div className="tabsContentBookingsMain">
               <div className="tabsContentBookingsMain-Image">Image</div>
@@ -97,7 +98,7 @@ const Tabs=()=> {
               </div>
             </div>
           </div>
-          
+          )}
           
         </div>
         
