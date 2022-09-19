@@ -32,6 +32,11 @@
   color: #3C6254;
   cursor: pointer;
 }
+.loginButton:hover{
+  
+  background-color: #f8f8f8;
+  border: 2px solid #529c81;
+}
 .registerButton{
   padding: 10px;
   width: 100px;
@@ -42,6 +47,12 @@
   border:2px solid #027249;
   cursor: pointer;
 }
+.registerButton:hover{
+  color: #ffffff;
+  background-color: #304e43;
+  border: 2px solid #529c81;
+}
+
 .navLeft{
   width: 50%;
 }
@@ -129,7 +140,7 @@
   display: flex;
   flex-wrap: wrap;
   margin-top: 30px;
-  width: 100%;
+  min-width: 100%;
   align-items: center;
   justify-content: center;
 }
@@ -151,7 +162,28 @@
 .mostVisitedTilesBtm{
   display: flex;
   justify-content: space-around;
-  width: 70%;
+  width: 50%;
+}
+
+.likeButton{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: -170px;
+  left: -10px;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: white;
+}
+.likeButtonIcon{
+  font-size: 20px;
+  color: #cacaca;
+}
+.likeButtonIcon :hover{
+    color: red;
+    
 }
 /* footer */
 .footerMain{
