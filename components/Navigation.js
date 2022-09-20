@@ -25,7 +25,13 @@ const handleSignupClick = (e)=>{
       <div className="navLeft"> Logo </div>
       </Link>
       <div className="navRight">
-         <div> Nav Links </div>
+         <div className='navLinksSection'> 
+          <ul className='navLinksLinks'>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact us</li>
+          </ul>
+           </div>
          <div> 
           <div>
             <button onClick={handleProfileClick}>Profile</button>
