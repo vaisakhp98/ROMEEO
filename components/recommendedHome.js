@@ -1,5 +1,7 @@
 import Image from 'next/image'
 import spot from '../assets/spot.jpg'
+import{AiFillStar,AiFillHeart} from 'react-icons/ai'
+import { IconContext } from 'react-icons'
 
 export default function RecommendedHome() {
     return (
@@ -17,7 +19,7 @@ export default function RecommendedHome() {
                 className="mostVisitedTilesImages"
                 src={spot}
                 width={140}
-                height={160}
+                height={170}
                 />
             </div>
             
@@ -27,8 +29,12 @@ export default function RecommendedHome() {
                     <h5>Locatoion</h5>
                 </div>
                 <div>
-                    <p>5 Star </p>
-                    <button >Like </button>
+                    <p>5 <AiFillStar/> </p>
+                    <button className='likeButton'>
+                        <IconContext.Provider value={{className : "likeButtonIcon"}}>
+                            <AiFillHeart/> 
+                            </IconContext.Provider>
+                        </button>
                 </div>
             </div>
         </div>)
