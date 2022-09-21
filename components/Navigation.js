@@ -34,7 +34,6 @@ const handleSignupClick = (e)=>{
            </div>
          <div> 
           <div>
-            <button onClick={handleProfileClick}>Profile</button>
             <button className='loginButton' onClick={handleLoginClick}>Login</button>
             <button className='registerButton' onClick={handleSignupClick}>Register</button>
           </div>

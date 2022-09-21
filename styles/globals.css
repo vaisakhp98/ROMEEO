@@ -23,6 +23,7 @@
   padding: 15px;
   background-color: rgb(255, 255, 255);
   z-index: 10;
+  max-height: 70px;
 }
 .loginButton{
   padding: 10px;
@@ -144,25 +145,6 @@
   justify-content: space-around;
   width: 100%;
 }
-
-.profileIconDropDown{
-  display: flex;
-  flex-direction: column;
-  margin: 5px;
-  border: 2px solid #222;
-  border-radius: 5px;
-}
-
-.profileIconDropDownButtons{
-  padding: 5px;
-  background-color: #ffffff;
-  cursor: pointer;
-}
-
-.profileIconDropDownButtons:hover{
-  background-color: #dfdfdf;
-}
-
 .topCatButtons{
     padding: 15px;
     border-radius: 5px;

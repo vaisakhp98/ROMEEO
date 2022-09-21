@@ -1,11 +1,12 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router';
-import { MdAccountCircle } from 'react-icons/md';
+import { MdOutlineAccountCircle } from 'react-icons/md';
+import { BiLogOutCircle } from 'react-icons/bi';
 import { useState } from 'react';
 
 export default function AuthNavigation() {
 
-  const [isToggled , setIsToggled] = useState(false)
+ 
 
   const router = useRouter()
 
@@ -31,15 +32,10 @@ export default function AuthNavigation() {
             <div className='navAuthNameandIcon'>
                 <h3 className='navAuthName'>Vaisakh M V</h3>
                 
-                <button onClick={handleProfileClick} onMouseEnter={()=> setIsToggled(!isToggled)}  className="navProfileButton"><MdAccountCircle/></button>
+                <button onClick={handleProfileClick} className="navProfileButton"><MdOutlineAccountCircle/></button>
+                <button className="navProfileButton"><BiLogOutCircle/></button>
             </div>
-            {isToggled && 
-            <div className='profileIconDropDown'>
-                <button className='profileIconDropDownButtons'>Logout</button>
-                <button className='profileIconDropDownButtons'>Your Bookings</button>
-                <button className='profileIconDropDownButtons'>Help</button>
-            </div>
-            }
+            
          </div>
       </div>
     </div>

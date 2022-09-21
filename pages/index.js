@@ -11,8 +11,8 @@ import AuthNavigation from '../components/authNavigation'
 export default function Home() {
   return (
     <div className={styles.container}>
-      {/* <Navigation/> */}
-      <AuthNavigation/>
+      <Navigation/>
+      {/* <AuthNavigation/> */}
       <Hero/>
       <SearchBox/>
       <TopCategories/>
