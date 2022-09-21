@@ -30,7 +30,7 @@ export default function Login() {
             </div>
 
             <div className='loginDontHaveAnAccount'>
-                <p>dont have an account ? </p><button className='loginDontHaveAnAccountBtn'>Sign Up</button>
+                <p> dont have an account ? </p><button className='loginDontHaveAnAccountBtn'>Sign Up</button>
             </div>
 
           </div>

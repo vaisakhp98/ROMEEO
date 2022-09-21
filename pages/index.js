@@ -6,11 +6,13 @@ import TopCategories from '../components/topCategories'
 import MostVisited from '../components/mostVisited'
 import RecommendedHome from '../components/recommendedHome'
 import Footer from '../components/footer'
+import AuthNavigation from '../components/authNavigation'
 
 export default function Home() {
   return (
     <div className={styles.container}>
-      <Navigation/>
+      {/* <Navigation/> */}
+      <AuthNavigation/>
       <Hero/>
       <SearchBox/>
       <TopCategories/>

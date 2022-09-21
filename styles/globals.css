@@ -118,13 +118,49 @@
   box-shadow: 10px 5px 4px #888888;
  
 }
+.navProfileButton{
+  padding: 5px;
+  background-color: #ffffff;
+  color: #3C6254;
+  font-size: xx-large;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.navAuthName{
+  position: relative;
+  bottom: 3px;
+  margin-right: 8px;
+}
 
+.navAuthNameandIcon{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
 
 .topCatMain{
   margin-top: 50px;
   display: flex;
   justify-content: space-around;
   width: 100%;
+}
+
+.profileIconDropDown{
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  border: 2px solid #222;
+  border-radius: 5px;
+}
+
+.profileIconDropDownButtons{
+  padding: 5px;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+.profileIconDropDownButtons:hover{
+  background-color: #dfdfdf;
 }
 
 .topCatButtons{
@@ -305,11 +341,6 @@ margin-top: 15px;
  justify-content: center;
  
 }
-.loginMain{
-  
-
-  
-}
 .userNameLoginName{
   margin-top: 20px;
 }
@@ -349,6 +380,10 @@ margin-top: 15px;
   background-color: #3C6254;
   border-radius: 5px;
   cursor: pointer;
+}
+.loginPageButton:hover{
+  background-color: #1e5340;
+
 }
 .loginDontHaveAnAccount{
   display: flex;
