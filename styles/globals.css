@@ -134,6 +134,56 @@
   flex-direction: column;
   align-items: center;
 }
+
+.adminNewHotelMain{
+margin: 15px;
+}
+
+.adminNewHotelSortButton{
+  display: flex;
+}
+
+.adminNewHotelMainContainer{
+  border: 1px solid #222;
+  margin-top: 15px;
+  border-radius: 5px;
+}
+
+.adminNewHotelMainContent{
+  margin: 10px;
+  display: flex;
+}
+.adminNewHotelMainContentImage{
+  width: 10%;
+  min-width: 10%;
+  background-color: skyblue;
+  padding: 5px;
+  display: inline-block;
+  min-height: 7em;
+}
+.adminNewHotelMainContentDetails{
+  min-width: 70%;
+  margin-left: 10px;
+}
+.adminNewHotelMainContentButtons{
+  min-width: 15%;
+  display: flex;
+  flex-direction: column;
+}
+.adminNewHotelTagsMain{
+  display: flex;
+  border-radius: 3px;
+  margin-left: 10px;
+}
+
+.adminNewHotelTags{
+  display: flex;
+  border:1px solid #222;
+  min-width: 35px;
+  max-width: 100px;
+  margin-left: 15px;
+}
+
 /*Main Search Bar  */
 .searchMain{
   display: flex;
