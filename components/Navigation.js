@@ -35,7 +35,7 @@ const handleSignupClick = (e)=>{
          <div> 
           <div>
             <button className='loginButton' onClick={handleLoginClick}>Login</button>
-            <button className='registerButton' onClick={handleSignupClick}>Register</button>
+            <button className='registerButton' onClick={handleSignupClick}>Sign Up</button>
           </div>
          </div>
       </div>

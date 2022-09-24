@@ -124,6 +124,7 @@
   padding: 10px;
   border-radius: 5px;
   box-shadow: 5px 8px 10px #eeeeee;
+  cursor: pointer;
   
 }
 .adminTopTilesliLeft{
@@ -487,6 +488,10 @@ margin-top: 15px;
   color: #3C6254;
   cursor: pointer;
 }
+.signUpRadioTraveller{
+  margin-right: 10px;
+  margin-top: 10px;
+}
 /* Users  Profile Page*/
 
 .ProfileTabsSection{
@@ -618,4 +623,17 @@ button {
 .tabsContentBookingsMain-Details{
   margin-left: 20px;
   width: 75%;
+}
+
+/* hotel admin */
+
+.hotelAdminNewBookingsMain{
+  margin: 15px;
+}
+.hotelAdminNewBookingsDetails{
+  width: 50%;
+}
+.hotelAdminMainContentDetails{
+  min-width: 60%;
+  margin-left: 10px;
 }

@@ -2,13 +2,13 @@ import Link from 'next/link'
 import { useRouter } from 'next/router';
 
 
-export default function adminTopTiles() {
+export default function hotelAdminTopTiles() {
 
   const router = useRouter()
 
-  const handleNewHotelsClick = (e)=>{
+  const handleNewHotelBookingsClick = (e)=>{
       e.preventDefault()
-      router.push('/adminNewHotels')
+      router.push('/hotelNewBookings')
   }
 
   const handleNewDestinationClick = (e)=>{
@@ -26,14 +26,14 @@ export default function adminTopTiles() {
     <div className="adminTopTiles">
       <h3 className='adminTopTilesQuickinfo'>Quick Info</h3>
       <ul className='adminTopTilesUl'>
-        <li onClick={handleNewHotelsClick} className='adminTopTilesli'>
+        <li onClick={handleNewHotelBookingsClick} className='adminTopTilesli'>
           <div className='adminTopTilesliLeft'>
             icon
           </div>
           <div className='adminTopTilesliRight'>
             <div>
               <div>54</div>
-              <div>New Hotels</div>
+              <div>New Bookings</div>
             </div>
             
           </div>
@@ -45,7 +45,7 @@ export default function adminTopTiles() {
           <div className='adminTopTilesliRight'>
             <div>
               <div>554</div>
-              <div>New Users</div>
+              <div>Cancelations</div>
             </div>
             
           </div>
@@ -57,7 +57,7 @@ export default function adminTopTiles() {
           <div className='adminTopTilesliRight'>
             <div>
               <div>554</div>
-              <div>New Destination</div>
+              <div>Check In</div>
             </div>
             
           </div>
@@ -69,7 +69,7 @@ export default function adminTopTiles() {
           <div className='adminTopTilesliRight'>
             <div>
               <div>554</div>
-              <div>Visits</div>
+              <div>Check out</div>
             </div>
             
           </div>
