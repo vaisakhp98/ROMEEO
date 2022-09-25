@@ -23,6 +23,19 @@ const Tabs=()=> {
         >
           Bookings
         </button>
+        <button
+          className={toggleState === 3 ? "tabs active-tabs" : "tabs"}
+          onClick={() => toggleTab(3)}
+        >
+          Add Destination
+        </button>
+
+        <button
+          className={toggleState === 4 ? "tabs active-tabs" : "tabs"}
+          onClick={() => toggleTab(4)}
+        >
+          View Destination
+        </button>
       </div>
 
       <div className="content-tabs">
@@ -101,8 +114,77 @@ const Tabs=()=> {
           )}
           
         </div>
-        
+
+
+        <div
+          className={toggleState === 3 ? "content  active-content" : "content"}
+        >
+          <h2>Add Destination</h2>
+          <hr />
+          <form className="addDestination">
+            <label className="addDestinationLabels">Destination Name: </label>
+            <input type='text' placeholder="Destination" className="addDestinationInput"/>
+
+            <label className="addDestinationLabels">State : </label>
+            <input type='text' placeholder="State" className="addDestinationInput"/>
+
+            <label className="addDestinationLabels">District : </label>
+            <input type='text' placeholder="District" className="addDestinationInput"/>
+
+            <label className="addDestinationLabels">Pincode : </label>
+            <input type='number' placeholder="Pincode" className="addDestinationInput"/>
+
+            <label className="addDestinationLabels">Description : </label>
+            <textarea> </textarea>
+
+            <label className="addDestinationLabels">Tags : </label>
+            <input type='text' placeholder="Tags" className="addDestinationInput"/>
+            <div className="addDestinationTagsMain">
+              <div className="addDestinationTags">
+                <div>Tags</div>
+                <button>X</button>
+              </div>
+            </div>
+
+            <div className="addDestinationImageAddMain">
+              
+              <div className="addDestinationImageAdd">
+                Image 1
+              </div>
+              <div className="addDestinationImageAdd">
+                2
+              </div>
+              <div className="addDestinationImageAdd">
+                3
+              </div>
+              <div className="addDestinationImageAdd">
+                4
+              </div>
+            </div>
+            
+            <button className="addDestinationSubmitBtn">Submit</button>
+
+          </form>
+          
+          
+        </div>
+
+
+
+        <div
+          className={toggleState === 4 ? "content  active-content" : "content"}
+        >
+          <h2>View Your Destination</h2>
+          <hr />
+          
+          
+          
+        </div>
+
+
       </div>
+
+      
     </div>
   );
 }

@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router';
 import { MdOutlineAccountCircle } from 'react-icons/md';
 import { BiLogOutCircle } from 'react-icons/bi';
+import { AiOutlinePlusCircle } from 'react-icons/ai';
 import { useState } from 'react';
 
 export default function AuthNavigation() {
@@ -30,8 +31,10 @@ export default function AuthNavigation() {
            </div>
          <div> 
             <div className='navAuthNameandIcon'>
+
                 <h3 className='navAuthName'>Vaisakh M V</h3>
                 
+                <button onClick={handleProfileClick} className="navProfileButton"><AiOutlinePlusCircle/></button>
                 <button onClick={handleProfileClick} className="navProfileButton"><MdOutlineAccountCircle/></button>
                 <button className="navProfileButton"><BiLogOutCircle/></button>
             </div>
