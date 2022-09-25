@@ -11,14 +11,14 @@ export default function hotelAdminTopTiles() {
       router.push('/hotelNewBookings')
   }
 
-  const handleNewDestinationClick = (e)=>{
+  const handlehotelCancelationClick = (e)=>{
       e.preventDefault()
-      router.push('/adminNewDestination')
+      router.push('/hotelCancelations')
   }
 
-  const handleNewUserClick = (e)=>{
+  const handlehotelCheckedInClick = (e)=>{
       e.preventDefault()
-      router.push('/adminNewUsers')
+      router.push('/hotelCheckedIn')
   }
 
 
@@ -38,7 +38,7 @@ export default function hotelAdminTopTiles() {
             
           </div>
         </li>
-        <li onClick={handleNewUserClick} className='adminTopTilesli'>
+        <li onClick={handlehotelCancelationClick} className='adminTopTilesli'>
           <div className='adminTopTilesliLeft'>
             icon
           </div>
@@ -50,14 +50,14 @@ export default function hotelAdminTopTiles() {
             
           </div>
         </li>
-        <li onClick={handleNewDestinationClick} className='adminTopTilesli'>
+        <li onClick={handlehotelCheckedInClick} className='adminTopTilesli'>
           <div className='adminTopTilesliLeft'>
             icon
           </div>
           <div className='adminTopTilesliRight'>
             <div>
               <div>554</div>
-              <div>Check In</div>
+              <div>Checked In</div>
             </div>
             
           </div>
@@ -69,7 +69,7 @@ export default function hotelAdminTopTiles() {
           <div className='adminTopTilesliRight'>
             <div>
               <div>554</div>
-              <div>Check out</div>
+              <div>Checked out</div>
             </div>
             
           </div>

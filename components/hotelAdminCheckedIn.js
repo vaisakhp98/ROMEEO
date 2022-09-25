@@ -1,5 +1,5 @@
 
-export default function hotelAdminNewBookings() {
+export default function hotelAdminCheckedIn() {
 
     return (
       <div className="hotelAdminNewBookingsMain">
@@ -43,10 +43,11 @@ export default function hotelAdminNewBookings() {
                     </div>
 
               <div className='adminNewHotelMainContentButtons'>
-                  <button>Checked In</button>
-                  <button>Delete</button>
+                  <button>Checked Out</button>
+                  <button>Cancel</button>
               </div>
           </div>
+          <h4>Issued Rooms : 203</h4>
           
   
         </div>)}
