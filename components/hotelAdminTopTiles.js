@@ -21,6 +21,11 @@ export default function hotelAdminTopTiles() {
       router.push('/hotelCheckedIn')
   }
 
+  const handlehotelCheckedOutClick = (e)=>{
+    e.preventDefault()
+    router.push('/hotelCheckedOut')
+}
+
 
   return (
     <div className="adminTopTiles">
@@ -62,7 +67,7 @@ export default function hotelAdminTopTiles() {
             
           </div>
         </li>
-        <li className='adminTopTilesli'>
+        <li onClick={handlehotelCheckedOutClick} className='adminTopTilesli'>
           <div className='adminTopTilesliLeft'>
             icon
           </div>
