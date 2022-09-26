@@ -198,7 +198,7 @@ margin: 15px;
   border-color: white;
   border: none ;
   padding: 10px;
-  box-shadow: 10px 4px 10px #888888;
+  border: 2px solid #3C6254;
   border-radius: 10px 0px 0px 10px;
  
 }
@@ -224,10 +224,21 @@ margin: 15px;
   width: 80%;
   height: 60px;
   border-color: white;
-  border: 0.5px solid;
+  border: none ;
   padding: 10px;
-  box-shadow: 10px 5px 4px #888888;
+  border-radius: 10px 0px 0px 10px;
+  border: 2px solid #3C6254;
  
+}
+.searchButton2{
+  min-width: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0px 10px 10px 0px;
+  cursor: pointer;
+  background-color: #3C6254;
+  color: aliceblue;
 }
 .navProfileButton{
   padding: 5px;
@@ -360,7 +371,7 @@ margin-left: 75px;
 margin-right: 75px;
 }
 .destDetailsLeft{
-  width: 50%;
+  width: 60%;
   max-height: 25%;
 }
 .horiLine{
@@ -412,6 +423,62 @@ margin-top: 15px;
   align-items: center;
   
 }
+
+.destRating{
+  margin-top: 15px;
+}
+.destAbout{
+  margin-top: 15px;
+}
+.destCTAButtons{
+  margin-top: 15px;
+}
+.destHotelsNearbyButton{
+  padding: 15px;
+  width: 45%;
+  background-color: #282828;
+  color: white;
+  border-radius: 5px;
+  border: 2px solid #777777;
+  cursor: pointer;
+}
+.destHotelsAddReviewsButton{
+  padding: 15px;
+  width: 45%;
+  color: white;
+  border-radius: 5px;
+  margin-left: 10px;
+  border: 2px solid #282828;
+  color: #282828;
+  background-color: white;
+  cursor: pointer;
+}
+
+.destShareButton{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  margin-left: 10px;
+  font-size: x-large;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.destLikeButton{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  margin-left: 10px;
+  font-size: x-large;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.destShareLikeButtonsMain{
+  display: flex;
+  height: 10%;
+}
+
 .hotelDetailsBooked{
   border: solid 2px rgb(0, 151, 13);
   margin-top: 30px;

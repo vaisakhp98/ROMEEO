@@ -1,4 +1,7 @@
 import { useRouter } from "next/router";
+import {MdIosShare} from 'react-icons/md'
+import {AiFillHeart} from 'react-icons/ai'
+
 
 export default function DestDetails() {
   const router = useRouter()
@@ -15,9 +18,9 @@ export default function DestDetails() {
                         <h3>Name of the place</h3>
                         <p>locarion of the place</p>
 
-                        <h3>Rating</h3>
+                        <h3 className="destRating">Rating</h3>
 
-                        <h3>About Place</h3>
+                        <h3 className="destAbout">About Place</h3>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                          Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
                          when an unknown printer took a galley of type and scrambled it to make a type
@@ -26,14 +29,14 @@ export default function DestDetails() {
                          the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
                          and more recently with desktop publishi</p>
 
-                         <div>
-                            <button type="button" onClick={handleClick}>Hotels Nearby</button>
-                            <button>Add Review</button>
+                         <div className="destCTAButtons">
+                            <button type="button" onClick={handleClick} className="destHotelsNearbyButton">Hotels Nearby</button>
+                            <button className="destHotelsAddReviewsButton">Add Review</button>
                          </div>
                     </div>
-                    <div>
-                        <button>Share</button>
-                        <button>Like</button>
+                    <div className="destShareLikeButtonsMain">
+                        <button className="destShareButton"><MdIosShare/></button>
+                        <button className="destLikeButton"><AiFillHeart/></button>
                     </div>
                </div>
             </div>
