@@ -7,7 +7,7 @@ export default function HotelReviews() {
     return (
       <div className="destReviewsSection">
           <div>
-            Reviews
+            <h3>Reviews</h3>
           </div>
           <div className="destReviewsMain">
             {[...Array(5)].map((e,i)=>

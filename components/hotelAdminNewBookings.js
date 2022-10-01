@@ -38,6 +38,7 @@ export default function hotelAdminNewBookings() {
                     <div className="hotelAdminNewBookingsDetails">
                         <div> Booked on : 15/06/2022 </div>
                         <div> Rooms  : 2 </div>
+                        <div>Type : AC </div>
                         <div> Check in : 17/06/2022 </div>
                         <div> Check out : 19/06/2022</div>
                     </div>

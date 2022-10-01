@@ -1,25 +1,32 @@
 import Image from 'next/image'
 import spot from '../assets/spot.jpg'
-import Link from 'next/link'
+import { useRouter } from 'next/router';
+import{AiFillStar,AiFillHeart} from 'react-icons/ai'
+import { IconContext } from 'react-icons'
 
-export default function CategoryTile() {
+export default function categoryTile() {
+    const router = useRouter()
+
+    const handleMostVisitedClick = (e)=>{
+        e.preventDefault()
+        router.push('/destination')
+    }
     return (
       
       <div className="mostVisitedMain">
         <div className="mostVisitedText">
-            Your Category
+            Most Visited
         </div>
-        <Link href= "/destination" >
         <div className="mostVisitedSection">
             {
-            [...Array(16)].map((e,i)=> 
-            <div key={i} className="mostVisitedTiles">
+            [...Array(8)].map((e,i)=> 
+            <div key={i} className="mostVisitedTiles" onClick={handleMostVisitedClick}>
             <div className="mostVisitedTilesImagesDiv">
                 <Image 
                 className="mostVisitedTilesImages"
                 src={spot}
                 width={140}
-                height={160}
+                height={170}
                 />
             </div>
             
@@ -29,8 +36,12 @@ export default function CategoryTile() {
                     <h5>Locatoion</h5>
                 </div>
                 <div>
-                    <p>5 Star </p>
-                    <button >Like </button>
+                    <p>5 <AiFillStar/> </p>
+                    <button className='likeButton'>
+                        <IconContext.Provider value={{className : "likeButtonIcon"}}>
+                            <AiFillHeart/> 
+                            </IconContext.Provider>
+                        </button>
                 </div>
             </div>
         </div>)
@@ -38,7 +49,6 @@ export default function CategoryTile() {
             }
 
         </div>
-        </Link>
       </div>
     )
   }

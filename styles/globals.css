@@ -390,7 +390,7 @@ margin-right: 75px;
   margin-top: 30px;
 }
 .destReviewsMain{
-margin-top: 30px;
+margin-top: 15px;
 }
 .destReviewsContainer{
 display: flex;
@@ -477,6 +477,83 @@ margin-top: 15px;
 .destShareLikeButtonsMain{
   display: flex;
   height: 10%;
+}
+.destImportantInfo{
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+ 
+}
+
+.destImportantInfoText{
+  margin-left: 10px;
+}
+.destfacilitiesSection{
+  margin-top: 15px;
+
+}
+.destfacilitiesMain{
+  display: flex;
+  border-radius: 3px;
+  min-width: 10%;
+  border: 1px solid black;
+  margin-right: 10px;
+  margin-top: 15px;
+  padding: 5px;
+}
+.destfacilitiesTitle{
+  margin-left: 5px;
+}
+.destFacilitiesMainContainer{
+  display: flex;
+}
+
+.checkoutContainer{
+  margin: 10px;
+}
+
+.checkoutContainerMain{
+  display: flex;
+  margin-top: 10px;
+}
+.checkoutContainerMainContent-Date{
+  margin-top:15px ;
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+}
+.checkoutContainerMainContent-DateMain{
+  display: flex;
+}
+.checkoutContainerMainImage{
+  width: 30%;
+  min-width: 40%;
+  background-color: #79ffce;
+}
+.checkoutChangeDate{
+  background-color: white;
+  color: blue;
+  cursor: pointer;
+}
+.checkoutPaymentType{
+  width: 15%;
+}
+.checkoutPaymentTypeWays{
+  display: flex;
+  justify-content: space-between;
+}
+
+.checkoutContainerMainContent-Rooms{
+  margin-top: 15px;
+}
+.checkoutContainerMainContent-Rooms{
+  display: flex;
+  width: 40%;
+  justify-content: space-between;
+}
+.checkoutContainerMainContent{
+  width: 70%;
+  margin-left: 10px;
 }
 
 .hotelDetailsBooked{

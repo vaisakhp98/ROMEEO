@@ -48,7 +48,7 @@ export default function hotelProfileInfo() {
             <textarea> </textarea>
 
             <label className="addDestinationLabels">Number of Rooms : </label>
-            <input type='text' placeholder="Tags" className="addDestinationInput"/>
+            <input type='text' className="addDestinationInput"/>
 
             <label className="addDestinationLabels">Type of Rooms : </label>
                 <label> AC </label>
@@ -58,12 +58,12 @@ export default function hotelProfileInfo() {
                 <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"/>
 
             <label className="addDestinationLabels">Facilities : </label>
-            <input type='text' placeholder="Tags" className="addDestinationInput"/>
+            <input type='text' placeholder="Facilities" className="addDestinationInput"/>
 
 
             <div className="addDestinationTagsMain">
               <div className="addDestinationTags">
-                <div>Tags</div>
+                <div>Facilities</div>
                 <button>X</button>
               </div>
             </div>

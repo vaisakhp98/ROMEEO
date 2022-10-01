@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
-import {MdIosShare} from 'react-icons/md'
-import {AiFillHeart} from 'react-icons/ai'
+import {MdIosShare,MdOutlinePool,MdLocalParking,MdSmokingRooms} from 'react-icons/md'
+import {AiFillHeart,AiFillCar} from 'react-icons/ai'
+import {BsHash} from 'react-icons/bs'
 
 
 export default function DestDetails() {
@@ -28,6 +29,41 @@ export default function DestDetails() {
                          electronic typesetting, remaining essentially unchanged. It was popularised in
                          the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
                          and more recently with desktop publishi</p>
+
+                         <div className="destfacilitiesSection">
+                            <h3>Tags</h3>
+
+                            <div className="destFacilitiesMainContainer">
+                                <div className="destfacilitiesMain">
+                                    <div>
+                                        <BsHash/>
+                                    </div>
+                                    <div className="destfacilitiesTitle">
+                                        Romantic
+                                    </div>
+                                </div>
+
+                                <div className="destfacilitiesMain">
+                                    <div>
+                                        <BsHash/>
+                                    </div>
+                                    <div className="destfacilitiesTitle">
+                                        Adventure
+                                    </div>
+                                </div>
+
+                                <div className="destfacilitiesMain">
+                                    <div>
+                                        <BsHash/>
+                                    </div>
+                                    <div className="destfacilitiesTitle">
+                                        Family
+                                    </div>
+                                </div>
+
+                              
+                            </div>
+                         </div>
 
                          <div className="destCTAButtons">
                             <button type="button" onClick={handleClick} className="destHotelsNearbyButton">Hotels Nearby</button>
