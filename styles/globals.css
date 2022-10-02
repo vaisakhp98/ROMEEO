@@ -787,7 +787,7 @@ button {
   flex-direction: column;
 }
 .addDestinationInput{
-  padding: 5px;
+  padding: 10px;
   border-radius: 5px;
   margin-top: 3px;
 }

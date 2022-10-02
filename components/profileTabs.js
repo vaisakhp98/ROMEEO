@@ -36,6 +36,12 @@ const Tabs=()=> {
         >
           View Destination
         </button>
+        <button
+          className={toggleState === 5 ? "tabs active-tabs" : "tabs"}
+          onClick={() => toggleTab(5)}
+        >
+          Liked List
+        </button>
       </div>
 
       <div className="content-tabs">
@@ -164,12 +170,8 @@ const Tabs=()=> {
             
             <button className="addDestinationSubmitBtn">Submit</button>
 
-          </form>
-          
-          
+          </form> 
         </div>
-
-
 
         <div
           className={toggleState === 4 ? "content  active-content" : "content"}
@@ -181,7 +183,15 @@ const Tabs=()=> {
           
         </div>
 
-
+        <div
+          className={toggleState === 5 ? "content  active-content" : "content"}
+        >
+          <h2>Your Liked List</h2>
+          <hr />
+          
+          
+          
+        </div>
       </div>
 
       

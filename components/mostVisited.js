@@ -3,8 +3,12 @@ import spot from '../assets/spot.jpg'
 import { useRouter } from 'next/router';
 import{AiFillStar,AiFillHeart} from 'react-icons/ai'
 import { IconContext } from 'react-icons'
+import axios from 'axios';
 
 export default function MostVisited() {
+
+   
+
     const router = useRouter()
 
     const handleMostVisitedClick = (e)=>{

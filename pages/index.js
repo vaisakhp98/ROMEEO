@@ -7,6 +7,7 @@ import MostVisited from '../components/mostVisited'
 import RecommendedHome from '../components/recommendedHome'
 import Footer from '../components/footer'
 import AuthNavigation from '../components/authNavigation'
+import axios from 'axios'
 
 export default function Home() {
   return (
