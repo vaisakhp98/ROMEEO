@@ -3,7 +3,7 @@ import spot from '../assets/spot.jpg'
 import{AiFillStar,AiFillHeart} from 'react-icons/ai'
 import { IconContext } from 'react-icons'
 
-export default function RecommendedHome() {
+export default function RecommendedHome(props) {
     return (
       
       <div className="mostVisitedMain">
@@ -12,8 +12,8 @@ export default function RecommendedHome() {
         </div>
         <div className="mostVisitedSection">
             {
-            [...Array(8)].map((e,i)=> 
-            <div key={i} className="mostVisitedTiles">
+            props.recommended.map((item, key)=> 
+            <div key={item} className="mostVisitedTiles">
             <div className="mostVisitedTilesImagesDiv">
                 <Image 
                 className="mostVisitedTilesImages"
@@ -25,11 +25,11 @@ export default function RecommendedHome() {
             
             <div className='mostVisitedTilesBtm'>
                 <div>
-                    <h3>Munnar</h3> 
-                    <h5>Locatoion</h5>
+                    <h3>{item.locationName}</h3> 
+                    <h5>{item.locationDistrict}</h5>
                 </div>
                 <div>
-                    <p>5 <AiFillStar/> </p>
+                    <p>{item.rating} <AiFillStar/> </p>
                     <button className='likeButton'>
                         <IconContext.Provider value={{className : "likeButtonIcon"}}>
                             <AiFillHeart/> 

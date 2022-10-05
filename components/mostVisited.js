@@ -4,10 +4,11 @@ import { useRouter } from 'next/router';
 import{AiFillStar,AiFillHeart} from 'react-icons/ai'
 import { IconContext } from 'react-icons'
 import axios from 'axios';
+import { useEffect } from 'react';
 
-export default function MostVisited() {
+export default function MostVisited(props) {
 
-   
+    const image = './Pages/api/homePageMostVisited'
 
     const router = useRouter()
 
@@ -23,24 +24,25 @@ export default function MostVisited() {
         </div>
         <div className="mostVisitedSection">
             {
-            [...Array(8)].map((e,i)=> 
-            <div key={i} className="mostVisitedTiles" onClick={handleMostVisitedClick}>
+            props.mostVisited.map((item, key)=>{ 
+                console.log(item.image)
+            return(<div key={key} className="mostVisitedTiles" onClick={handleMostVisitedClick}>
             <div className="mostVisitedTilesImagesDiv">
-                <Image 
+                <img 
                 className="mostVisitedTilesImages"
-                src={spot}
-                width={140}
-                height={170}
+                src={item.image}
+                width={230}
+                height={190}
                 />
             </div>
             
             <div className='mostVisitedTilesBtm'>
                 <div>
-                    <h3>Munnar</h3> 
-                    <h5>Locatoion</h5>
+                    <h3>{item.locationName}</h3> 
+                    <h5>{item.locationDistrict}</h5>
                 </div>
-                <div>
-                    <p>5 <AiFillStar/> </p>
+                <div className='likeButtonSection'>
+                    <p>{item.rating} <AiFillStar/> </p>
                     <button className='likeButton'>
                         <IconContext.Provider value={{className : "likeButtonIcon"}}>
                             <AiFillHeart/> 
@@ -48,7 +50,7 @@ export default function MostVisited() {
                         </button>
                 </div>
             </div>
-        </div>)
+        </div>)})
             
             }
 

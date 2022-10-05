@@ -9,7 +9,7 @@
   color: tomato;
 }
 .heroMain{
-  height: 50vh;
+  height: 65vh;
   width: 100%;
   background-color: rgb(193, 255, 255);
 }
@@ -302,6 +302,15 @@ margin: 15px;
   flex-direction: column;
   align-items: center;
   margin-top: 20px;
+  border-radius: 5px;
+  
+}
+.mostVisitedTiles:hover{
+  transform: scale(1.05);
+  transition: all .7s;
+  transition-timing-function: ease-in-out;
+  
+  
 }
 .mostVisitedTiles :hover{
   cursor: pointer;
@@ -309,12 +318,14 @@ margin: 15px;
 
 .mostVisitedTilesImages{
   border-radius: 5px;
-  width: 50%;
+  min-width: 25%;
+  margin-right: 10px;
 }
 .mostVisitedTilesBtm{
   display: flex;
-  justify-content: space-around;
-  width: 50%;
+  justify-content: space-between;
+  min-width: 70%;
+  
 }
 
 .likeButton{
@@ -322,19 +333,54 @@ margin: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
-  top: -185px;
-  left: -5px;
+  top: -200px;
+  left: -20px;
   height: 30px;
   width: 30px;
   border-radius: 50%;
   background-color: white;
+ 
 }
+@media only screen and (max-width:1115px){
+  .likeButton{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: -200px;
+    left: -10px;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: white;
+   
+  }
+}
+@media only screen and (max-width:990px){
+  .likeButton{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: -200px;
+    left: 5px;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: white;
+   
+  }
+}
+
+
 .likeButtonIcon{
   font-size: 20px;
   color: #cacaca;
 }
+
 .likeButtonIcon :hover{
     color: red;
+    transition: 0.5s
     
 }
 /* footer */

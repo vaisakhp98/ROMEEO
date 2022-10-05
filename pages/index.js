@@ -8,8 +8,24 @@ import RecommendedHome from '../components/recommendedHome'
 import Footer from '../components/footer'
 import AuthNavigation from '../components/authNavigation'
 import axios from 'axios'
+import { useEffect, useState } from 'react'
 
 export default function Home() {
+  const [mostVisited, setMostVisited]=useState([])
+  useEffect(()=>{
+    axios.get('/api/homePageMostVisited')
+    .then((res)=>{setMostVisited(res.data)})
+    .catch((err)=>console.log("An error has occured"))
+  },[])
+
+  const [recommended, setRecommended]=useState([])
+  useEffect(()=>{
+    axios.get('/api/homePageRecommended')
+    .then((res)=>{setRecommended(res.data)})
+    .catch((err)=>console.log("An error has occured in recommended"))
+  },[])
+
+
   return (
     <div className={styles.container}>
       {/* <Navigation/> */}
@@ -17,8 +33,12 @@ export default function Home() {
       <Hero/>
       <SearchBox/>
       <TopCategories/>
-      <MostVisited/>
-      <RecommendedHome/>
+      <MostVisited
+        mostVisited = {mostVisited}
+      />
+      <RecommendedHome 
+        recommended = {recommended}
+      />
       <Footer/>
     </div>
   )
