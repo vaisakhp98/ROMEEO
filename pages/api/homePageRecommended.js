@@ -2,51 +2,52 @@ export const homePageRecommendedApi = [
     {
         locationName: 'Munnar',
         locationDistrict : 'idduki',
+        description: " Munnar is situated at the confluence of three mountain streams - Muthirapuzha, Nallathanni and Kundala – and the word 'Munnar' means three rivers in Malayalam. Situated about 1600m above sea level, the hill station had been the summer resort of the British Government during the colonial era.",
         rating : 5,
-        Image : 'https://static.india.com/wp-content/uploads/2019/01/Munnar.jpg?impolicy=Medium_Resize&w=1200&h=800'
+        image : '/munnar.jpg'
     },
     {
         locationName: 'Kodaikanal',
         locationDistrict : 'dindigul',
         rating : 4,
-        Image : 'https://static.india.com/wp-content/uploads/2019/01/Munnar.jpg?impolicy=Medium_Resize&w=1200&h=800'
+        image : '/kodaikanal.jpg'
     },
     {
         locationName: 'Thekkady',
         locationDistrict : 'periyar',
         rating : 4,
-        Image : 'https://static.india.com/wp-content/uploads/2019/01/Munnar.jpg?impolicy=Medium_Resize&w=1200&h=800'
+        image : '/thekady.jpg'
     },
     {
         locationName: 'Bekal Fort',
         locationDistrict : 'Kovalam',
         rating : 3,
-        Image : 'https://static.india.com/wp-content/uploads/2019/01/Munnar.jpg?impolicy=Medium_Resize&w=1200&h=800'
+        image : '/bekal.jpg'
     },
 
     {
-        locationName: 'Munnar',
+        locationName: 'Vagamon',
         locationDistrict : 'idduki',
         rating : 5,
-        Image : 'https://static.india.com/wp-content/uploads/2019/01/Munnar.jpg?impolicy=Medium_Resize&w=1200&h=800'
+        image : '/vagamon.jpg'
     },
     {
-        locationName: 'Kodaikanal',
+        locationName: 'Athirapilly',
         locationDistrict : 'dindigul',
         rating : 4,
-        Image : 'https://static.india.com/wp-content/uploads/2019/01/Munnar.jpg?impolicy=Medium_Resize&w=1200&h=800'
+        image : '/athirapilly.jpg'
     },
     {
-        locationName: 'Thekkady',
+        locationName: 'Allapuza',
         locationDistrict : 'periyar',
         rating : 4,
-        Image : 'https://static.india.com/wp-content/uploads/2019/01/Munnar.jpg?impolicy=Medium_Resize&w=1200&h=800'
+        image : '/alleppey.jpg'
     },
     {
-        locationName: 'Bekal Fort',
+        locationName: 'Neliyampathy',
         locationDistrict : 'Kovalam',
         rating : 3,
-        Image : 'https://static.india.com/wp-content/uploads/2019/01/Munnar.jpg?impolicy=Medium_Resize&w=1200&h=800'
+        image : '/nelliyampathy.jpg'
     },
 
 ]

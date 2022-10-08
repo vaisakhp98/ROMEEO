@@ -2,7 +2,7 @@ import Image from 'next/image'
 import thumbnail from '../assets/thumbnail.jpg'
 
 
-export default function DestReviews() {
+export default function DestReviews(props) {
   
     return (
       <div className="destReviewsSection">
@@ -10,26 +10,26 @@ export default function DestReviews() {
             Reviews
           </div>
           <div className="destReviewsMain">
-            {[...Array(5)].map((e,i)=>
-            <div className="destReviewsContainer">
+            {props.destReviews.map((item,key)=>
+            <div key={item} className="destReviewsContainer">
                 <div className="destReviewsContainerImageContainer">
                     {/* <Image
                         className="mostVisitedTilesImages"
                         src={thumbnail}
                         
                     /> */}
-                    Image
+                    {item.image}
                 </div>
                 <div className="destReviewsContainerReview">
                     <div>
-                        <b>Review Heading</b>
+                        <b>{item.reviewHeading}</b>
                     </div>
                     <div>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                    {item.review}
                     </div>
                 </div>
                 <div className="destReviewsContainerRating">
-                    Rating
+                    {item.rating}
                 </div>
             </div>)
             }

@@ -17,9 +17,9 @@ export default function RecommendedHome(props) {
             <div className="mostVisitedTilesImagesDiv">
                 <Image 
                 className="mostVisitedTilesImages"
-                src={spot}
-                width={140}
-                height={170}
+                src={item.image}
+                width={230}
+                height={190}
                 />
             </div>
             

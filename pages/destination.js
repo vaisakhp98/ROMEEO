@@ -7,17 +7,43 @@ import TopCategories from '../components/topCategories'
 import DestDetails from '../components/destDetails'
 import DestReviews from '../components/destReviews'
 
+import { useState,useEffect } from "react";
+import axios from 'axios'
+
 
 
 export default function destination() {
+
+  const [destDetails, setDestDetails]=useState([])
+  useEffect(()=>{
+    axios.get('/api/destination')
+    .then((res)=>{setDestDetails(res.data)})
+    .catch((err)=>console.log("An error has occured"))
+  },[])
+
+  const [destReviews, setDestReviews]=useState([])
+  useEffect(()=>{
+    axios.get('/api/destReviews')
+    .then((res)=>{setDestReviews(res.data)})
+    .catch((err)=>console.log("An error has occured"))
+  },[])
+
   return (
+
+
     <div className={styles.container}>
       <Navigation/>
       <SearchBox2/>
       <TopCategories/>
-      <DestHero/>
-      <DestDetails/>
-      <DestReviews/>
+      <DestHero 
+        destDetails = {destDetails}
+      />
+      <DestDetails
+        destDetails = {destDetails}
+      />
+      <DestReviews
+        destReviews = {destReviews}
+      />
       <Footer/>
     </div>
   )
