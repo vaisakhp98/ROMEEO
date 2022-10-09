@@ -32,7 +32,7 @@ export default function MostVisited(props) {
                 <img 
                 className="mostVisitedTilesImages"
                 src={item.image}
-                width={250}
+                width={260}
                 height={200}
                 />
             </div>

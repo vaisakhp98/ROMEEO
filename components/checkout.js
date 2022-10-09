@@ -6,125 +6,118 @@ export default function checkout() {
     }
 
       return (
-        <div className="checkoutContainer">
-            <div>
-                <h2>Checkout</h2>
+        <div className="checkoutSection">
+            <div className="checkoutContainer">
+            <div className="checkoutContainerImage">
+                Image
+            </div>
+            
+
+            <div className="checkoutContainerHotelName">
+                
+                <h2><b>Meridian</b></h2>
+                <b>Munnar</b>
                 <hr/>
             </div>
-            <div className="checkoutContainerMain">
-                <div className="checkoutContainerMainImage">Image</div>
-                <div className="checkoutContainerMainContent">
-                    <div className="checkoutContainerMainContent-HotelDetail">
-                        <h3>Meredian Hotel</h3>
-                        <h5>Munnar</h5>
+
+            <div className="checkoutContainerDateandTimeSection">
+                <div className="checkoutContainerDateandTime">
+                    
+                    <div>
+                        <h4>Check-In</h4>
+                        <h1>24</h1>
+                        <h4>Friday,</h4>
+                        <p>July 2022 </p>
+                        <button className="changeButton">Change</button>
                     </div>
+                    
+                </div>
 
-                    <div className="checkoutContainerMainContent-Date">
-                        <div>
-                            <b>CheckIn</b>
-                         
-                            <div className="checkoutContainerMainContent-DateMain">
-                                <div>
-                                    <h1>24</h1>
-                                </div>
-                                <div>
-                                    <p>July 2022</p>
-                                    <p>Friday</p>
-                                </div>
-                            </div>
-                            
-                        </div>
-                        <div>
-                            <b>CheckOut</b>
-                          
-                            <div className="checkoutContainerMainContent-DateMain">
-                                <div>
-                                    <h1>26</h1>
-                                </div>
-                                <div>
-                                    <p>July 2022</p>
-                                    <p>Friday</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <button className="checkoutChangeDate">Change</button>
-                        </div>
-                        
-                    </div>
-
-                    <div className="checkoutContainerMainContent-Rooms">
-                        <div>
-                            <h4 className="checkoutContainerMainContent-RoomsTitle">Room Details</h4>
-                                <div>
-                                    <h3>2 Rooms </h3>
-                                    <h5>A/C Room </h5>
-                                </div>
-                        </div>
-
-                        <div>
-                            <button className="checkoutChangeDate">Change</button>
-                        </div>
+                <div className="checkoutContainerDateandTime-checkOut">
+                    
+                <div>
+                        <h4>Check-Out</h4>
+                        <h1>24</h1>
+                        <h4>Friday,</h4>
+                        <p>July 2022 </p>
+                        <button className="changeButton">Change</button>
                     </div>
                 </div>
+                
             </div>
 
-            <div>
+            <div className="roomDetails">
+                <hr/>
+                <h4>Room Details</h4>
+                <h3>2 Rooms</h3>
+                <h4>A/C Rooms</h4>
+
+                <button className="changeButton">Change</button>
+            </div>
+
+            <div className="guestDetails">
+                <hr/>
+                <h4>Name of Guest :</h4>
+                <p>Nikhil</p>
+
+                <h4>Phone:</h4>
+                <p>+91 12544 86521 </p>
+
+                <h4>E-mail :</h4>
+                <p>Nikhil@gamil.com</p>
+            </div>
+
+            <div className="cashDetails">
+                <hr/>
+                <h4>Room Price :</h4>
+                <p>4300 Rs</p>
+
+                <h4>+TAX :</h4>
+                <p>4300 Rs</p>
+
+                <h4>+Convinenece :</h4>
+                <p>4300 Rs</p>
+                <hr/>
+                <h2>Total Payment - 4500 Rs</h2>
+            </div>
+
+            <div className="paymentType">
+                <hr/>
+                <hr/>
+                <h4>Payment type :</h4>
                 <div>
-                    <h4>Guest Details</h4>
-
-                    <h5>Name of Guest : </h5> Nikhil 
-                    <h5>Phone : </h5> +91 25332 41205 
-                    <h5>E-mail : </h5> Nikhil@gmail.com
-                    <hr/>
-                </div>
-
-                <div>
-                    <h4>Total Price</h4>
-
-                    <h5>Room Rent : </h5> 4300 Rs 
-                    <h5>+ TAX : </h5> 300 Rs
-                    <h5>+ Convinence : </h5> 120 Rs
+                    <div>
+                        <label>UPI</label>
+                        <input type="radio" id="html" name="fav_language" value="HTML"/>
+                    </div>
+                    
+                    
+                    <div>
+                        <label>Net Banking</label>
+                        <input type="radio" id="html" name="fav_language" value="HTML"/>
+                    </div>
 
                     <div>
-                        <h2>Total : 4720 Rs</h2>
+                        <label>Google Pay</label>
+                        <input type="radio" id="html" name="fav_language" value="HTML"/>
                     </div>
-                    <hr/>
+
                 </div>
             </div>
 
-            <div>
-                <div>
-                    <h4>Payment Type :</h4>
-                </div>
-
-                <div className="checkoutPaymentType">
-                    <div className="checkoutPaymentTypeWays">
-                        <label for="html">G-Pay</label>
-                        <input type="radio" id="html" name="fav_language" value="HTML" />                   
-                    </div>
-                    <div className="checkoutPaymentTypeWays">
-                        <label for="html">UPI</label>
-                        <input type="radio" id="html" name="fav_language" value="HTML" />                   
-                    </div>
-                    <div className="checkoutPaymentTypeWays">
-                        <label for="html">Net Banking</label>
-                        <input type="radio" id="html" name="fav_language" value="HTML" />                   
-                    </div>
-                </div>
+            <div className="checkoutSubmit">
                 <hr/>
+                <div>
+                        <label>I agree to all Terms and Conditions :</label>
+                        <input type="checkbox" id="html" name="fav_language" value="HTML"/>
+                </div>
+                <div className="payNowButtonDiv">
+                    <button className="payNowButton">Pay Now</button>
+                </div>
             </div>
-
-            <div>
-                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike" />
-                <label for="vehicle1"> I agree to all the Terms and Conditions</label>
-            </div>
-
-            <div>
-                <button onClick={completed}>Complete</button>
-            </div>
- 
+        </div>      
         </div>
+        
       );
     }
   

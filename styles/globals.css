@@ -330,7 +330,7 @@ margin: 15px;
 .mostVisitedTilesBtm{
   display: flex;
   justify-content: space-between;
-  min-width: 70%;
+  width: 90%;
   
 }
 
@@ -339,8 +339,8 @@ margin: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
-  top: -200px;
-  left: -20px;
+  top: -210px;
+  left: -35px;
   height: 30px;
   width: 30px;
   border-radius: 50%;
@@ -353,7 +353,7 @@ margin: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
-    top: -200px;
+    top: -210px;
     left: -10px;
     height: 30px;
     width: 30px;
@@ -368,8 +368,8 @@ margin: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
-    top: -200px;
-    left: 5px;
+    top: -205px;
+    left: -15px;
     height: 30px;
     width: 30px;
     border-radius: 50%;
@@ -562,33 +562,41 @@ margin-top: 15px;
   display: flex;
 }
 
+.checkoutSection{
+  width: 100%;
+  justify-content: center;
+  display: flex;
+}
 .checkoutContainer{
   margin: 10px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.checkoutContainerImage{
+  height: 30vh;
+  width: 100%;
+  background-color: #027249;
+}
+.checkoutContainerHotelName{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
 }
 
-.checkoutContainerMain{
+.checkoutContainerDateandTimeSection{
   display: flex;
+  width: 100%;
   margin-top: 10px;
 }
-.checkoutContainerMainContent-Date{
-  margin-top:15px ;
-  width: 40%;
-  display: flex;
-  justify-content: space-between;
+.checkoutContainerDateandTime-checkOut{
+  margin-left: 30px;
 }
-.checkoutContainerMainContent-DateMain{
-  display: flex;
-}
-.checkoutContainerMainImage{
-  width: 30%;
-  min-width: 40%;
-  background-color: #79ffce;
-}
-.checkoutChangeDate{
-  background-color: white;
-  color: blue;
-  cursor: pointer;
-}
+
+
+
 .checkoutPaymentType{
   width: 15%;
 }
@@ -597,6 +605,61 @@ margin-top: 15px;
   justify-content: space-between;
 }
 
+.changeButton{
+  background-color: rgb(212, 212, 212);
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.guestDetails{
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+}
+.cashDetails{
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.roomDetails{
+  width: 100%;
+  margin-top: 10px;
+}
+
+.paymentType{
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+}
+.checkoutSubmit{
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.payNowButtonDiv{
+  width: 100%;
+
+}
+.payNowButton{
+  width: 100%;
+  margin-top: 10px;
+  padding: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #34ffb5;
+}
 .checkoutContainerMainContent-Rooms{
   margin-top: 15px;
 }

@@ -31,8 +31,8 @@ export default function HotelsListTile(props) {
                 <img 
                 className="mostVisitedTilesImages"
                 src={item.image}
-                width={230}
-                height={190}
+                width={260}
+                height={200}
                 />
             </div>
             
