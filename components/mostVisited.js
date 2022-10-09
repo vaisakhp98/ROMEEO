@@ -25,14 +25,15 @@ export default function MostVisited(props) {
         <div className="mostVisitedSection">
             {
             props.mostVisited.map((item, key)=>{ 
-                console.log(item.image)
-            return(<div key={key} className="mostVisitedTiles" onClick={handleMostVisitedClick}>
+            return(
+            
+            <div key={key} className="mostVisitedTiles" onClick={handleMostVisitedClick}>
             <div className="mostVisitedTilesImagesDiv">
                 <img 
                 className="mostVisitedTilesImages"
                 src={item.image}
-                width={230}
-                height={190}
+                width={250}
+                height={200}
                 />
             </div>
             

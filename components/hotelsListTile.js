@@ -5,32 +5,44 @@ import{AiFillStar,AiFillHeart} from 'react-icons/ai'
 import { IconContext } from 'react-icons'
 import axios from 'axios';
 import { useEffect } from 'react';
-export default function HotelsListTile() {
+
+export default function HotelsListTile(props) {
+
+    const image = './Pages/api/homePageMostVisited'
+
+    const router = useRouter()
+
+    const handleMostVisitedClick = (e)=>{
+        e.preventDefault()
+        router.push('/hotel')
+    }
     return (
       
         <div className="mostVisitedMain">
         <div className="mostVisitedText">
-            Most Visited
+            <b>Hotels in Munnar</b>
         </div>
         <div className="mostVisitedSection">
-            
-            <div  className="mostVisitedTiles" >
+            {
+            props.hotelList.map((item, key)=>{ 
+                console.log(item.image)
+            return(<div key={key} className="mostVisitedTiles" onClick={handleMostVisitedClick}>
             <div className="mostVisitedTilesImagesDiv">
-                <Image 
+                <img 
                 className="mostVisitedTilesImages"
-                src={spot}
-                width={140}
-                height={170}
-                >{}</Image>
+                src={item.image}
+                width={230}
+                height={190}
+                />
             </div>
             
             <div className='mostVisitedTilesBtm'>
                 <div>
-                    <h3>Meridian</h3> 
-                    <h5>Munnar</h5>
+                    <h3>{item.hotelName}</h3> 
+                    <h5>{item.hotelLocation}</h5>
                 </div>
-                <div>
-                    <p> 5<AiFillStar/> </p>
+                <div className='likeButtonSection'>
+                    <p>{item.rating} <AiFillStar/> </p>
                     <button className='likeButton'>
                         <IconContext.Provider value={{className : "likeButtonIcon"}}>
                             <AiFillHeart/> 
@@ -38,7 +50,10 @@ export default function HotelsListTile() {
                         </button>
                 </div>
             </div>
-        </div>
+        </div>)})
+            
+            }
+
         </div>
       </div>
     )

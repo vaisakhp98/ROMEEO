@@ -4,7 +4,7 @@ import {MdIosShare , MdOutlinePool ,MdLocalParking ,MdSmokingRooms} from 'react-
 import {AiFillHeart , AiFillInfoCircle ,AiFillCar} from 'react-icons/ai'
 import {FaHotTub} from 'react-icons/fa'
 
-export default function HotelDetails() {
+export default function HotelDetails(props) {
 
   const[isHidden,setisHidden] = useState(false)
 
@@ -16,21 +16,18 @@ export default function HotelDetails() {
       return (
         <div>
             <div className="destDetail"> 
+            
                <div className="destDetailsMain">
-                    <div className="destDetailsLeft">
-                        <h3>Name of the place</h3>
-                        <p>locarion of the place</p>
+                {
+                    props.hotelDetails.map((item, key)=>
+                    <div key={item} className="destDetailsLeft">
+                        <h3>{item.locationName}</h3>
+                        <p>{item.locationDistrict}</p>
 
-                        <h3 className="destRating">Rating</h3>
+                        <h3 className="destRating">Rating {item.rating}</h3>
 
                         <h3 className="destAbout">About Place</h3>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                         Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                         when an unknown printer took a galley of type and scrambled it to make a type
-                         specimen book. It has survived not only five centuries, but also the leap into
-                         electronic typesetting, remaining essentially unchanged. It was popularised in
-                         the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-                         and more recently with desktop publishi</p>
+                        <p>{item.description}</p>
 
                          <div className="destImportantInfo">
                             <AiFillInfoCircle/>
@@ -98,7 +95,7 @@ export default function HotelDetails() {
                             <button type="button" onClick={handleClick} className="destHotelsNearbyButton">Book Hotel</button>
                             <button className="destHotelsAddReviewsButton">Add Review</button>
                          </div>
-                    </div>
+                    </div>)}
                     <div className="destShareLikeButtonsMain">
                         <button className="destShareButton"><MdIosShare/></button>
                         <button className="destLikeButton"><AiFillHeart/></button>

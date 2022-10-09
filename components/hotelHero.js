@@ -3,38 +3,30 @@ import "slick-carousel/slick/slick-theme.css";
 import React from "react";
 import Slider from "react-slick";
 
-export default function HotelHero() {
+export default function HotelHero(props) {
     var settings = {
-        dots:false,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1
+      dots:true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      cssEase:"linear",
       };
       return (
+
         <div>
-          <hr className="horiLine"/>
+        <hr className="horiLine"/>
         <Slider className="sliderMain" {...settings}>
-          <div>
-            <h3>Slide 1</h3>
-          </div>
-          <div>
-            <h3>Slide 2</h3>
-          </div>
-          <div>
-            <h3>SLide 3</h3>
-          </div>
-          <div>
-            <h3>Slide 4</h3>
-          </div>
-          <div>
-            <h3>5</h3>
-          </div>
-          <div>
-            <h3>6</h3>
-          </div>
-        </Slider>
+        {props.hotelDetails.map((item, key)=> 
+          <div key={item}>
+          <img 
+              className="destinationImageTile"
+              src={item.image}
+              />
         </div>
+        )}
+      </Slider>
+      </div>
       );
     }
   
