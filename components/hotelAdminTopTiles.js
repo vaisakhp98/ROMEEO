@@ -1,6 +1,9 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router';
-
+import {RiHotelLine} from 'react-icons/ri'
+import {FiUserPlus} from 'react-icons/fi'
+import {TbMountain} from 'react-icons/tb'
+import {BsEye} from 'react-icons/bs'
 
 export default function hotelAdminTopTiles() {
 
@@ -31,50 +34,59 @@ export default function hotelAdminTopTiles() {
     <div className="adminTopTiles">
       <h3 className='adminTopTilesQuickinfo'>Quick Info</h3>
       <ul className='adminTopTilesUl'>
-        <li onClick={handleNewHotelBookingsClick} className='adminTopTilesli'>
+        <li onClick={handleNewHotelBookingsClick} className='adminTopTilesli1'>
           <div className='adminTopTilesliLeft'>
-            icon
+            <RiHotelLine/>
           </div>
           <div className='adminTopTilesliRight'>
             <div>
-              <div>54</div>
+              <div>
+                <h1>53</h1>
+              </div>
               <div>New Bookings</div>
             </div>
             
           </div>
         </li>
-        <li onClick={handlehotelCancelationClick} className='adminTopTilesli'>
+        <li onClick={handlehotelCancelationClick} className='adminTopTilesli2'>
           <div className='adminTopTilesliLeft'>
-            icon
+            <FiUserPlus/>
           </div>
           <div className='adminTopTilesliRight'>
             <div>
-              <div>554</div>
-              <div>Cancelations</div>
+              <div>
+                <h1>
+                  554
+                </h1>
+              </div>
+              <div>New Canceleation</div>
             </div>
             
           </div>
         </li>
-        <li onClick={handlehotelCheckedInClick} className='adminTopTilesli'>
+        <li onClick={handlehotelCheckedInClick} className='adminTopTilesli3'>
           <div className='adminTopTilesliLeft'>
-            icon
+            <TbMountain/>
           </div>
           <div className='adminTopTilesliRight'>
             <div>
-              <div>554</div>
+              <div>
+                <h1>3</h1>
+              </div>
               <div>Checked In</div>
             </div>
             
           </div>
         </li>
-        <li onClick={handlehotelCheckedOutClick} className='adminTopTilesli'>
+        <li onClick={handlehotelCheckedOutClick} className='adminTopTilesli4'>
           <div className='adminTopTilesliLeft'>
-            icon
+            <BsEye/>
           </div>
           <div className='adminTopTilesliRight'>
             <div>
-              <div>554</div>
-              <div>Checked out</div>
+              <div>
+                <h1>94</h1></div>
+              <div>Checked Out</div>
             </div>
             
           </div>
