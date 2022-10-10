@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import{AiFillStar,AiFillHeart} from 'react-icons/ai'
 import { IconContext } from 'react-icons'
 
-export default function categoryTile() {
+export default function categoryTile(props) {
     const router = useRouter()
 
     const handleMostVisitedClick = (e)=>{
@@ -13,30 +13,30 @@ export default function categoryTile() {
     }
     return (
       
-      <div className="mostVisitedMain">
+        <div className="mostVisitedMain">
         <div className="mostVisitedText">
-            Most Visited
+            Recommended
         </div>
         <div className="mostVisitedSection">
             {
-            [...Array(8)].map((e,i)=> 
-            <div key={i} className="mostVisitedTiles" onClick={handleMostVisitedClick}>
-            <div className="mostVisitedTilesImagesDiv">
+            props.selectedCategory.map((item, key)=> 
+            <div key={item} className="mostVisitedTiles">
+            <div onClick={handleMostVisitedClick} className="mostVisitedTilesImagesDiv">
                 <Image 
                 className="mostVisitedTilesImages"
-                src={spot}
-                width={140}
-                height={170}
+                src={item.image}
+                width={260}
+                height={200}
                 />
             </div>
             
             <div className='mostVisitedTilesBtm'>
                 <div>
-                    <h3>Munnar</h3> 
-                    <h5>Locatoion</h5>
+                    <h3>{item.locationName}</h3> 
+                    <h5>{item.locationDistrict}</h5>
                 </div>
                 <div>
-                    <p>5 <AiFillStar/> </p>
+                    <p>{item.rating} <AiFillStar/> </p>
                     <button className='likeButton'>
                         <IconContext.Provider value={{className : "likeButtonIcon"}}>
                             <AiFillHeart/> 

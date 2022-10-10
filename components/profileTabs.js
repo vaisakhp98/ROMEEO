@@ -1,12 +1,35 @@
 import { useState } from "react";
+import { useRouter } from 'next/router';
 
-
-const Tabs=()=> {
+const Tabs=(props)=> {
   const [toggleState, setToggleState] = useState(1);
 
   const toggleTab = (index) => {
     setToggleState(index);
   };
+
+  const router = useRouter()
+
+    const handleviewHotelClick = (e)=>{
+        e.preventDefault()
+        router.push('/hotel')
+    }
+
+    const destinationSubmitted=()=>{
+      alert("Your destination has been submitted")
+    }
+
+    const canceledAlert=()=>{
+      alert("Your Reservation has been canceled")
+    }
+
+    const removedAlert=()=>{
+      alert("Your item has been removed")
+    }
+
+    const deletedAlert=()=>{
+      alert("Your item has been Deleted")
+    }
 
   return (
     <div className="container">
@@ -96,24 +119,39 @@ const Tabs=()=> {
         >
           <h2>Your Bookings</h2>
           <hr />
-          {[...Array(2)].map((e,i)=> 
-          <div className="tabsContentBookingsSection">
+          {props.profileBookings.map((item,key)=> 
+          <div key={item} className="tabsContentBookingsSection">
             <div className="tabsContentBookingsMain">
               <div className="tabsContentBookingsMain-Image">Image</div>
               <div className="tabsContentBookingsMain-Details">
                 <div>
-                  <p>Hotel Name</p>
-                  <h4>Vishwas Nagar</h4>
+                  <p>Hotel Name :</p>
+                  <h4>{item.hotelName}</h4>
                 </div>
                 <div>
                   <p>Location</p>
-                  <h4>Munnar</h4>
+                  <h4>{item.hotelLocation}</h4>
                 </div>
-                <div>Date and Room</div>
+                <div>
+                  <div>
+                    Check In :
+                    <p>{item.cindate}</p>
+
+                    Check In :
+                    <p>{item.coutdate}</p>
+                  </div>
+
+                  <div>
+                    <b>Room Details :</b>
+                    <div>
+                      <p>{item.noOfRooms} Room : {item.typeofRoom}</p>
+                    </div>
+                  </div>
+                </div>
               </div>
               <div className="tabsContentBookingsMain-Buttons">
-                <button>View Hotel</button>
-                <button>Cancel</button>
+                <button onClick={handleviewHotelClick}  className="tabsContentBookingsMainViewHotel">View Hotel</button>
+                <button onClick={canceledAlert} className="tabsContentBookingsMainCancel">Cancel</button>
               </div>
             </div>
           </div>
@@ -168,7 +206,7 @@ const Tabs=()=> {
               </div>
             </div>
             
-            <button className="addDestinationSubmitBtn">Submit</button>
+            <button onClick={destinationSubmitted} className="addDestinationSubmitBtn">Submit</button>
 
           </form> 
         </div>
@@ -176,8 +214,30 @@ const Tabs=()=> {
         <div
           className={toggleState === 4 ? "content  active-content" : "content"}
         >
-          <h2>View Your Destination</h2>
+          <h2>View Destination</h2>
           <hr />
+          {props.profileBookings.map((item,key)=> 
+          <div key={item} className="tabsContentBookingsSection">
+            <div className="tabsContentBookingsMain">
+              <div className="tabsContentBookingsMain-Image">Image</div>
+              <div className="tabsContentBookingsMain-Details">
+                <div>
+                  <p>Hotel Name :</p>
+                  <h4>{item.hotelName}</h4>
+                </div>
+                <div>
+                  <p>Location</p>
+                  <h4>{item.hotelLocation}</h4>
+                </div>
+                
+              </div>
+              <div className="tabsContentBookingsMain-Buttons">
+                <button onClick={handleviewHotelClick}  className="tabsContentBookingsMainViewHotel">Edit</button>
+                <button onClick={deletedAlert} className="tabsContentBookingsMainCancel">Delete</button>
+              </div>
+            </div>
+          </div>
+          )}
           
           
           
@@ -186,8 +246,29 @@ const Tabs=()=> {
         <div
           className={toggleState === 5 ? "content  active-content" : "content"}
         >
-          <h2>Your Liked List</h2>
-          <hr />
+        
+          {props.profileBookings.map((item,key)=> 
+          
+          <div key={item} className="tabsContentBookingsSection">
+            <div className="tabsContentBookingsMain">
+              <div className="tabsContentBookingsMain-Image">Image</div>
+              <div className="tabsContentBookingsMain-Details">
+                <div>
+                  <p>Hotel Name :</p>
+                  <h4>{item.hotelName}</h4>
+                </div>
+                <div>
+                  <p>Location</p>
+                  <h4>{item.hotelLocation}</h4>
+                </div>
+              </div>
+              <div className="tabsContentBookingsMain-Buttons">
+                <button onClick={handleviewHotelClick}  className="tabsContentBookingsMainViewHotel">Book Hotel</button>
+                <button onClick={removedAlert} className="tabsContentBookingsMainCancel">Remove</button>
+              </div>
+            </div>
+          </div>
+          )}
           
           
           

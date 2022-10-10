@@ -112,7 +112,7 @@ export default function checkout() {
                         <input type="checkbox" id="html" name="fav_language" value="HTML"/>
                 </div>
                 <div className="payNowButtonDiv">
-                    <button className="payNowButton">Pay Now</button>
+                    <button onClick={completed} className="payNowButton">Pay Now</button>
                 </div>
             </div>
         </div>      
