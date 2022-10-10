@@ -363,6 +363,23 @@ margin: 15px;
    
   }
 }
+
+@media only screen and (max-width:1285px){
+  .likeButton{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: -210px;
+    left: -30px;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: white;
+   
+  }
+}
+
 @media only screen and (max-width:990px){
   .likeButton{
     position: relative;
