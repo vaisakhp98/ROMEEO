@@ -15,11 +15,19 @@ export default function profile() {
     .catch((err)=>console.log("An error has occured in recommended"))
   },[])
 
+  const [profileViewDestination, setProfileViewDestination]=useState([])
+  useEffect(()=>{
+    axios.get('/api/profileViewDestination')
+    .then((res)=>{setProfileViewDestination(res.data)})
+    .catch((err)=>console.log("An error has occured in recommended"))
+  },[])
+
   return (
     <div className={styles.container}>
       <Navigation/>
       <ProfileTabs 
-        profileBookings = {profileBookings}
+        profileBookings = {profileBookings} 
+        profileViewDestination={profileViewDestination}
       />
       <Footer/>
     </div>

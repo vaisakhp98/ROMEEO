@@ -1,58 +1,73 @@
+import {AiOutlineDashboard} from 'react-icons/ai'
+import { useRouter } from 'next/router'
 
-export default function hotelAdminCheckedOut() {
-
+export default function hotelAdminCheckedOut(props) {
+  const router = useRouter()
+  const handleDashClick = (e)=>{
+      e.preventDefault()
+      router.push('/hotelIndex')
+  }
     return (
       <div className="hotelAdminNewBookingsMain">
-          Checked Out
+          <h2>New Checked Out</h2>
+         
         <div className='adminNewHotelSortButton'>
           <div>
-              icon
+            <select name="cars" id="cars">
+                  <option value="Today">Today</option>
+                <option value="Yesterday">Yesterday</option>
+                <option value="ThisWeek">This Week</option>
+                <option value="ThisMonth">This Month</option>
+            </select>
           </div>
+            
+
           <div>
-              <button>Sort</button>
+            <button onClick={handleDashClick} className="goToDashBoardButton"><AiOutlineDashboard className='dashboardIcon'/> Dashboard</button>
           </div>
+            
         </div>
         {
-            [...Array(6)].map((e,i)=> 
-        <div className='adminNewHotelMainContainer'>
+           props.hotelAdminCheckedOut.map((item,key)=> 
+        <div key={item} className='adminNewHotelMainContainer'>
           <div className='adminNewHotelMainContent'>
               <div className='adminNewHotelMainContentImage'>Image</div>
                 <div className='hotelAdminMainContentDetails'>
                     <div>
                         <p>Booked By :</p>
-                        <h4>Rahul Mehta</h4>
+                        <h4>{item.userName}</h4>
                     </div>
     
                         <div>
                             <p>Phone :</p>
-                            <h4>+91 52369 45120</h4>
+                            <h4>+91 {item.phone}</h4>
                         </div>
 
                         <div>
                             <p>Email :</p>
-                            <h4>rahulMehta94@gmail.com</h4>
+                            <h4>{item.email}</h4>
                         </div>
 
                     </div>
 
                     <div className="hotelAdminNewBookingsDetails">
-                        <div> Booked on : 15/06/2022 </div>
-                        <div> Rooms  : 2 </div>
-                        <div> Check in : 17/06/2022 </div>
-                        <div> Check out : 19/06/2022</div>
+                        <div> Booked on : {item.bookedon} </div>
+                        <div> Rooms  : {item.rooms} </div>
+                        <div> Check in : {item.cinDate} </div>
+                        <div> Check out : {item.coutDate}</div>
                     </div>
 
               <div className='adminNewHotelMainContentButtons'>
-                  <button>Completed</button>
-                  <button>OK</button>
+                  <button className="adminNewHotelMainContentButtonsApprove"> Completed</button>
+                  <button className="adminNewHotelMainContentButtonsOk">OK</button>
               </div>
 
               
           </div>
           
           <div>
-            <h3>Issued room : 203 </h3>
-            <h4>05/06/2022 - 07/06/2022 </h4>
+            <h3>Issued room : {item.issuedRoom} </h3>
+            <h4>{item.cinDate} - {item.coutDate} </h4>
           </div>
   
         </div>)}

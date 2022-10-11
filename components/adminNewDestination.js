@@ -1,56 +1,100 @@
+import {MdFamilyRestroom , MdOutlinePool ,MdLocalParking ,MdSmokingRooms} from 'react-icons/md'
+import {AiFillHeart , AiFillInfoCircle ,AiFillCar,AiOutlineDashboard} from 'react-icons/ai'
+import {FaMountain} from 'react-icons/fa'
+import {GiSkier} from 'react-icons/gi'
+import { useRouter } from 'next/router'
 
-export default function adminNewDestination() {
+export default function adminNewDestination(props) {
+
+    const router = useRouter()
+    const handleDashClick = (e)=>{
+        e.preventDefault()
+        router.push('/adminIndex')
+    }
+
 
     return (
       <div className="adminNewHotelMain">
-        New Destination
+        <h2>New Destination</h2>
         <div className='adminNewHotelSortButton'>
           <div>
-              icon
+          <select name="cars" id="cars">
+                <option value="Today">Today</option>
+                <option value="Yesterday">Yesterday</option>
+                <option value="ThisWeek">This Week</option>
+                <option value="ThisMonth">This Month</option>
+            </select>
           </div>
+
           <div>
-              <button>Sort</button>
+            <button onClick={handleDashClick} className="goToDashBoardButton"><AiOutlineDashboard className='dashboardIcon'/> Dashboard</button>
           </div>
+          
+          
         </div>
   
-        <div className='adminNewHotelMainContainer'>
+        {
+            props.adminNewDestination.map((item,key)=>
+        <div key={item} className='adminNewHotelMainContainer'>
           <div className='adminNewHotelMainContent'>
               <div className='adminNewHotelMainContentImage'>Image</div>
               <div className='adminNewHotelMainContentDetails'>
-                  <div>
-                      <p>Name</p>
-                      <h4>Meridian Residence</h4>
+                  <div className="adminNewHotelMainContentDetailsDetail">
+                      <p>Name :</p>
+                      <h4>{item.locationName}</h4>
                   </div>
   
-                  <div>
-                      <p>Location</p>
-                      <h4>Munnar</h4>
+                  <div className="adminNewHotelMainContentDetailsDetail">
+                      <p>Location :</p>
+                      <h4>{item.locationDistrict}</h4>
                   </div>
   
-                  <div>
-                      <p>Description</p>
-                      <h4>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.....</h4>
+                  <div className="adminNewHotelMainContentDetailsDetail">
+                      <p>Description :</p>
+                      <h4>{item.description}</h4>
                   </div>
   
               </div>
               <div className='adminNewHotelMainContentButtons'>
-                  <button>Approve</button>
-                  <button>View</button>
-                  <button>Delete</button>
+                  <button className = 'adminNewHotelMainContentButtonsApprove'>'Approve</button>
+                  <button className='adminNewHotelMainContentButtonsView'>View</button>
+                  <button className='adminNewHotelMainContentButtonsDelete'>Delete</button>
               </div>
           </div>
-          <div className='adminNewHotelTagsMain'>
-              <div className='adminNewHotelTags'>
-                  <div>
-                     # tags
-                  </div>
-              </div>
-              
-          </div>
+
+          
+            <div className='adminNewHotelMainTags'>
+                
+                <div className='adminNewHotelTags'>
+                    <div className='adminNewHotelTagsTag'>
+                    <div><GiSkier/></div>
+                    <div>Sking </div>
+                    </div> 
+                </div>
+
+                <div className='adminNewHotelTags'>
+                    <div className='adminNewHotelTagsTag'>
+                    <div><MdFamilyRestroom/></div>
+                    <div>Family </div>
+                    </div> 
+                </div>
+
+                <div className='adminNewHotelTags'>
+                    <div className='adminNewHotelTagsTag'>
+                    <div><FaMountain/></div>
+                    <div>Sight Seeing</div>
+                    </div> 
+                </div>
+
+                
+
+            </div>
+
+          
           <div className='adminNewHotelPostedBy'> 
-              postedBy : Meridian Residence
+              <h4>postedBy : {item.postedBy}</h4>
           </div>
-        </div> 
+        </div>)} 
       </div>
     )
   }

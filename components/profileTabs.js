@@ -216,18 +216,29 @@ const Tabs=(props)=> {
         >
           <h2>View Destination</h2>
           <hr />
-          {props.profileBookings.map((item,key)=> 
+          {props.profileViewDestination.map((item,key)=> 
           <div key={item} className="tabsContentBookingsSection">
             <div className="tabsContentBookingsMain">
               <div className="tabsContentBookingsMain-Image">Image</div>
               <div className="tabsContentBookingsMain-Details">
-                <div>
-                  <p>Hotel Name :</p>
-                  <h4>{item.hotelName}</h4>
+                <div className="profileViewDestination">
+                  <p>Location Name :</p>
+                  <h4>{item.locationName}</h4>
                 </div>
-                <div>
-                  <p>Location</p>
-                  <h4>{item.hotelLocation}</h4>
+
+                <div className="profileViewDestination">
+                  <p>Location :</p>
+                  <h4>{item.locationDistrict}</h4>
+                </div>
+
+                <div className="profileViewDestination">
+                  <p>Discription :</p>
+                  <h4>{item.locationDiscription}</h4>
+                </div>
+
+                <div className="profileViewDestination">
+                  <p>Tags :</p>
+                  <h4>#{item.locationTags}</h4>
                 </div>
                 
               </div>
