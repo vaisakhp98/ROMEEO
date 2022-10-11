@@ -40,7 +40,6 @@ export default function DestDetails(props) {
                                 </div>)}
                             </div>
                          </div>
-
                          <div className="destCTAButtons">
                             <button type="button" onClick={handleClick} className="destHotelsNearbyButton">Hotels Nearby</button>
                             <button className="destHotelsAddReviewsButton">Add Review</button>
