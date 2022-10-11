@@ -4,6 +4,8 @@ import React from "react";
 import Slider from "react-slick";
 
 export default function DestHero(props) {
+
+  console.log(props.destDetails.image);
     var settings = {
         dots:true,
         infinite: true,
@@ -16,11 +18,11 @@ export default function DestHero(props) {
         <div>
           <hr className="horiLine"/>
           <Slider className="sliderMain" {...settings}>
-          {props.destDetails.map((item, key)=> 
-            <div key={item}>
+          {props.destDetails?.image?.map((item, key)=> 
+            <div key={key}>
             <img 
                 className="destinationImageTile"
-                src={item.image}
+                src={item}
                 />
           </div>
           )}

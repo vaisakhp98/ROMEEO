@@ -16,29 +16,28 @@ export default function DestDetails(props) {
             <div className="destDetail"> 
                <div className="destDetailsMain">
                 
-                    {
-                        props.destDetails.map((item, key)=> 
-                        <div key={item} className="destDetailsLeft">
-                        <h3>{item.locationName}</h3>
-                        <p><MdLocationOn/>{item.locationDistrict}</p>
+                        <div className="destDetailsLeft">
+                        <h3>{props.destDetails.locationName}</h3>
+                        <p><MdLocationOn/>{props.destDetails.locationDistrict}</p>
 
                         <h3 className="destRating">Rating</h3>
 
                         <h3 className="destAbout">About Place</h3>
-                        <p>{item.description}</p>
+                        <p>{props.destDetails.description}</p>
 
                          <div className="destfacilitiesSection">
                             <h3>Tags</h3>
 
                             <div className="destFacilitiesMainContainer">
-                                <div className="destfacilitiesMain">
+                                {props.destDetails?.tags?.map((tag,key)=>
+                                <div key={key} className="destfacilitiesMain">
                                     <div>
                                         <BsHash/>
                                     </div>
                                     <div className="destfacilitiesTitle">
-                                        {item.tags}
+                                        {tag}
                                     </div>
-                                </div>
+                                </div>)}
                             </div>
                          </div>
 
@@ -46,7 +45,7 @@ export default function DestDetails(props) {
                             <button type="button" onClick={handleClick} className="destHotelsNearbyButton">Hotels Nearby</button>
                             <button className="destHotelsAddReviewsButton">Add Review</button>
                          </div>
-                    </div>)}
+                    </div>
                     <div className="destShareLikeButtonsMain">
                         <button className="destShareButton"><MdIosShare/></button>
                         <button className="destLikeButton"><AiFillHeart/></button>

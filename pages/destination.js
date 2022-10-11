@@ -17,7 +17,8 @@ export default function destination() {
   const [destDetails, setDestDetails]=useState([])
   useEffect(()=>{
     axios.get('/api/destination')
-    .then((res)=>{setDestDetails(res.data)})
+    .then((res)=>{setDestDetails(res.data)
+    })
     .catch((err)=>console.log("An error has occured"))
   },[])
 
