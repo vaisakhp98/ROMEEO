@@ -575,17 +575,21 @@ margin: 15px;
 
 
 /* Destination Page */
-
-.sliderMain{
-  padding: 2% 5% 0% 6%;
-  min-height: 15vh;
-  
-  margin-top: 15px;
-  width: 100%;
+.sliderContainer{
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
+.sliderMain{
+  padding: 2% 5% 0% 6%;
+  min-height: 15vh;
+  margin-top: 15px;
+  width: 88%;
+  align-items: center;
+  justify-content: center;
+}
+
 .destDetail{
   width: 100%;
   margin-top: 20px;

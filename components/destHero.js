@@ -17,16 +17,19 @@ export default function DestHero(props) {
       return (
         <div>
           <hr className="horiLine"/>
-          <Slider className="sliderMain" {...settings}>
-          {props.destDetails?.image?.map((item, key)=> 
-            <div key={key}>
-            <img 
+            <div className="sliderContainer">
+              <Slider className="sliderMain" {...settings}>
+                {props.destDetails?.image?.map((item, key)=> 
+                  <div key={key}>
+                  <img 
                 className="destinationImageTile"
                 src={item}
                 />
           </div>
           )}
         </Slider>
+            </div>
+          
         </div>
       );
     }
