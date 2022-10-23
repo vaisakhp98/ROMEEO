@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import {MdIosShare,MdOutlinePool,MdLocalParking,MdSmokingRooms,MdLocationOn} from 'react-icons/md'
 import {AiFillHeart,AiFillCar} from 'react-icons/ai'
 import {BsHash} from 'react-icons/bs'
+import StarRating from "./ratingsStars";
 
 
 export default function DestDetails(props) {
@@ -20,7 +21,9 @@ export default function DestDetails(props) {
                         <h3>{props.destDetails.locationName}</h3>
                         <p><MdLocationOn/>{props.destDetails.locationDistrict}</p>
 
-                        <h3 className="destRating">Rating</h3>
+                        <h3 className="destRating">
+                            <StarRating/>
+                        </h3>
 
                         <h3 className="destAbout">About Place</h3>
                         <p>{props.destDetails.description}</p>
