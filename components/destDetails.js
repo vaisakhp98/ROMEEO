@@ -3,6 +3,7 @@ import {MdIosShare,MdOutlinePool,MdLocalParking,MdSmokingRooms,MdLocationOn} fro
 import {AiFillHeart,AiFillCar} from 'react-icons/ai'
 import {BsHash} from 'react-icons/bs'
 import StarRating from "./ratingsStars";
+import "@fontsource/rubik"
 
 
 export default function DestDetails(props) {
@@ -14,7 +15,7 @@ export default function DestDetails(props) {
   }
       return (
         <div>
-            <div className="destDetail"> 
+            <div className="destDetail" style={{fontFamily:'rubik',fontWeight:300}}> 
                <div className="destDetailsMain">
                 
                         <div className="destDetailsLeft">

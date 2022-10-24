@@ -15,7 +15,7 @@ export default function HotelDetails(props) {
   }
       return (
         <div>
-            <div className="destDetail"> 
+            <div className="destDetail" style={{fontFamily:'rubik',fontWeight:300}}> 
             
                <div className="destDetailsMain">
                 {

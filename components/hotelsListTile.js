@@ -18,7 +18,7 @@ export default function HotelsListTile(props) {
     }
     return (
       
-        <div className="mostVisitedMain">
+        <div className="mostVisitedMain" style={{fontFamily:'rubik',fontWeight:300}} >
         <div className="mostVisitedText">
             <b>Hotels in Munnar</b>
         </div>
@@ -31,15 +31,15 @@ export default function HotelsListTile(props) {
                 <img 
                 className="mostVisitedTilesImages"
                 src={item.image}
-                width={260}
+                width={290}
                 height={200}
                 />
             </div>
             
             <div className='mostVisitedTilesBtm'>
                 <div>
-                    <h3>{item.hotelName}</h3> 
-                    <h5>{item.hotelLocation}</h5>
+                    <h4>{item.hotelName}</h4> 
+                    <h6>{item.hotelLocation}</h6>
                 </div>
                 <div className='likeButtonSection'>
                     <p>{item.rating} <AiFillStar/> </p>

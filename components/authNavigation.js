@@ -4,6 +4,8 @@ import { MdOutlineAccountCircle } from 'react-icons/md';
 import { BiLogOutCircle } from 'react-icons/bi';
 import { AiOutlinePlusCircle } from 'react-icons/ai';
 import { useState } from 'react';
+import "@fontsource/rubik"
+
 
 export default function AuthNavigation() {
 
@@ -17,7 +19,7 @@ export default function AuthNavigation() {
   }
 
   return (
-    <div className="navMain">
+    <div className="navMain"  style={{fontFamily:'rubik',fontWeight:300}}>
       <Link href="/">
       <div className="navLeft"> Logo </div>
       </Link>

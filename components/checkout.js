@@ -6,7 +6,7 @@ export default function checkout() {
     }
 
       return (
-        <div className="checkoutSection">
+        <div className="checkoutSection" style={{fontFamily:'rubik',fontWeight:300}}>
             <div className="checkoutContainer">
             <div className="checkoutContainerImage">
                 Image
@@ -28,8 +28,13 @@ export default function checkout() {
                         <h1>24</h1>
                         <h4>Friday,</h4>
                         <p>July 2022 </p>
-                        <button className="changeButton">Change</button>
+                        
+                        <input type="date" id="birthday" name="birthday" className="datePicker"/>
+
+                        
                     </div>
+                 
+                    
                     
                 </div>
 
@@ -40,8 +45,10 @@ export default function checkout() {
                         <h1>24</h1>
                         <h4>Friday,</h4>
                         <p>July 2022 </p>
-                        <button className="changeButton">Change</button>
+                        <input type="date" id="birthday" name="birthday" className="datePicker"/>
+                       
                     </div>
+                    
                 </div>
                 
             </div>
@@ -85,19 +92,19 @@ export default function checkout() {
                 <hr/>
                 <hr/>
                 <h4>Payment type :</h4>
-                <div>
-                    <div>
+                <div className="paymentMethodSection">
+                    <div className="paymentMethodDivs">
                         <label>UPI</label>
                         <input type="radio" id="html" name="fav_language" value="HTML"/>
                     </div>
                     
                     
-                    <div>
+                    <div className="paymentMethodDivs">
                         <label>Net Banking</label>
                         <input type="radio" id="html" name="fav_language" value="HTML"/>
                     </div>
 
-                    <div>
+                    <div className="paymentMethodDivs">
                         <label>Google Pay</label>
                         <input type="radio" id="html" name="fav_language" value="HTML"/>
                     </div>

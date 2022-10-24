@@ -10,6 +10,9 @@ import AuthNavigation from '../components/authNavigation'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 
+import "@fontsource/rubik"
+
+
 export default function Home() {
   const [mostVisited, setMostVisited]=useState([])
   useEffect(()=>{

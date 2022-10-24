@@ -1,11 +1,12 @@
 import Image from 'next/image'
 import thumbnail from '../assets/thumbnail.jpg'
+import {AiFillStar} from 'react-icons/ai'
 
 
 export default function DestReviews(props) {
   
     return (
-      <div className="destReviewsSection">
+      <div className="destReviewsSection" style={{fontFamily:'rubik',fontWeight:300}}>
           <div>
             Reviews
           </div>
@@ -29,7 +30,9 @@ export default function DestReviews(props) {
                     </div>
                 </div>
                 <div className="destReviewsContainerRating">
+                    
                     {item.rating}
+                    <AiFillStar/>
                 </div>
             </div>)
             }

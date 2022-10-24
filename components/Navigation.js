@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router';
 import { FaBeer } from 'react-icons/fa';
+import "@fontsource/rubik"
 
 export default function Navigation() {
 
@@ -24,7 +25,7 @@ const handleSignupClick = (e)=>{
       <Link href="/">
       <div className="navLeft"> Logo </div>
       </Link>
-      <div className="navRight">
+      <div className="navRight"  style={{fontFamily:'rubik',fontWeight:300}}>
          <div className='navLinksSection'> 
           <ul className='navLinksLinks'>
             <li>Home</li>

@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fontsource/rubik": "^4.5.11",
     "axios": "^0.27.2",
     "babel-preset-es2015": "^6.24.1",
     "firebase": "^9.12.1",

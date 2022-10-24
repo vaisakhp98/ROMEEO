@@ -2,11 +2,14 @@ import Image from 'next/image'
 import spot from '../assets/spot.jpg'
 import{AiFillStar,AiFillHeart} from 'react-icons/ai'
 import { IconContext } from 'react-icons'
+import {MdLocationOn} from 'react-icons/md'
+import "@fontsource/rubik"
+
 
 export default function RecommendedHome(props) {
     return (
       
-      <div className="mostVisitedMain">
+      <div className="mostVisitedMain" style={{fontFamily:'rubik',fontWeight:300}}>
         <div className="mostVisitedText">
             Recommended
         </div>
@@ -18,15 +21,15 @@ export default function RecommendedHome(props) {
                 <Image 
                 className="mostVisitedTilesImages"
                 src={item.image}
-                width={260}
+                width={290}
                 height={200}
                 />
             </div>
             
             <div className='mostVisitedTilesBtm'>
                 <div>
-                    <h3>{item.locationName}</h3> 
-                    <h5>{item.locationDistrict}</h5>
+                    <h4>{item.locationName}</h4> 
+                    <h6><MdLocationOn/>{item.locationDistrict}</h6>
                 </div>
                 <div>
                     <p>{item.rating} <AiFillStar/> </p>
