@@ -6,7 +6,7 @@ import { useState,useEffect } from 'react'
 import axios from 'axios'
 
 
-export default function profile() {
+export default function Profile() {
 
   const [profileBookings, setProfileBookings]=useState([])
   useEffect(()=>{

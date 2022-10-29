@@ -1,14 +1,14 @@
 import styles from '../styles/Home.module.css'
 import Footer from '../components/footer'
-import Login from '../components/login'
+import Loginn from '../components/login'
 import Navigation from '../components/Navigation'
 
 
-export default function login() {
+export default function Login() {
   return (
     <div className={styles.container}>
       <Navigation/>
-      <Login/>
+      <Loginn/>
       <Footer/>
     </div>
   )

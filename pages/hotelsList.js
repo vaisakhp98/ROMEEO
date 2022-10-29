@@ -7,7 +7,7 @@ import { useState,useEffect } from 'react'
 import axios from 'axios'
 
 
-export default function hotelsList() {
+export default function HotelsList() {
 
   const [hotelList, setHotelList]=useState([])
   useEffect(()=>{

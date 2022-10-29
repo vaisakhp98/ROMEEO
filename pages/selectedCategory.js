@@ -7,7 +7,7 @@ import { useState,useEffect } from 'react'
 import axios from 'axios'
 
 
-export default function selectedCategory() {
+export default function SelectedCategory() {
 
   const [selectedCategory, setSelectedCategory]=useState([])
   useEffect(()=>{

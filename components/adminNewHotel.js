@@ -4,7 +4,7 @@ import {FaHotTub} from 'react-icons/fa'
 import { useRouter } from 'next/router'
 
 
-export default function adminNewHotel(props) {
+export default function AdminNewHotel(props) {
 
     const router = useRouter()
     const handleDashClick = (e)=>{
@@ -33,11 +33,11 @@ export default function adminNewHotel(props) {
       </div>
         {
             props.adminNewHotel.map((item,key)=>
-      <div className='adminNewHotelMainContainer'>
+      <div key={item} className='adminNewHotelMainContainer'>
         
         <div  className='adminNewHotelMainContent'>
        
-            <div key={item} className='adminNewHotelMainContentImage'>Image</div>
+            <div  className='adminNewHotelMainContentImage'>Image</div>
             <div className='adminNewHotelMainContentDetails'>
                 <div className='adminNewHotelMainContentDetailsDetail'>
                     <p>Name :</p>

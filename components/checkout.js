@@ -1,5 +1,5 @@
 
-export default function checkout() {
+export default function Checkout() {
   
     const completed =()=>{
         alert("Payment completed")

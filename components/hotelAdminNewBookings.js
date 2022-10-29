@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
 import {AiOutlineDashboard} from 'react-icons/ai'
 
-export default function hotelAdminNewBookings(props) {
+export default function HotelAdminNewBookings(props) {
     const router = useRouter()
     const handleDashClick = (e)=>{
         e.preventDefault()

@@ -5,7 +5,7 @@ import { BiLogOutCircle } from 'react-icons/bi';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { useState } from 'react';
 
-export default function adminNav() {
+export default function AdminNav() {
 
   return (
     <div className="navMain">

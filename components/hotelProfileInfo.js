@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import { useState } from "react";
 
-export default function hotelProfileInfo() {
+export default function HotelProfileInfo() {
 
   const[isHidden,setisHidden] = useState(false)
 

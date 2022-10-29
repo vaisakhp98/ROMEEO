@@ -1,21 +1,21 @@
 import AdminNav from '../components/adminNav'
-import HotelAdminCheckedOut from '../components/hotelAdminCheckedOut'
+import HAdminCheckedOut from '../components/hotelAdminCheckedOut'
 import { useState,useEffect } from 'react'
 import axios from 'axios'
 
-export default function hotelAdminCheckedOut() {
+export default function HotelAdminCheckedOut() {
   
-  const [hotelAdminCheckedOut, setHotelAdminCheckedOut]=useState([])
+  const [hotelAdminCheckedOut, setHotelAdmincheckedOut]=useState([])
   useEffect(()=>{
     axios.get('/api/hotelAdminCheckedOut')
-    .then((res)=>{setHotelAdminCheckedOut(res.data)})
+    .then((res)=>{setHotelAdmincheckedOut(res.data)})
     .catch((err)=>console.log("An error has occured in recommended"))
   },[])
 
   return (
     <div className='adminIndex'>
       <AdminNav/>
-      <HotelAdminCheckedOut 
+      <HAdminCheckedOut 
         hotelAdminCheckedOut={hotelAdminCheckedOut}
       />
     </div>

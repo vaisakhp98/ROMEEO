@@ -6,7 +6,7 @@ import {TbMountain} from 'react-icons/tb'
 import {BsEye} from 'react-icons/bs'
 
 
-export default function adminTopTiles() {
+export default function AdminTopTiles() {
 
   const router = useRouter()
 

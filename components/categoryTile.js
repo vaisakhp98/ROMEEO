@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import{AiFillStar,AiFillHeart} from 'react-icons/ai'
 import { IconContext } from 'react-icons'
 
-export default function categoryTile(props) {
+export default function CategoryTile(props) {
     const router = useRouter()
 
     const handleMostVisitedClick = (e)=>{

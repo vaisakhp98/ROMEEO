@@ -3,7 +3,7 @@ import AdminNewUsers from '../components/adminNewUsers'
 import { useState,useEffect } from 'react'
 import axios from 'axios'
 
-export default function adminIndex() {
+export default function AdminIndex() {
 
   const [adminNewUser, setAdminNewUser]=useState([])
   useEffect(()=>{

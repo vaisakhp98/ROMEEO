@@ -4,7 +4,7 @@ import {FaMountain} from 'react-icons/fa'
 import {GiSkier} from 'react-icons/gi'
 import { useRouter } from 'next/router'
 
-export default function adminNewDestination(props) {
+export default function AdminNewDestination(props) {
 
     const router = useRouter()
     const handleDashClick = (e)=>{
@@ -56,7 +56,7 @@ export default function adminNewDestination(props) {
   
               </div>
               <div className='adminNewHotelMainContentButtons'>
-                  <button className = 'adminNewHotelMainContentButtonsApprove'>'Approve</button>
+                  <button className = 'adminNewHotelMainContentButtonsApprove'>Approve</button>
                   <button className='adminNewHotelMainContentButtonsView'>View</button>
                   <button className='adminNewHotelMainContentButtonsDelete'>Delete</button>
               </div>

@@ -3,7 +3,7 @@ import AdminNewDestination from '../components/adminNewDestination'
 import { useState,useEffect } from 'react'
 import axios from 'axios'
 
-export default function adminIndex() {
+export default function AdminIndex() {
 
   const [adminNewDestination, setAdminNewDestination]=useState([])
   useEffect(()=>{

@@ -4,7 +4,7 @@ import AdminNav from '../components/adminNav'
 import HotelProfileInfo from '../components/hotelProfileInfo'
 
 
-export default function hotelProfile() {
+export default function HotelProfile() {
   return (
     <div className={styles.container}>
       <AdminNav/>

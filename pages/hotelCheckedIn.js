@@ -3,7 +3,7 @@ import HotelAdminCheckedIn from '../components/hotelAdminCheckedIn'
 import { useState,useEffect } from 'react'
 import axios from 'axios'
 
-export default function hotelCheckedIn() {
+export default function HotelCheckedIn() {
 
   const [hotelAdminCheckedIn, setHotelAdminCheckedIn]=useState([])
   useEffect(()=>{

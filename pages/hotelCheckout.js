@@ -3,7 +3,7 @@ import Navigation from '../components/Navigation'
 import Checkout from '../components/checkout'
 import Footer from '../components/footer'
 
-export default function hotelCheckout() {
+export default function HotelCheckout() {
   return (
     <div>
       <Navigation/>

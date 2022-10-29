@@ -1,24 +1,26 @@
 import AdminNav from '../components/adminNav'
-import AdminNewHotel from '../components/adminNewHotel'
+import AdmNewHotel from '../components/adminNewHotel'
 import { useState,useEffect } from 'react'
 import axios from 'axios'
 
-export default function adminNewHotel() {
+const AdminNewHotel = () => {
 
-  const [adminNewHotel, setAdminNewHotel]=useState([])
+  const [adminNewHotel, setAdminNewhotel]=useState([])
   useEffect(()=>{
     axios.get('/api/adminNewHotels')
-    .then((res)=>{setAdminNewHotel(res.data)})
+    .then((res)=>{setAdminNewhotel(res.data)})
     .catch((err)=>console.log("An error has occured in recommended"))
   },[])
 
   return (
     <div className='adminIndex'>
       <AdminNav/>
-      <AdminNewHotel 
+      <AdmNewHotel 
         adminNewHotel={adminNewHotel}
       />
       
     </div>
   )
 }
+
+export default adminNewHotel

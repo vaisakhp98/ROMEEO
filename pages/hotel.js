@@ -12,7 +12,7 @@ import axios from 'axios'
 
 
 
-export default function hotel() {
+export default function Hotel() {
 
   const [hotelDetails, setHotelDetails]=useState([])
   useEffect(()=>{

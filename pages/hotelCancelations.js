@@ -3,7 +3,7 @@ import HotelAdminCancelations from '../components/hotelAdminCancelations'
 import { useState,useEffect } from 'react'
 import axios from 'axios'
 
-export default function hotelCancelations() {
+export default function HotelCancelations() {
 
   const [hotelAdminCancelation, setHotelAdminCancelation]=useState([])
   useEffect(()=>{

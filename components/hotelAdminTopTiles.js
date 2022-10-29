@@ -5,7 +5,7 @@ import {FiUserPlus} from 'react-icons/fi'
 import {TbMountain} from 'react-icons/tb'
 import {BsEye} from 'react-icons/bs'
 
-export default function hotelAdminTopTiles() {
+export default function HotelAdminTopTiles() {
 
   const router = useRouter()
 

@@ -4,7 +4,7 @@ import {AiFillHeart , AiFillInfoCircle ,AiFillCar,AiOutlineDashboard} from 'reac
 import {FaHotTub} from 'react-icons/fa'
 import { useRouter } from 'next/router'
 
-export default function adminNewUsers(props) {
+export default function AdminNewUsers(props) {
 
     const router = useRouter()
     const handleDashClick = (e)=>{

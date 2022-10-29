@@ -12,7 +12,7 @@ import axios from 'axios'
 
 
 
-export default function destination() {
+export default function Destination() {
 
   const [destDetails, setDestDetails]=useState([])
   useEffect(()=>{

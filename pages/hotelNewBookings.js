@@ -3,7 +3,7 @@ import HotelAdminNewBookings from '../components/hotelAdminNewBookings'
 import { useState,useEffect } from 'react'
 import axios from 'axios'
 
-export default function hotelNewBookings() {
+export default function HotelNewBookings() {
   const [hotelAdminNewBookings, setHotelAdminNewBookings]=useState([])
   useEffect(()=>{
     axios.get('/api/hotelAdminNewBookings')
