@@ -10,10 +10,12 @@
   },
   "dependencies": {
     "@fontsource/rubik": "^4.5.11",
+    "@types/nprogress": "^0.2.0",
+    "aws-amplify": "^4.3.42",
     "axios": "^0.27.2",
     "babel-preset-es2015": "^6.24.1",
-    "firebase": "^9.12.1",
     "next": "12.2.5",
+    "nprogress": "^0.2.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.4.0",

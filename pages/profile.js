@@ -1,5 +1,8 @@
 import styles from '../styles/Home.module.css'
 import Footer from '../components/footer'
+import {Auth} from 'aws-amplify'
+import '@aws-amplify/ui-react/style.css'
+import {Authenticator} from '@aws-amplify/ui-react'
 import Navigation from '../components/Navigation'
 import ProfileTabs from '../components/profileTabs'
 import { useState,useEffect } from 'react'
@@ -24,11 +27,17 @@ export default function profile() {
 
   return (
     <div className={styles.container}>
+      
       <Navigation/>
-      <ProfileTabs 
-        profileBookings = {profileBookings} 
-        profileViewDestination={profileViewDestination}
-      />
+      <Authenticator loginMechanism = {['email']}  >
+        {({signOut,user})=>(
+            <ProfileTabs 
+            profileBookings = {profileBookings} 
+            profileViewDestination={profileViewDestination}
+          />
+        )}
+      </Authenticator>
+      
       <Footer/>
     </div>
   )
