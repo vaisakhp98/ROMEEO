@@ -1,0 +1,74 @@
+type Locations @modal 
+@auth(
+    rules : [
+        # allow all authenticated users the ability to create posts
+        # allow owners ability to update and delete their posts
+        {
+            allow : private  
+        },
+
+        # allow all authenticated users to read posts
+        {
+            allow : private,opertations:[read]
+        }
+
+        # allow all guest users (not authenticated) to read posts
+        {
+            allow : public , opertations : [read]
+        }
+    ]
+)
+
+// Destination
+{
+    id : ID!
+    image: String! -
+    locationName : String!
+    locationDist : String!
+    description : String!
+    rating : Integer!
+    Tags : String! -
+}
+
+
+// Destination reviews
+
+{
+    id : ID!
+    image: String! -
+    title : String!
+    description : String!
+    rating : String!
+}
+
+// Hotel Details
+{
+    id : ID!
+    image : String! -
+    hotelName : String!
+    hotelLocation : String!
+    rating : Integer 
+    description : String!
+    facilities : String -
+    price : Integer 
+}
+
+//Hotel Details
+{
+    id:ID!
+    roomType : String! -
+    roomsAvailable : Integer
+    roomPrice : Integer
+    checkInDate : String
+    checkOutDate : String
+}
+
+// Hotel reviews
+
+{
+    id : ID!
+    image: String! -
+    title : String!
+    description : String!
+    rating : String!
+}

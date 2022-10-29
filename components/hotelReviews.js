@@ -7,9 +7,28 @@ export default function HotelReviews(props) {
   
     return (
       <div className="destReviewsSection" style={{fontFamily:'rubik',fontWeight:300}}>
-          <div>
-            <h3>Reviews</h3>
-          </div>
+          <div className='destReviewsReviewSection'>
+            <h3>Enter Review</h3>
+            <div className='destReviewWriteReviews'>
+                <div>
+                    <input type="text" placeholder = "Enter the Title" className='destReviewWriteReviewsinputs'/>
+                </div>
+                <div>
+                    <textarea  placeholder = "Enter the description" className='destReviewWriteReviewsinputs' />
+                </div>
+                <div>
+                    <h5>Rating</h5>
+                    <AiFillStar/>
+                    <AiFillStar/>
+                    <AiFillStar/>
+                    <AiFillStar/>
+                    <AiFillStar/>
+                </div>
+            
+            </div>
+            <button className='reviewSubmitButton'>Submit</button>
+
+        </div>
           <div className="destReviewsMain">
             {props.hotelReview.map((item,key)=>
             <div key={item} className="destReviewsContainer">

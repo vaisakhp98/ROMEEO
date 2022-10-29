@@ -624,8 +624,32 @@ margin-right: 75px;
   margin-right:80px ;
   margin-top: 30px;
 }
+
+.destReviewsReviewSection{
+  border: black 1px solid;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  width: 55%;
+}
+
+.destReviewWriteReviews{
+  margin-top: 10px;
+  
+}
+.destReviewWriteReviewsinputs{
+  padding: 8px;
+  margin-bottom: 5px;
+  width: 100%;
+}
 .destReviewsMain{
 margin-top: 15px;
+}
+.reviewSubmitButton{
+  padding: 8px;
+  width: 100%;
+  margin-bottom: 10px;
+  cursor: pointer;
 }
 .destReviewsContainer{
 display: flex;
