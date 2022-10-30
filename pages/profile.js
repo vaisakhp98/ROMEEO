@@ -1,7 +1,7 @@
 import styles from '../styles/Home.module.css'
 import Footer from '../components/footer'
 import {Auth} from 'aws-amplify'
-import '@aws-amplify/ui-react/style.css'
+// import '@aws-amplify/ui-react/style.css' 
 import {Authenticator} from '@aws-amplify/ui-react'
 import Navigation from '../components/Navigation'
 import ProfileTabs from '../components/profileTabs'
@@ -9,8 +9,11 @@ import { useState,useEffect } from 'react'
 import axios from 'axios'
 
 
+
 export default function Profile() {
 
+
+ 
   const [profileBookings, setProfileBookings]=useState([])
   useEffect(()=>{
     axios.get('/api/profileBookings')
@@ -29,7 +32,7 @@ export default function Profile() {
     <div className={styles.container}>
       
       <Navigation/>
-      <Authenticator loginMechanism = {['email']}  >
+      <Authenticator loginMechanism = {['email']}  signUpAttributes={['name', 'phone_number']}>
         {({signOut,user})=>(
             <ProfileTabs 
             profileBookings = {profileBookings} 

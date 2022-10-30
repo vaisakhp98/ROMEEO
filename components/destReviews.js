@@ -35,7 +35,7 @@ export default function DestReviews(props) {
           </div>
           <div className="destReviewsMain">
             {props.destReviews.map((item,key)=>
-            <div key={item} className="destReviewsContainer">
+            <div key={key} className="destReviewsContainer">
                 <div className="destReviewsContainerImageContainer">
                     {/* <Image
                         className="mostVisitedTilesImages"

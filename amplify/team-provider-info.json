@@ -1,0 +1,23 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-romeeo-dev-120014-authRole",
+      "UnauthRoleArn": "arn:aws:iam::368292570813:role/amplify-romeeo-dev-120014-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::368292570813:role/amplify-romeeo-dev-120014-authRole",
+      "Region": "ap-south-1",
+      "DeploymentBucketName": "amplify-romeeo-dev-120014-deployment",
+      "UnauthRoleName": "amplify-romeeo-dev-120014-unauthRole",
+      "StackName": "amplify-romeeo-dev-120014",
+      "StackId": "arn:aws:cloudformation:ap-south-1:368292570813:stack/amplify-romeeo-dev-120014/51727ea0-581c-11ed-be72-0a1cc8335ce6",
+      "AmplifyAppId": "dlhojnwo1eb17"
+    },
+    "categories": {
+      "auth": {
+        "romeeoedddc7cb": {}
+      },
+      "api": {
+        "romeeo": {}
+      }
+    }
+  }
+}

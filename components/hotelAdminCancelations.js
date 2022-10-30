@@ -29,7 +29,7 @@ export default function HotelAdminCancelations(props) {
         </div>
         {
             props.hotelAdminCancelation.map((item,key)=> 
-        <div key={item} className='adminNewHotelMainContainer'>
+        <div key={key} className='adminNewHotelMainContainer'>
           <div className='adminNewHotelMainContent'>
               <div className='adminNewHotelMainContentImage'>Image</div>
                 <div className='hotelAdminMainContentDetails'>

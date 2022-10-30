@@ -20,7 +20,7 @@ export default function HotelDetails(props) {
                <div className="destDetailsMain">
                 {
                     props.hotelDetails.map((item, key)=>
-                    <div key={item} className="destDetailsLeft">
+                    <div key={key} className="destDetailsLeft">
                         <h2>{item.locationName}</h2>
                         <p>{item.locationDistrict}</p>
 

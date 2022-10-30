@@ -28,7 +28,7 @@ export default function HotelAdminNewBookings(props) {
         </div>
         {
             props.hotelAdminNewBookings.map((item,key)=> 
-        <div key={item} className='adminNewHotelMainContainer'>
+        <div key={key} className='adminNewHotelMainContainer'>
           <div className='adminNewHotelMainContent'>
               <div className='adminNewHotelMainContentImage'>Image</div>
                 <div className='hotelAdminMainContentDetails'>

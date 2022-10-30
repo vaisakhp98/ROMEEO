@@ -9,8 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@aws-amplify/ui-react": "^3.5.10",
     "@fontsource/rubik": "^4.5.11",
-    "@types/nprogress": "^0.2.0",
     "aws-amplify": "^4.3.42",
     "axios": "^0.27.2",
     "babel-preset-es2015": "^6.24.1",
@@ -25,6 +25,7 @@
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
+    "@types/nprogress": "^0.2.0",
     "eslint": "8.23.0",
     "eslint-config-next": "12.2.5"
   }

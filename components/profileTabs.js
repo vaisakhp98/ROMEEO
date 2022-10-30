@@ -1,7 +1,11 @@
 import { useState } from "react";
 import { useRouter } from 'next/router';
+import { createLocation } from "../graphql/mutations";
+import {API, Auth , currentUserInfo} from 'aws-amplify'
+
 
 const Tabs=(props)=> {
+  const [name,setName] = useState( " ")
   const [toggleState, setToggleState] = useState(1);
 
   const toggleTab = (index) => {
@@ -15,8 +19,18 @@ const Tabs=(props)=> {
         router.push('/hotel')
     }
 
-    const destinationSubmitted=()=>{
+    const addLocation = async () => {
+      await API.graphql({
+        authMode: 'AMAZON_COGNITO_USER_POOLS',
+        query: createLocation ,
+        variables : {input:{name:name}}
+      })
+    }
+
+    const destinationSubmitted=(e)=>{
+      e.preventDefault()
       alert("Your destination has been submitted")
+      addLocation()
     }
 
     const canceledAlert=()=>{
@@ -30,6 +44,15 @@ const Tabs=(props)=> {
     const deletedAlert=()=>{
       alert("Your item has been Deleted")
     }
+    const getUser = async () => {
+      const { attributes } = await Auth.currentAuthenticatedUser()
+      console.log(attributes) 
+    }
+    getUser()
+
+    
+      
+  
 
   return (
     <div className="container">
@@ -120,7 +143,7 @@ const Tabs=(props)=> {
           <h2>Your Bookings</h2>
           <hr />
           {props.profileBookings.map((item,key)=> 
-          <div key={item} className="tabsContentBookingsSection">
+          <div key={key} className="tabsContentBookingsSection">
             <div className="tabsContentBookingsMain">
               <div className="tabsContentBookingsMain-Image">Image</div>
               <div className="tabsContentBookingsMain-Details">
@@ -160,6 +183,8 @@ const Tabs=(props)=> {
         </div>
 
 
+
+            {/* <h1>Destinaation Adding</h1> */}
         <div
           className={toggleState === 3 ? "content  active-content" : "content"}
         >
@@ -167,7 +192,7 @@ const Tabs=(props)=> {
           <hr />
           <form className="addDestination">
             <label className="addDestinationLabels">Destination Name: </label>
-            <input type='text' placeholder="Destination" className="addDestinationInput"/>
+            <input onChange={(e)=>{setName(e.target.value)}} type='text' placeholder="Destination" className="addDestinationInput"/>
 
             <label className="addDestinationLabels">State : </label>
             <input type='text' placeholder="State" className="addDestinationInput"/>
@@ -211,13 +236,14 @@ const Tabs=(props)=> {
           </form> 
         </div>
 
+        {/* <h1>View Locations</h1> */}
         <div
           className={toggleState === 4 ? "content  active-content" : "content"}
         >
           <h2>View Destination</h2>
           <hr />
           {props.profileViewDestination.map((item,key)=> 
-          <div key={item} className="tabsContentBookingsSection">
+          <div key={key} className="tabsContentBookingsSection">
             <div className="tabsContentBookingsMain">
               <div className="tabsContentBookingsMain-Image">Image</div>
               <div className="tabsContentBookingsMain-Details">
@@ -260,7 +286,7 @@ const Tabs=(props)=> {
         
           {props.profileBookings.map((item,key)=> 
           
-          <div key={item} className="tabsContentBookingsSection">
+          <div key={key} className="tabsContentBookingsSection">
             <div className="tabsContentBookingsMain">
               <div className="tabsContentBookingsMain-Image">Image</div>
               <div className="tabsContentBookingsMain-Details">

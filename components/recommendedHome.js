@@ -16,7 +16,7 @@ export default function RecommendedHome(props) {
         <div className="mostVisitedSection">
             {
             props.recommended.map((item, key)=> 
-            <div key={item} className="mostVisitedTiles">
+            <div key={key} className="mostVisitedTiles">
             <div className="mostVisitedTilesImagesDiv">
                 <Image 
                 className="mostVisitedTilesImages"

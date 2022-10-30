@@ -4,6 +4,11 @@ import { MdOutlineAccountCircle } from 'react-icons/md';
 import { BiLogOutCircle } from 'react-icons/bi';
 import { AiOutlinePlusCircle } from 'react-icons/ai';
 import { useState } from 'react';
+
+
+// import '@aws-amplify/ui-react/style.css' 
+import {Authenticator} from '@aws-amplify/ui-react'
+
 import "@fontsource/rubik"
 
 
@@ -19,6 +24,7 @@ export default function AuthNavigation() {
   }
 
   return (
+    
     <div className="navMain"  style={{fontFamily:'rubik',fontWeight:300}}>
       <Link href="/">
       <div className="navLeft"> Logo </div>
@@ -38,7 +44,11 @@ export default function AuthNavigation() {
                 
                 <button onClick={handleProfileClick} className="navProfileButton"><AiOutlinePlusCircle/></button>
                 <button onClick={handleProfileClick} className="navProfileButton"><MdOutlineAccountCircle/></button>
-                <button className="navProfileButton"><BiLogOutCircle/></button>
+                <Authenticator loginMechanism = {['email']}  >
+                  {({signOut,user})=>(
+                  <button className="navProfileButton" onClick={signOut}> <BiLogOutCircle/></button>
+                  )}
+                </Authenticator>
             </div>
             
          </div>

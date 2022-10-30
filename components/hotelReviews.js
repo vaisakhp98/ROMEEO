@@ -31,7 +31,7 @@ export default function HotelReviews(props) {
         </div>
           <div className="destReviewsMain">
             {props.hotelReview.map((item,key)=>
-            <div key={item} className="destReviewsContainer">
+            <div key={key} className="destReviewsContainer">
                 <div className="destReviewsContainerImageContainer">
                     {/* <Image
                         className="mostVisitedTilesImages"

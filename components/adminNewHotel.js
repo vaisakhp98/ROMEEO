@@ -33,7 +33,7 @@ export default function AdminNewHotel(props) {
       </div>
         {
             props.adminNewHotel.map((item,key)=>
-      <div key={item} className='adminNewHotelMainContainer'>
+      <div key={key} className='adminNewHotelMainContainer'>
         
         <div  className='adminNewHotelMainContent'>
        

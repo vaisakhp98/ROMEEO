@@ -1,6 +1,6 @@
 import '../styles/globals.css'
 
-import "../configureAmplify"
+import "./../configureAmplify"
 
 import NProgress from 'nprogress';
 import "nprogress/nprogress.css";

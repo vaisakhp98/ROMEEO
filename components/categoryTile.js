@@ -20,7 +20,7 @@ export default function CategoryTile(props) {
         <div className="mostVisitedSection">
             {
             props.selectedCategory.map((item, key)=> 
-            <div key={item} className="mostVisitedTiles">
+            <div key={key} className="mostVisitedTiles">
             <div onClick={handleMostVisitedClick} className="mostVisitedTilesImagesDiv">
                 <Image 
                 className="mostVisitedTilesImages"

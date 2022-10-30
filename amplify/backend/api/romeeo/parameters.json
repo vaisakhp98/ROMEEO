@@ -1,0 +1,12 @@
+{
+  "AppSyncApiName": "romeeo",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthModeLastUpdated": "2022-10-30T07:36:34.246Z",
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authromeeoedddc7cb",
+      "Outputs.UserPoolId"
+    ]
+  }
+}
