@@ -1,11 +1,14 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from 'next/router';
 import { createLocation } from "../graphql/mutations";
+import { getLocation, listLocations } from "../graphql/queries";
+
 import {API, Auth , currentUserInfo} from 'aws-amplify'
 
 
 const Tabs=(props)=> {
-  const [name,setName] = useState( " ")
+  const [id ,setId] = useState([])
+  const [name,setName] = useState(" ")
   const [toggleState, setToggleState] = useState(1);
 
   const toggleTab = (index) => {
@@ -27,6 +30,24 @@ const Tabs=(props)=> {
       })
     }
 
+    useEffect(()=>{
+      const allLocation = async () => {
+      await API.graphql({
+        authMode: 'AMAZON_COGNITO_USER_POOLS',
+        query: listLocations,
+         // variables : {id}
+      })
+      console.log(allLocation);
+      
+    }
+    
+    allLocation();
+    
+    },[])
+
+    
+    
+
     const destinationSubmitted=(e)=>{
       e.preventDefault()
       alert("Your destination has been submitted")
@@ -46,7 +67,7 @@ const Tabs=(props)=> {
     }
     const getUser = async () => {
       const { attributes } = await Auth.currentAuthenticatedUser()
-      console.log(attributes) 
+      // console.log(attributes) 
     }
     getUser()
 

@@ -25,6 +25,10 @@ type Location @model @auth(
 {
   id: ID!
   name: String!
+  district : String!
+  description : String!
+  image : String!
+  rating : Int
 }
 
 # type Post @model {

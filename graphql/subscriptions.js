@@ -9,6 +9,10 @@ export const onCreateLocation = /* GraphQL */ `
     onCreateLocation(filter: $filter, owner: $owner) {
       id
       name
+      district
+      description
+      image
+      rating
       createdAt
       updatedAt
       owner
@@ -23,6 +27,10 @@ export const onUpdateLocation = /* GraphQL */ `
     onUpdateLocation(filter: $filter, owner: $owner) {
       id
       name
+      district
+      description
+      image
+      rating
       createdAt
       updatedAt
       owner
@@ -37,6 +45,10 @@ export const onDeleteLocation = /* GraphQL */ `
     onDeleteLocation(filter: $filter, owner: $owner) {
       id
       name
+      district
+      description
+      image
+      rating
       createdAt
       updatedAt
       owner

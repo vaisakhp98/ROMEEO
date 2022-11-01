@@ -6,6 +6,10 @@ export const getLocation = /* GraphQL */ `
     getLocation(id: $id) {
       id
       name
+      district
+      description
+      image
+      rating
       createdAt
       updatedAt
       owner
@@ -22,6 +26,10 @@ export const listLocations = /* GraphQL */ `
       items {
         id
         name
+        district
+        description
+        image
+        rating
         createdAt
         updatedAt
         owner

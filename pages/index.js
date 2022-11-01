@@ -65,7 +65,7 @@ export default function Home() {
       <SearchBox/>
       <TopCategories/>
       <MostVisited
-        mostVisited = {mostVisited}
+        mostVisited = {mostVisited} fetchLocations={fetchLocations}
       />
       <RecommendedHome 
         recommended = {recommended}
