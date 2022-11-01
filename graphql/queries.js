@@ -7,6 +7,9 @@ export const getLocation = /* GraphQL */ `
       id
       name
       district
+      state
+      pincode
+      Tags
       description
       image
       rating
@@ -27,6 +30,9 @@ export const listLocations = /* GraphQL */ `
         id
         name
         district
+        state
+        pincode
+        Tags
         description
         image
         rating

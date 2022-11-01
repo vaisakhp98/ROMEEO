@@ -7,8 +7,16 @@ import {API, Auth , currentUserInfo} from 'aws-amplify'
 
 
 const Tabs=(props)=> {
-  const [id ,setId] = useState([])
+ 
+  
+  const [state,setState] = useState(" ")
   const [name,setName] = useState(" ")
+  const [district,setDistrict] = useState(" ")
+  const [pincode,setPincode] = useState(" ")
+  const [description,setDescription] = useState(" ")
+  
+
+
   const [toggleState, setToggleState] = useState(1);
 
   const toggleTab = (index) => {
@@ -26,7 +34,7 @@ const Tabs=(props)=> {
       await API.graphql({
         authMode: 'AMAZON_COGNITO_USER_POOLS',
         query: createLocation ,
-        variables : {input:{name:name}}
+        variables : {input:{name:name} , input :{district:district} }
       })
     }
 
@@ -219,7 +227,7 @@ const Tabs=(props)=> {
             <input type='text' placeholder="State" className="addDestinationInput"/>
 
             <label className="addDestinationLabels">District : </label>
-            <input type='text' placeholder="District" className="addDestinationInput"/>
+            <input onChange={(e)=>{setDistrict(e.target.value)}} type='text' placeholder="District" className="addDestinationInput"/>
 
             <label className="addDestinationLabels">Pincode : </label>
             <input type='number' placeholder="Pincode" className="addDestinationInput"/>

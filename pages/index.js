@@ -19,19 +19,7 @@ import "@fontsource/rubik"
 export default function Home() {
   const [mostVisited, setMostVisited]=useState([])
 
-  const [locations, setLocations] = useState({})
 
-  const fetchLocations = async () => {
-    const locationData = await API.graphql({
-      // authMode: 'AMAZON_COGNITO_USER_POOLS',
-      query: listLocations
-    })
-
-    setLocations(locationData.data.listLocations.items)
-  }
-  useEffect(()=>{
-    fetchLocations()
-  }, [])
 
   useEffect(()=>{
     axios.get('/api/homePageMostVisited')
@@ -65,7 +53,7 @@ export default function Home() {
       <SearchBox/>
       <TopCategories/>
       <MostVisited
-        mostVisited = {mostVisited} fetchLocations={fetchLocations}
+        mostVisited = {mostVisited} 
       />
       <RecommendedHome 
         recommended = {recommended}

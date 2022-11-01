@@ -10,6 +10,9 @@ export const createLocation = /* GraphQL */ `
       id
       name
       district
+      state
+      pincode
+      Tags
       description
       image
       rating
@@ -28,6 +31,9 @@ export const updateLocation = /* GraphQL */ `
       id
       name
       district
+      state
+      pincode
+      Tags
       description
       image
       rating
@@ -46,6 +52,9 @@ export const deleteLocation = /* GraphQL */ `
       id
       name
       district
+      state
+      pincode
+      Tags
       description
       image
       rating

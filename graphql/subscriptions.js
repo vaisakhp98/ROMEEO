@@ -10,6 +10,9 @@ export const onCreateLocation = /* GraphQL */ `
       id
       name
       district
+      state
+      pincode
+      Tags
       description
       image
       rating
@@ -28,6 +31,9 @@ export const onUpdateLocation = /* GraphQL */ `
       id
       name
       district
+      state
+      pincode
+      Tags
       description
       image
       rating
@@ -46,6 +52,9 @@ export const onDeleteLocation = /* GraphQL */ `
       id
       name
       district
+      state
+      pincode
+      Tags
       description
       image
       rating

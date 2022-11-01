@@ -80,7 +80,7 @@ export default function MostVisited(props) {
                 <div>
                     
                     <h4>{item.name}</h4> 
-                    <h6> <MdLocationOn/> {item.locationDistrict}</h6>
+                    <h6> <MdLocationOn/> {item.district}</h6>
                 </div>
                 <div className='likeButtonSection'>
                     <p>{item.rating} <AiFillStar/> </p>
