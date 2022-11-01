@@ -30,8 +30,6 @@ export default function MostVisited(props) {
     fetchLocations()
   }, [])
 
-    //const [loc ,setLoc] = useState("")
-
     const image = './Pages/api/homePageMostVisited'
 
     const router = useRouter()

@@ -34,7 +34,8 @@ const Tabs=(props)=> {
       await API.graphql({
         authMode: 'AMAZON_COGNITO_USER_POOLS',
         query: createLocation ,
-        variables : {input:{name:name} , input :{district:district} }
+        variables : {input:{name:name}, 
+        input:{district:district} }
       })
     }
 

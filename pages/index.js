@@ -19,8 +19,6 @@ import "@fontsource/rubik"
 export default function Home() {
   const [mostVisited, setMostVisited]=useState([])
 
-
-
   useEffect(()=>{
     axios.get('/api/homePageMostVisited')
     .then((res)=>{setMostVisited(res.data)})
