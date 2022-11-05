@@ -16,16 +16,19 @@ export default function HotelHero(props) {
 
         <div>
         <hr className="horiLine"/>
-        <Slider className="sliderMain" {...settings}>
-        {props.hotelDetails.map((item, key)=> 
-          <div key={key}>
-          <img 
+          <div className="sliderContainer">
+            <Slider className="sliderMain" {...settings}>
+              {props.hotelDetails?.image?.map((item, key)=> 
+                <div key={key}>
+                <img 
               className="destinationImageTile"
-              src={item.image}
+              src={item}
               />
         </div>
         )}
       </Slider>
+          </div>
+        
       </div>
       );
     }
