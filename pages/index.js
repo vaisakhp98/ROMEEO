@@ -40,10 +40,6 @@ export default function Home() {
 
   return (
     <div className={styles.container}>
-      <form onSubmit={submit}>
-        <input type="text" placeholder = "name here" />
-        <button type="submit"> Submit</button>
-      </form>
       {/* {locations.map((item)=><h1>{item.createdAt}</h1>)} */}
       {/* <Navigation/> */}
       <AuthNavigation/>

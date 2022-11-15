@@ -23,4 +23,4 @@ const AdminNewHotel = () => {
   )
 }
 
-export default adminNewHotel
+export default AdminNewHotel

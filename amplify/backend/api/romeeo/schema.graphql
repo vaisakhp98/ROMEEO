@@ -32,7 +32,38 @@ type Location @model @auth(
   description: String!
   image: String!
   rating: Int
+  hotel: [Hotel] @hasMany
+}
 
+type Hotel @model @auth(
+    rules : [
+        # allow all authenticated users the ability to create posts
+        # allow owners ability to update and delete their posts
+        {
+            allow : owner  
+        },
+
+        # allow all authenticated users to read posts
+        {
+            allow : private,operations:[create, update, read]
+        },
+
+        # allow all guest users (not authenticated) to read posts
+        {
+            allow : public , operations : [read]
+        },
+    ]
+)
+{
+  id: ID!
+  name: String!
+  district: String!
+  price: Int
+  desciption: String
+  max:Int
+  image: [String] 
+  location: Location @belongsTo
+  rating: Int
 }
 
 # type Post @model {

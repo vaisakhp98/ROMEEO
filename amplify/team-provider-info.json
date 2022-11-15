@@ -13,10 +13,21 @@
     },
     "categories": {
       "auth": {
-        "romeeoedddc7cb": {}
+        "romeeoedddc7cb": {},
+        "userPoolGroups": {}
       },
       "api": {
+        "romeeo": {},
+        "AdminQueries": {}
+      },
+      "storage": {
         "romeeo": {}
+      },
+      "function": {
+        "AdminQueriesd85a5732": {
+          "deploymentBucketName": "amplify-romeeo-dev-120014-deployment",
+          "s3Key": "amplify-builds/AdminQueriesd85a5732-77515876615772494668-build.zip"
+        }
       }
     }
   }
