@@ -4,7 +4,7 @@ import {Auth} from 'aws-amplify'
 // import '@aws-amplify/ui-react/style.css' 
 import {Authenticator} from '@aws-amplify/ui-react'
 import Navigation from '../components/Navigation'
-import ProfileTabs from '../components/profileTabs'
+import ProfileTabs from '../components/profile'
 import { useState,useEffect } from 'react'
 import axios from 'axios'
 
