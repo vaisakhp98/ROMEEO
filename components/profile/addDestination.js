@@ -37,6 +37,11 @@ const AddDestination = () => {
         return values
     }
   
+    /**
+     * Add destination
+     * 
+     * @param {Event} e 
+     */
       const handleAddDestination = (e) => {
         e.preventDefault()
   
@@ -46,7 +51,9 @@ const AddDestination = () => {
         
         if(!values) return
 
+        // upload images and get file names
         uploadImages(values.images)
+        .then(res => console.log(res))
 
         // const addLocation = async () => {
         //   await API.graphql({
