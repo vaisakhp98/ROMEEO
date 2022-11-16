@@ -1,25 +1,32 @@
 import { uploadImages } from "@lib/image"
+import { API } from "aws-amplify"
+import { createLocation } from "graphql/mutations"
 
 const AddDestination = () => {
+    /**
+     * Validate the form 
+     * @param {Form object} form 
+     * @returns 
+     */
     const validateForm = (form) => {
         const values = {
-          dest_name: form.dest_name.value,
-          state: form.state.value,
+          name: form.dest_name.value,
+        //   state: form.state.value,
           district: form.district.value,
           pincode: form.pincode.value,
           description: form.description.value,
-          images: []
+          image: []
         }
   
         // validations
-        if(values.dest_name=="" || values.state=="" || values.district=="" || Number.isInteger(values.pincode) || values.description==""){
+        if(values.name=="" || values.district=="" || Number.isInteger(values.pincode) || values.description==""){
           console.log("Values provided does not match")
           return false
         }
   
         if(form.image1.files[0] || form.image2.files[0]){
-          values.images.push(form.image1.files[0])
-          values.images.push(form.image2.files[0])
+          values.image.push(form.image1.files[0])
+          values.image.push(form.image2.files[0])
         }
         else{
           console.log("images 1 and 2 mandatory")
@@ -27,11 +34,11 @@ const AddDestination = () => {
         }
   
         if(form.image3.files[0]){
-          values.images.push(form.image3.files[0])
+          values.image.push(form.image3.files[0])
         }
   
         if(form.image4.files[0]){
-          values.images.push(form.image4.files[0])
+          values.image.push(form.image4.files[0])
         }
   
         return values
@@ -47,22 +54,24 @@ const AddDestination = () => {
   
         const form = e.target
   
-        const values = validateForm(form)
+        // validate form
+        const data = validateForm(form)
         
-        if(!values) return
+        if(!data) return
 
         // upload images and get file names
-        uploadImages(values.images)
-        .then(res => console.log(res))
+        uploadImages(data.image)
+        .then(async (res) => {
+            data.image=res
 
-        // const addLocation = async () => {
-        //   await API.graphql({
-        //     authMode: 'AMAZON_COGNITO_USER_POOLS',
-        //     query: createLocation ,
-        //     variables : {input:{name:name}, 
-        //     input:{district:district} }
-        //   })
-        // }
+            // call api
+            await API.graphql({
+            authMode: 'AMAZON_COGNITO_USER_POOLS',
+            query: createLocation ,
+            variables : {input: data}
+            })
+        })
+        .catch(err => console.log(err))
       }
   
     return (
