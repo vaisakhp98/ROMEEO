@@ -21,13 +21,6 @@ export default function Profile() {
     .catch((err)=>console.log("An error has occured in recommended"))
   },[])
 
-  const [profileViewDestination, setProfileViewDestination]=useState([])
-  useEffect(()=>{
-    axios.get('/api/profileViewDestination')
-    .then((res)=>{setProfileViewDestination(res.data)})
-    .catch((err)=>console.log("An error has occured in recommended"))
-  },[])
-
   return (
     <div className={styles.container}>
       
@@ -36,7 +29,6 @@ export default function Profile() {
         {({signOut,user})=>(
             <ProfileTabs 
             profileBookings = {profileBookings} 
-            profileViewDestination={profileViewDestination}
           />
         )}
       </Authenticator>

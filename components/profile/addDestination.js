@@ -92,7 +92,7 @@ const AddDestination = () => {
             <input type='number' name="pincode" placeholder="Pincode" className="addDestinationInput"/>
 
             <label className="addDestinationLabels">Description : </label>
-            <textarea name="description" placeholder="Description"> </textarea>
+            <textarea name="description" placeholder="Description" defaultValue=""> </textarea>
 
             <label className="addDestinationLabels">Tags : </label>
             <input type='text' placeholder="Tags" className="addDestinationInput"/>

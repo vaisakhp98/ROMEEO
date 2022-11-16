@@ -65,7 +65,7 @@
             "authenticationType": "API_KEY",
             "apiKeyConfig": {
               "apiKeyExpirationDays": 365,
-              "apiKeyExpirationDate": "2023-11-14T14:24:52.253Z",
+              "apiKeyExpirationDate": "2023-11-16T08:58:37.876Z",
               "description": "romeeo"
             }
           },

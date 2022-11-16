@@ -13,12 +13,12 @@ type Location @model @auth(
 
         # allow all authenticated users to read posts
         {
-            allow : private,operations:[create, update, read]
+            allow : private, operations: [create, update, read]
         },
 
         # allow all guest users (not authenticated) to read posts
         {
-            allow : public , operations : [read]
+            allow : public, operations: [read]
         },
     ]
 )
@@ -45,12 +45,12 @@ type Hotel @model @auth(
 
         # allow all authenticated users to read posts
         {
-            allow : private,operations:[create, update, read]
+            allow : private, operations: [create, update, read]
         },
 
         # allow all guest users (not authenticated) to read posts
         {
-            allow : public , operations : [read]
+            allow : public, operations: [read]
         },
     ]
 )

@@ -5,6 +5,7 @@ import { getLocation, listLocations } from "../../graphql/queries";
 
 import {API, Auth , currentUserInfo} from 'aws-amplify'
 import AddDestination from "./addDestination";
+import ViewDestination from "./viewDestination";
 
 Auth.updateUserAttributes
 const Tabs=(props)=> {
@@ -22,34 +23,6 @@ const Tabs=(props)=> {
         e.preventDefault()
         router.push('/hotel')
     }
-
-    const addLocation = async () => {
-      await API.graphql({
-        authMode: 'AMAZON_COGNITO_USER_POOLS',
-        query: createLocation ,
-        variables : {input:{name:name}, 
-        input:{district:district} }
-      })
-    }
-
-    useEffect(()=>{
-      const allLocation = async () => {
-      await API.graphql({
-        authMode: 'AMAZON_COGNITO_USER_POOLS',
-        query: listLocations,
-         // variables : {id}
-      })
-      console.log(allLocation);
-      
-    }
-    
-    allLocation();
-    
-    },[])
-
-    
-    
-
 
     const canceledAlert=()=>{
       alert("Your Reservation has been canceled")
@@ -216,44 +189,12 @@ const Tabs=(props)=> {
         <div
           className={toggleState === 4 ? "content  active-content" : "content"}
         >
-          <h2>View Destination</h2>
-          <hr />
-          {props.profileViewDestination.map((item,key)=> 
-          <div key={key} className="tabsContentBookingsSection">
-            <div className="tabsContentBookingsMain">
-              <div className="tabsContentBookingsMain-Image">Image</div>
-              <div className="tabsContentBookingsMain-Details">
-                <div className="profileViewDestination">
-                  <p>Location Name :</p>
-                  <h4>{item.locationName}</h4>
-                </div>
-
-                <div className="profileViewDestination">
-                  <p>Location :</p>
-                  <h4>{item.locationDistrict}</h4>
-                </div>
-
-                <div className="profileViewDestination">
-                  <p>Discription :</p>
-                  <h4>{item.locationDiscription}</h4>
-                </div>
-
-                <div className="profileViewDestination">
-                  <p>Tags :</p>
-                  <h4>#{item.locationTags}</h4>
-                </div>
-                
-              </div>
-              <div className="tabsContentBookingsMain-Buttons">
-                <button onClick={handleviewHotelClick}  className="tabsContentBookingsMainViewHotel">Edit</button>
-                <button onClick={deletedAlert} className="tabsContentBookingsMainCancel">Delete</button>
-              </div>
-            </div>
-          </div>
-          )}
-          
-          
-          
+          {
+            toggleState === 4 &&
+            <ViewDestination
+              toggleState = {toggleState}
+            />
+          }
         </div>
 
         <div
