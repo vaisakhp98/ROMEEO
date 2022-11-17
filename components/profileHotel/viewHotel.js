@@ -3,11 +3,11 @@ import { deleteLocation } from "graphql/mutations"
 import { listLocations } from "graphql/queries"
 import { useEffect, useState } from "react"
 import {toast} from 'react-toastify'
-import Destination from "./destination"
+import Destination from "./hotel"
 import EditDestination from "./editDestination"
 
 
-const ViewDestination = (props) => {
+const ViewHotel = (props) => {
     const [destinations, setDestinations] = useState([])
     const [edit, setEdit ] = useState(false)
     const [editId, setEditId] = useState(undefined)
@@ -61,7 +61,7 @@ const ViewDestination = (props) => {
 
     return (
         <>
-            <h2>View Destination</h2>
+            <h2>View Hotel</h2>
           <hr />
           {
             destinations.length!=0 ? destinations.map((item,key)=> 
@@ -81,4 +81,4 @@ const ViewDestination = (props) => {
     )
 }
 
-export default ViewDestination
+export default ViewHotel

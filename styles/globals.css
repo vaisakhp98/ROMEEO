@@ -1117,9 +1117,13 @@ button {
   height: 15vh;
 }
 .tabsContentBookingsMain-Image{
-  width: auto;
+  width: 10%;
   min-width: 100px;
-  background-color: #222;
+  
+}
+.tabsContentBookingsMainImageMain{
+  min-width: 100%;
+  max-width: 60%;
 }
 .tabsContentBookingsMain-Details{
   margin-left: 20px;

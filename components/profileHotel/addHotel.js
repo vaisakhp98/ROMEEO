@@ -2,7 +2,7 @@ import { uploadImages } from "@lib/image"
 import { API } from "aws-amplify"
 import { createLocation } from "graphql/mutations"
 
-const AddDestination = () => {
+const AddHotel = () => {
     /**
      * Validate the form 
      * @param {Form object} form 
@@ -76,7 +76,7 @@ const AddDestination = () => {
   
     return (
         <>
-        <h2>Add Destination</h2>
+        <h2>Add Hotel</h2>
           <hr />
           <form className="addDestination" onSubmit={handleAddDestination}>
             <label className="addDestinationLabels">Destination Name: </label>
@@ -131,4 +131,4 @@ const AddDestination = () => {
           </>
     )
 }
-export default AddDestination
+export default AddHotel

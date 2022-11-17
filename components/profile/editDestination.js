@@ -1,8 +1,27 @@
 import { uploadImages } from "@lib/image"
 import { API } from "aws-amplify"
-import { createLocation } from "graphql/mutations"
+import { updateLocation } from "graphql/mutations"
+import { getLocation } from "graphql/queries"
+import { useEffect, useState } from "react"
 
-const AddDestination = () => {
+const EditDestination = (props) => {
+  const {id} = props
+
+  const [editData, setEditData] = useState({})
+
+  const [description, setDescription] = useState("")
+
+  // fetch edit data
+  useEffect(()=>{
+    const fetchEditData = async () => {
+      const postData = await API.graphql({query: getLocation, variables: {id: id}})
+      setEditData(postData.data.getLocation)
+      setDescription(postData.data.getLocation.description)
+    }
+
+    fetchEditData()
+  }, [])
+
     /**
      * Validate the form 
      * @param {Form object} form 
@@ -49,15 +68,18 @@ const AddDestination = () => {
      * 
      * @param {Event} e 
      */
-      const handleAddDestination = (e) => {
+      const handleEditDestination = (e) => {
         e.preventDefault()
   
         const form = e.target
   
         // validate form
         const data = validateForm(form)
-        
+        data.description = description
+
         if(!data) return
+
+        
 
         // upload images and get file names
         uploadImages(data.image)
@@ -67,32 +89,42 @@ const AddDestination = () => {
             // call api
             await API.graphql({
             authMode: 'AMAZON_COGNITO_USER_POOLS',
-            query: createLocation ,
-            variables : {input: data}
+            query: updateLocation,
+            variables : {input: {id: editData.id, ...data}}
             })
         })
         .catch(err => console.log(err))
       }
   
+      /**
+       * Close edit window
+       * 
+       * @param {Event} e
+       */
+      const handleCancel = (e) => {
+        e.preventDefault()
+
+        props.setEdit(false)
+      }
     return (
         <>
-        <h2>Add Destination</h2>
+        <h2>Edit Destination</h2>
           <hr />
-          <form className="addDestination" onSubmit={handleAddDestination}>
+          <form className="addDestination" onSubmit={handleEditDestination}>
             <label className="addDestinationLabels">Destination Name: </label>
-            <input type='text' name="dest_name" placeholder="Destination" className="addDestinationInput"/>
+            <input type='text' name="dest_name" defaultValue = {editData.name} placeholder="Destination" className="addDestinationInput"/>
 
             <label className="addDestinationLabels">State : </label>
-            <input type='text' name="state" placeholder="State" className="addDestinationInput"/>
+            <input type='text' name="state" placeholder="State" defaultValue = {editData.state ?? ""} className="addDestinationInput"/>
 
             <label className="addDestinationLabels">District : </label>
-            <input type='text' name="district" placeholder="District" className="addDestinationInput"/>
+            <input type='text' name="district" placeholder="District" defaultValue = {editData.district} className="addDestinationInput"/>
 
             <label className="addDestinationLabels">Pincode : </label>
-            <input type='number' name="pincode" placeholder="Pincode" className="addDestinationInput"/>
+            <input type='number' name="pincode" placeholder="Pincode" defaultValue = {editData.pincode} className="addDestinationInput"/>
 
             <label className="addDestinationLabels">Description : </label>
-            <textarea name="description" placeholder="Description"> </textarea>
+            <textarea name="description" placeholder="Description" value = {description} onChange={(e) => setDescription(e.target.value)}> </textarea>
 
             <label className="addDestinationLabels">Tags : </label>
             <input type='text' placeholder="Tags" className="addDestinationInput"/>
@@ -108,27 +140,12 @@ const AddDestination = () => {
               <input type="file" name="image3"/>
               <input type="file" name="image4"/>
             </div>
-
-            {/* <div className="addDestinationImageAddMain">
-              
-              <div className="addDestinationImageAdd">
-                Image 1
-              </div>
-              <div className="addDestinationImageAdd">
-                2
-              </div>
-              <div className="addDestinationImageAdd">
-                3
-              </div>
-              <div className="addDestinationImageAdd">
-                4
-              </div>
-            </div> */}
             
-            <button className="addDestinationSubmitBtn">Submit</button>
+            <button className="addDestinationSubmitBtn">Save Changes</button>
+            <button type="button" onClick={handleCancel} className="tabsContentBookingsMainCancel">cancel</button>
 
           </form> 
           </>
     )
 }
-export default AddDestination
+export default EditDestination

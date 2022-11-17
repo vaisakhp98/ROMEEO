@@ -7,6 +7,14 @@ import { useState } from 'react';
 
 export default function AdminNav() {
 
+  
+  const router = useRouter()
+  const handleClick = (e)=>{
+      e.preventDefault() 
+      router.push('/profileHotel')
+  }
+
+
   return (
     <div className="navMain">
       <Link href="/">
@@ -21,7 +29,7 @@ export default function AdminNav() {
             <div className='navAuthNameandIcon'>
                 <h3 className='navAuthName'>Vaisakh M V</h3>
                 
-                <button  className="navProfileButton"><MdOutlineAccountCircle/></button>
+                <button  className="navProfileButton" onClick={handleClick}><MdOutlineAccountCircle/></button>
                 <button className="navProfileButton"><BiLogOutCircle/></button>
             </div>
             
