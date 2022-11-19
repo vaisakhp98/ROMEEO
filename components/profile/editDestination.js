@@ -42,23 +42,15 @@ const EditDestination = (props) => {
           console.log("Values provided does not match")
           return false
         }
-  
-        if(form.image1.files[0] || form.image2.files[0]){
-          values.image.push(form.image1.files[0])
-          values.image.push(form.image2.files[0])
-        }
-        else{
-          console.log("images 1 and 2 mandatory")
-          return false
-        }
-  
-        if(form.image3.files[0]){
-          values.image.push(form.image3.files[0])
-        }
-  
-        if(form.image4.files[0]){
-          values.image.push(form.image4.files[0])
-        }
+
+        [...new Array(4)].map((_, key)=>{
+          if(form.image[key].files[0]){
+            values.image.push(form.image[key].files[0])
+          }
+          else if(editData.image[key]){
+            values.image.push(editData.image[key])
+          }
+        })
   
         return values
     }
@@ -76,7 +68,7 @@ const EditDestination = (props) => {
         // validate form
         const data = validateForm(form)
         data.description = description
-
+        console.log(data)
         if(!data) return
 
         
@@ -135,10 +127,10 @@ const EditDestination = (props) => {
               </div>
             </div>
             <div className="space-y-4 py-5">
-              <input type="file" name="image1"/>
-              <input type="file" name="image2"/>
-              <input type="file" name="image3"/>
-              <input type="file" name="image4"/>
+              <input type="file" name="image"/>
+              <input type="file" name="image"/>
+              <input type="file" name="image"/>
+              <input type="file" name="image"/>
             </div>
             
             <button className="addDestinationSubmitBtn">Save Changes</button>
