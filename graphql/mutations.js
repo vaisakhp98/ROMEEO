@@ -46,6 +46,7 @@ export const createLocation = /* GraphQL */ `
       review {
         items {
           id
+          title
           content
           userId
           image
@@ -122,6 +123,7 @@ export const updateLocation = /* GraphQL */ `
       review {
         items {
           id
+          title
           content
           userId
           image
@@ -198,6 +200,7 @@ export const deleteLocation = /* GraphQL */ `
       review {
         items {
           id
+          title
           content
           userId
           image
@@ -533,6 +536,7 @@ export const createReview = /* GraphQL */ `
         stateLocationId
         owner
       }
+      title
       content
       userId
       image
@@ -583,6 +587,7 @@ export const updateReview = /* GraphQL */ `
         stateLocationId
         owner
       }
+      title
       content
       userId
       image
@@ -633,6 +638,7 @@ export const deleteReview = /* GraphQL */ `
         stateLocationId
         owner
       }
+      title
       content
       userId
       image

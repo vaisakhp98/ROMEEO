@@ -43,6 +43,7 @@ export const getLocation = /* GraphQL */ `
       review {
         items {
           id
+          title
           content
           userId
           image
@@ -300,6 +301,7 @@ export const getReview = /* GraphQL */ `
         stateLocationId
         owner
       }
+      title
       content
       userId
       image
@@ -336,6 +338,7 @@ export const listReviews = /* GraphQL */ `
           stateLocationId
           owner
         }
+        title
         content
         userId
         image

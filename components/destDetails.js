@@ -4,14 +4,39 @@ import {AiFillHeart,AiFillCar} from 'react-icons/ai'
 import {BsHash} from 'react-icons/bs'
 import StarRating from "./ratingsStars";
 import "@fontsource/rubik"
+import { useContext, useState } from "react";
+import { UserContext } from "@lib/context/authContext";
+import { API } from "aws-amplify";
+import { createLike, updateLike } from "@graphql/mutations";
 
 
 export default function DestDetails(props) {
-  const router = useRouter()
+    const [like, setLike] = useState(props.item.like?.items.length!=0)
+    const [likeId, setLikeId] = useState(props.item.like?.items[0].id)
+    
+    const context = useContext(UserContext)
+    const router = useRouter()
 
   const handleClick = (e)=>{
       e.preventDefault()
       router.push('/hotelsList')
+  }
+
+  const handleLike = async (e) => {
+    e.preventDefault()
+      const data = {
+        userId: context.user.sub,
+        status: !like,
+        locationLikeId: props.item.id,
+      }
+      if(likeId) {data.id = likeId}
+    const likeData = await API.graphql({
+        query: likeId ? updateLike : craeteLike,
+        variables: {input: data},
+        authMode: 'AMAZON_COGNITO_USER_POOLS',
+    })
+
+    setLike(!like)
   }
       return (
         <div>
@@ -50,7 +75,7 @@ export default function DestDetails(props) {
                     </div>
                     <div className="destShareLikeButtonsMain">
                         <button className="destShareButton"><MdIosShare/></button>
-                        <button className="destLikeButton"><AiFillHeart/></button>
+                        <button className="destLikeButton" onClick={handleLike}><AiFillHeart style={{color: `${like ? "red" : "black"}`}}/></button>
                     </div>
                </div>
             </div>

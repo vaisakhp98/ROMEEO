@@ -8,15 +8,6 @@ export default function DestHero(props) {
   const {item} = props
   const [image, setImage] = useState()
 
-    useEffect(()=>{
-        const fetchImage = async () => {
-            if(!item.image) return
-            const url = await loadImage(item.image[0])
-            setImage(url)
-        }
-
-        fetchImage()
-    },[item.image])
 
     var settings = {
         dots:true,
@@ -31,14 +22,9 @@ export default function DestHero(props) {
           <hr className="horiLine"/>
             <div className="sliderContainer">
               <Slider className="sliderMain" {...settings}>
-                {/* {props.item?.image?.map((item, key)=> 
-                  <div key={key}> */}
-                      <img 
-                        className="destinationImageTile"
-                        src={image}
-                      />
-                  {/* </div>
-          )} */}
+                {item.image?.map((img, key)=> 
+                  <ImageElement key = {key} item={img}/>
+          )}
         </Slider>
             </div>
           
@@ -46,4 +32,30 @@ export default function DestHero(props) {
       );
     }
   
+
+    const ImageElement = (props) => {
+      const {item} = props
+      const [image, setImage] = useState()
+
+      
+    useEffect(()=>{
+        const fetchImage = async () => {
+            if(!item) return
+            const url = await loadImage(item)
+            setImage(url)
+        }
+
+        fetchImage()
+    },[item])
+
+    return(
+      <div>
+          <img 
+            className="destinationImageTile"
+            src={image}
+          />
+      </div>
+    )
+
+    }
   

@@ -42,7 +42,7 @@ export default function Destination() {
           const destinationData = await API.graphql(graphqlOperation(listReviews,{
               filter: { locationReviewId: id }
           }))
-          await setDestination(destinationData.data.listReviews.items)
+          await setReviews(destinationData.data.listReviews.items)
       }
 
       fetchReviews()
@@ -59,8 +59,16 @@ export default function Destination() {
 
       const destinationData = await API.graphql({
           query: createReview,
-          variables: {input: data}
+          variables: {input: data},
+          authMode: 'AMAZON_COGNITO_USER_POOLS',
       })
+
+      setReviews((prevState=>{
+        return [
+          destinationData.data.createReview,
+          ...prevState,
+        ]
+      }))
   }
 
   return (

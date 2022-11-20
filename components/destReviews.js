@@ -50,7 +50,7 @@ export default function DestReviews(props) {
                 </div>
                 <div className="destReviewsContainerReview">
                     <div>
-                        <b>{item.userId}</b>
+                        <b>{item.title}</b>
                     </div>
                     <div>
                     {item.content}
