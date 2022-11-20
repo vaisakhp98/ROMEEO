@@ -14,29 +14,24 @@ import { listLocations } from '../graphql/queries'
 import {API} from 'aws-amplify'
 
 import "@fontsource/rubik"
+import ItemList from '@components/Item/ItemList'
 
 
 export default function Home() {
-  const [mostVisited, setMostVisited]=useState([])
+  const [visited, setVisited] = useState([])
 
-  useEffect(()=>{
-    axios.get('/api/homePageMostVisited')
-    .then((res)=>{setMostVisited(res.data)})
-    .catch((err)=>console.log("An error has occured"))
-  },[])
+  const fetchLocations = async () => {
+    const locationData = await API.graphql({
+      // authMode: 'AMAZON_COGNITO_USER_POOLS',
+      query: listLocations
+    })
 
-  const [recommended, setRecommended]=useState([])
-  useEffect(()=>{
-    axios.get('/api/homePageRecommended')
-    .then((res)=>{setRecommended(res.data)})
-    .catch((err)=>console.log("An error has occured in recommended"))
-  },[])
-
-  const submit=(e)=>{
-    e.preventdefault
-    alert("submitted")
+    setVisited(locationData.data.listLocations.items)
   }
 
+  useEffect(()=>{
+    fetchLocations()
+  }, [])
 
   return (
     <div className={styles.container}>
@@ -46,11 +41,13 @@ export default function Home() {
       <Hero/>
       <SearchBox/>
       <TopCategories/>
-      <MostVisited
-        mostVisited = {mostVisited} 
+      <ItemList
+        title="Most Visited"
+        items = {visited}
       />
-      <RecommendedHome 
-        recommended = {recommended}
+      <ItemList
+        title="Recommended"
+        items = {visited}
       />
       <Footer/>
     </div>

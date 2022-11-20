@@ -108,10 +108,10 @@ const EditHotel = (props) => {
       }
     return (
         <>
-        <h2>Edit Destination</h2>
+        <h2>Edit hotel</h2>
           <hr />
           <form className="addDestination" onSubmit={handleEditDestination}>
-            <label className="addDestinationLabels">Destination Name: </label>
+            <label className="addDestinationLabels">Hotel Name: </label>
             <input type='text' name="dest_name" defaultValue = {editData.name} placeholder="Destination" className="addDestinationInput"/>
 
             <label className="addDestinationLabels">State : </label>

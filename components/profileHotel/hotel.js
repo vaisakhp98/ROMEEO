@@ -1,5 +1,4 @@
 import { Storage } from "aws-amplify"
-import Hotel from "pages/hotel"
 import { useEffect, useState } from "react"
 
 const Hotel = (props) => {

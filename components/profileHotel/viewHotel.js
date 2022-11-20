@@ -4,7 +4,7 @@ import { listLocations } from "graphql/queries"
 import { useEffect, useState } from "react"
 import {toast} from 'react-toastify'
 import Destination from "./hotel"
-import EditDestination from "./editDestination"
+import EditHotel from "./editHotel"
 
 
 const ViewHotel = (props) => {
@@ -57,7 +57,7 @@ const ViewHotel = (props) => {
         await toast("Deleted", {type:"success",theme:"colored"})
     }
 
-    if(edit) return <EditDestination id={editId} setEdit={setEdit}/>
+    if(edit) return <EditHotel id={editId} setEdit={setEdit}/>
 
     return (
         <>
@@ -72,8 +72,8 @@ const ViewHotel = (props) => {
           )
             :
             <div>
-                <h3>No Destinations listed</h3>
-                <p>Please add new destination to view</p>
+                <h3>No Hotels listed</h3>
+                <p>Please add new hotel to view</p>
             </div>
         }
           
