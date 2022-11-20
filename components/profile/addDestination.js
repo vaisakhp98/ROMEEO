@@ -1,8 +1,10 @@
+import { UserContext } from "@lib/context/authContext"
 import { uploadImages } from "@lib/image"
 import { API } from "aws-amplify"
 import { createLocation } from "graphql/mutations"
 
 const AddDestination = () => {
+  const context = useContext(UserContext)
     /**
      * Validate the form 
      * @param {Form object} form 
@@ -11,10 +13,12 @@ const AddDestination = () => {
     const validateForm = (form) => {
         const values = {
           name: form.dest_name.value,
-        //   state: form.state.value,
+          // state: form.state.value,
+          approval: "pending",
           district: form.district.value,
           pincode: form.pincode.value,
           description: form.description.value,
+          userId: context.user.sub,
           image: []
         }
   

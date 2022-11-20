@@ -5,6 +5,7 @@ import "./../configureAmplify"
 import NProgress from 'nprogress';
 import "nprogress/nprogress.css";
 import { Router } from 'next/router';
+import UserProvider from '@lib/context/authContext';
 
 
 NProgress.configure({
@@ -19,7 +20,9 @@ Router.events.on('routeChangeComplete',()=>NProgress.start());
 Router.events.on('routeChangeError',()=>NProgress.start());
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return <UserProvider>
+      <Component {...pageProps} />
+    </UserProvider>
 }
 
 export default MyApp

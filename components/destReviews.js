@@ -7,14 +7,14 @@ export default function DestReviews(props) {
   
     return (
       <div className="destReviewsSection" style={{fontFamily:'rubik',fontWeight:300}}>
-        <div className='destReviewsReviewSection'>
+        <form className='destReviewsReviewSection' onSubmit={props.addReview}>
             <h3>Enter Review</h3>
             <div className='destReviewWriteReviews'>
                 <div>
-                    <input type="text" placeholder = "Enter the Title" className='destReviewWriteReviewsinputs'/>
+                    <input name = "title" type="text" placeholder = "Enter the Title" className='destReviewWriteReviewsinputs'/>
                 </div>
                 <div>
-                    <textarea  placeholder = "Enter the description" className='destReviewWriteReviewsinputs' />
+                    <textarea name="content"  placeholder = "Enter the description" className='destReviewWriteReviewsinputs' />
                 </div>
                 <div>
                     <h5>Rating</h5>
@@ -26,15 +26,19 @@ export default function DestReviews(props) {
                 </div>
             
             </div>
-            <button className='reviewSubmitButton'>Submit</button>
+            <button type="submit" className='reviewSubmitButton'>Submit</button>
 
-        </div>
+        </form>
 
           <div>
             <h3>Reviews</h3>
           </div>
           <div className="destReviewsMain">
-            {props.destReviews.map((item,key)=>
+            {
+            props.reviews.length == 0 ?
+            "No Reviews Yet"
+            :
+            props.reviews.map((item,key)=>
             <div key={key} className="destReviewsContainer">
                 <div className="destReviewsContainerImageContainer">
                     {/* <Image
@@ -46,10 +50,10 @@ export default function DestReviews(props) {
                 </div>
                 <div className="destReviewsContainerReview">
                     <div>
-                        <b>{item.reviewHeading}</b>
+                        <b>{item.userId}</b>
                     </div>
                     <div>
-                    {item.review}
+                    {item.content}
                     </div>
                 </div>
                 <div className="destReviewsContainerRating">

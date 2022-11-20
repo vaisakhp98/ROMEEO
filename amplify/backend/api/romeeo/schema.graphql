@@ -26,13 +26,18 @@ type Location @model @auth(
   id: ID!
   name: String!
   district: String!
-  state: String
   pincode: Int
   Tags:String
   description: String!
+  userId: String
   image: [String]
   rating: Int
   hotel: [Hotel] @hasMany
+  state: State @belongsTo
+  review: [Review] @hasMany
+  like: [Like] @hasMany
+  approval: String
+  reviewCount: Int
 }
 
 type Hotel @model @auth(
@@ -66,6 +71,31 @@ type Hotel @model @auth(
   rating: Int
 }
 
+type State @model @auth(
+    rules : [
+        # allow all authenticated users the ability to create posts
+        # allow owners ability to update and delete their posts
+        {
+            allow : owner  
+        },
+
+        # allow all authenticated users to read posts
+        {
+            allow : private, operations: [create, update, read, delete]
+        },
+
+        # allow all guest users (not authenticated) to read posts
+        {
+            allow : public, operations: [read]
+        },
+    ]
+)
+{
+    id: ID!
+    name: String!
+    location: [Location] @hasMany
+}
+
 # type Post @model {
 #   id: ID!
 #   title: String!
@@ -73,8 +103,54 @@ type Hotel @model @auth(
 #   comments: [Comment] @hasMany
 # }
 
-# type Comment @model {
-#   id: ID!
-#   post: Post @belongsTo
-#   content: String!
-# }
+type Review @model @auth(
+    rules : [
+        # allow all authenticated users the ability to create posts
+        # allow owners ability to update and delete their posts
+        {
+            allow : owner  
+        },
+
+        # allow all authenticated users to read posts
+        {
+            allow : private, operations: [create, update, read, delete]
+        },
+
+        # allow all guest users (not authenticated) to read posts
+        {
+            allow : public, operations: [read]
+        },
+    ]
+) {
+  id: ID!
+  location: Location @belongsTo
+  title: String
+  content: String!
+  userId: String
+  image: String
+}
+
+type Like @model @auth(
+    rules : [
+        # allow all authenticated users the ability to create posts
+        # allow owners ability to update and delete their posts
+        {
+            allow : owner  
+        },
+
+        # allow all authenticated users to read posts
+        {
+            allow : private, operations: [create, update, read, delete]
+        },
+
+        # allow all guest users (not authenticated) to read posts
+        {
+            allow : public, operations: [read]
+        },
+    ]
+) {
+    id: ID!
+    userId: String
+    status: Boolean
+    location: Location @belongsTo
+}

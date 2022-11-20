@@ -4,6 +4,7 @@ import { IconContext } from 'react-icons'
 import { loadImage } from '@lib/image'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
+import Link from 'next/link'
 
 
 const SingleItem = (props) => {
@@ -22,14 +23,9 @@ const SingleItem = (props) => {
     
     const router = useRouter()
 
-    const handleMostVisitedClick = (e)=>{
-        e.preventDefault()
-        router.push('/destination')
-    }
-
     return(
-            
-        <div className="mostVisitedTiles" onClick={handleMostVisitedClick}>
+        <Link href={`/destination/${item.id}`}>
+        <a className="mostVisitedTiles">
         <div className="mostVisitedTilesImagesDiv">
             <img 
             className="mostVisitedTilesImages"
@@ -47,14 +43,14 @@ const SingleItem = (props) => {
             </div>
             <div className='likeButtonSection'>
                 <p>{item.rating} <AiFillStar/> </p>
-                <button className='likeButton'>
+                <button className='likeButton' >
                     <IconContext.Provider value={{className : "likeButtonIcon"}}>
                         <AiFillHeart/> 
-                        </IconContext.Provider>
-                    </button>
+                    </IconContext.Provider>
+                </button>
             </div>
         </div>
-    </div>)
+    </a></Link>)
 }
 
 export default SingleItem

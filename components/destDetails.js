@@ -19,21 +19,21 @@ export default function DestDetails(props) {
                <div className="destDetailsMain">
                 
                         <div className="destDetailsLeft">
-                        <h3>{props.destDetails.locationName}</h3>
-                        <p><MdLocationOn/>{props.destDetails.locationDistrict}</p>
+                        <h3>{props.item.name}</h3>
+                        <p><MdLocationOn/>{props.item.district}</p>
 
                         <h3 className="destRating">
                             <StarRating/>
                         </h3>
 
                         <h3 className="destAbout">About Place</h3>
-                        <p>{props.destDetails.description}</p>
+                        <p>{props.item.description}</p>
 
                          <div className="destfacilitiesSection">
                             <h3>Tags</h3>
 
                             <div className="destFacilitiesMainContainer">
-                                {props.destDetails?.tags?.map((tag,key)=>
+                                {props.item?.tags?.map((tag,key)=>
                                 <div key={key} className="destfacilitiesMain">
                                     <div>
                                         <BsHash/>
