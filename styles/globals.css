@@ -1,499 +1,519 @@
-*{
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap');
 
-
 /* Home Page */
-.hero{
-  color: tomato;
+
+.hero {
+    color: tomato;
 }
-.heroMain{
-  height: 65vh;
-  width: 100%;
-  background-color: rgb(193, 255, 255);
+
+.heroMain {
+    height: 65vh;
+    width: 100%;
+    background-color: rgb(193, 255, 255);
 }
+
 
 /* Navigation */
+
 .navMain {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px;
-  background-color: rgb(255, 255, 255);
-  z-index: 10;
-  max-height: 70px;
-}
-.loginButton{
-  padding: 10px;
-  width: 100px;
-  border-radius: 4px;
-  background-color: white;
-  border: 2px solid #3C6254;
-  color: #3C6254;
-  cursor: pointer;
-}
-.loginButton:hover{
-  
-  background-color: #f8f8f8;
-  border: 2px solid #529c81;
-}
-.registerButton{
-  padding: 10px;
-  width: 100px;
-  border-radius: 4px;
-  margin-left: 10px;
-  background-color: #3C6254;
-  color: white;
-  border:2px solid #027249;
-  cursor: pointer;
-}
-.registerButton:hover{
-  color: #ffffff;
-  background-color: #304e43;
-  border: 2px solid #529c81;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: rgb(255, 255, 255);
+    z-index: 10;
+    max-height: 70px;
 }
 
-.navLeft{
-  width: 30%;
+.loginButton {
+    padding: 10px;
+    width: 100px;
+    border-radius: 4px;
+    background-color: white;
+    border: 2px solid #3C6254;
+    color: #3C6254;
+    cursor: pointer;
 }
-.navRight{
-  width: 70%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+
+.loginButton:hover {
+    background-color: #f8f8f8;
+    border: 2px solid #529c81;
 }
-.navLinksSection{
-  width: 50%;
-  
+
+.registerButton {
+    padding: 10px;
+    width: 100px;
+    border-radius: 4px;
+    margin-left: 10px;
+    background-color: #3C6254;
+    color: white;
+    border: 2px solid #027249;
+    cursor: pointer;
 }
-.navLinksLinks{
-  align-items: center;
-  display: flex;
-  list-style: none;
-  margin-left: 10px;
-  justify-content: space-around;
+
+.registerButton:hover {
+    color: #ffffff;
+    background-color: #304e43;
+    border: 2px solid #529c81;
 }
+
+.navLeft {
+    width: 30%;
+}
+
+.navRight {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navLinksSection {
+    width: 50%;
+}
+
+.navLinksLinks {
+    align-items: center;
+    display: flex;
+    list-style: none;
+    margin-left: 10px;
+    justify-content: space-around;
+}
+
 
 /* Admin Navigation */
 
-.adminNavSearch{
-  display: flex;
+.adminNavSearch {
+    display: flex;
 }
 
 .adminNavSearchInput {
-  padding: 12px;
-  border-radius: 5px 0px 0px 5px;
-  border: 1px solid #9e9e9e;
-  background-color: #fcfcfc;
+    padding: 12px;
+    border-radius: 5px 0px 0px 5px;
+    border: 1px solid #9e9e9e;
+    background-color: #fcfcfc;
 }
 
-.adminNavSearchButton{
-  padding: 11px;
-  border-radius: 0px 5px 5px 0px;
-  border: 1px solid #9e9e9e;
-  background-color: #fcfcfc;
-  color: #3C6254;
-  font-size: medium;
-  cursor: pointer;
+.adminNavSearchButton {
+    padding: 11px;
+    border-radius: 0px 5px 5px 0px;
+    border: 1px solid #9e9e9e;
+    background-color: #fcfcfc;
+    color: #3C6254;
+    font-size: medium;
+    cursor: pointer;
 }
+
+
 /* admin TopTiles */
 
-.adminTopTiles{
-  padding: 10px;
-  margin-top: 15px;
-  
-}
-.adminTopTilesQuickinfo{
-  margin-left: 65px;
-  margin-bottom: 15px;
-}
-.adminTopTilesUl{
-  display: flex;
-  list-style: none;
-  justify-content: space-around;
+.adminTopTiles {
+    padding: 10px;
+    margin-top: 15px;
 }
 
-.adminTopTilesli1{
-  background-color: #e0e0e0;
-  min-width: 17%;
-  min-height: 7rem;
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-left: 5px;
+.adminTopTilesQuickinfo {
+    margin-left: 65px;
+    margin-bottom: 15px;
 }
 
-.adminTopTilesli1 :hover{
- scale: 1.1;
- transition: all 1s;
-
-}
-.adminTopTilesli2{
-  background-color: #e0e0e0;
-  min-width: 17%;
-  min-height: 7rem;
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-left: 5px;
-}
-.adminTopTilesli2 :hover{
-  scale: 1.1;
-  transition: all 1s;
- }
-.adminTopTilesli3{
-  background-color: #e0e0e0;
-  min-width: 17%;
-  min-height: 7rem;
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-left: 5px;
-}
-.adminTopTilesli3 :hover{
-  scale: 1.1;
-  transition: all 1s;
- }
-.adminTopTilesli4{
-  background-color: #e0e0e0;
-  min-width: 17%;
-  min-height: 7rem;
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-left: 5px;
-}
-.adminTopTilesli4 :hover{
-  scale: 1.1;
-  transition: all 1s;
- }
-.adminTopTilesliLeft{
-  min-width: 30%;
-  padding: 10px;
-  font-size: x-large;
-  font-weight: 600;
-  
-  
-}
-.adminTopTilesliRight{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.adminTopTilesUl {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
 }
 
-.adminNewHotelMain{
-margin: 15px;
+.adminTopTilesli1 {
+    background-color: #e0e0e0;
+    min-width: 17%;
+    min-height: 7rem;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 5px;
 }
 
-.adminNewHotelSortButton{
-  margin-top: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.adminTopTilesli1 :hover {
+    scale: 1.1;
+    transition: all 1s;
 }
 
-.adminNewHotelMainContainer{
-  border: 1px solid #222;
-  margin-top: 15px;
-  border-radius: 5px;
+.adminTopTilesli2 {
+    background-color: #e0e0e0;
+    min-width: 17%;
+    min-height: 7rem;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 5px;
 }
 
-.adminNewHotelMainContent{
-  margin: 10px;
-  display: flex;
-}
-.adminNewHotelMainContentImage{
-  width: 10%;
-  min-width: 10%;
-  background-color: skyblue;
-  padding: 5px;
-  display: inline-block;
-  height: 8em;
-  min-height: 8em;
-}
-.adminNewHotelMainContentDetails{
-  min-width: 70%;
-  margin-left: 10px;
-}
-.adminNewHotelMainContentButtons{
-  min-width: 15%;
-  display: flex;
-  flex-direction: column;
-}
-.adminNewHotelMainContentButtonsApprove{
-  padding: 12px;
-  border-radius: 5px;
-  margin-bottom: 5px;
-  background-color: #027249;
-  color: white;
-  cursor: pointer;
-}
-.adminNewHotelMainContentButtonsOk{
-  padding: 12px;
-  border-radius: 5px;
-  margin-bottom: 5px;
-  background-color: #00925d;
-  color: white;
-  cursor: pointer;
-}
-.adminNewHotelMainContentDetailsDetail{
-  margin-bottom: 10px;
-}
-.adminNewHotelMainContentButtonsView{
-  padding: 12px;
-  border-radius: 5px;
-  margin-bottom: 5px;
-  background-color: #414141;
-  color: white;
-  cursor: pointer;
-  
+.adminTopTilesli2 :hover {
+    scale: 1.1;
+    transition: all 1s;
 }
 
-.adminNewHotelMainContentButtonsDelete{
-  padding: 12px;
-  border-radius: 5px;
-  margin-bottom: 5px;
-  background-color: #ffffff;
-  border: 2px solid rgb(255, 170, 170);
-  cursor: pointer;
+.adminTopTilesli3 {
+    background-color: #e0e0e0;
+    min-width: 17%;
+    min-height: 7rem;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 5px;
 }
 
-.adminNewHotelTagsMain{
-  display: flex;
-  border-radius: 3px;
-  margin-left: 10px;
-  width: 100%;
+.adminTopTilesli3 :hover {
+    scale: 1.1;
+    transition: all 1s;
 }
 
-.adminNewHotelTags{
-  display: flex;
-  border:1px solid #222;
-  min-width: 100px;
-  max-width: 200px;
-  margin-right: 8px;
-  padding: 5px;
-  border-radius: 4px;
-  
+.adminTopTilesli4 {
+    background-color: #e0e0e0;
+    min-width: 17%;
+    min-height: 7rem;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 5px;
 }
-.adminNewHotelTagsTag{
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+.adminTopTilesli4 :hover {
+    scale: 1.1;
+    transition: all 1s;
 }
-.adminNewHotelMainTags{
-  display: flex;
-  margin-left: 10px;
+
+.adminTopTilesliLeft {
+    min-width: 30%;
+    padding: 10px;
+    font-size: x-large;
+    font-weight: 600;
 }
-.adminNewHotelTagsTagIcon{
-  padding: 5px;
+
+.adminTopTilesliRight {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-.adminNewHotelTagsTagTitle{
-  padding: 5px;
+
+.adminNewHotelMain {
+    margin: 15px;
 }
-.adminNewHotelPostedBy{
-  margin-left: 10px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+
+.adminNewHotelSortButton {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
-.goToDashBoardButton{
-  padding: 7px;
-  min-width:10% ;
-  margin-left:15px ;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  border-radius: 5px;
-  
+
+.adminNewHotelMainContainer {
+    border: 1px solid #222;
+    margin-top: 15px;
+    border-radius: 5px;
 }
-.dashboardIcon{
-  font-size: x-large;
-  margin-right: 10px;
+
+.adminNewHotelMainContent {
+    margin: 10px;
+    display: flex;
 }
+
+.adminNewHotelMainContentImage {
+    width: 10%;
+    min-width: 10%;
+    background-color: skyblue;
+    padding: 5px;
+    display: inline-block;
+    height: 8em;
+    min-height: 8em;
+}
+
+.adminNewHotelMainContentDetails {
+    min-width: 70%;
+    margin-left: 10px;
+}
+
+.adminNewHotelMainContentButtons {
+    min-width: 15%;
+    display: flex;
+    flex-direction: column;
+}
+
+.adminNewHotelMainContentButtonsApprove {
+    padding: 12px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    background-color: #027249;
+    color: white;
+    cursor: pointer;
+}
+
+.adminNewHotelMainContentButtonsOk {
+    padding: 12px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    background-color: #00925d;
+    color: white;
+    cursor: pointer;
+}
+
+.adminNewHotelMainContentDetailsDetail {
+    margin-bottom: 10px;
+}
+
+.adminNewHotelMainContentButtonsView {
+    padding: 12px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    background-color: #414141;
+    color: white;
+    cursor: pointer;
+}
+
+.adminNewHotelMainContentButtonsDelete {
+    padding: 12px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    background-color: #ffffff;
+    border: 2px solid rgb(255, 170, 170);
+    cursor: pointer;
+}
+
+.adminNewHotelTagsMain {
+    display: flex;
+    border-radius: 3px;
+    margin-left: 10px;
+    width: 100%;
+}
+
+.adminNewHotelTags {
+    display: flex;
+    border: 1px solid #222;
+    min-width: 100px;
+    max-width: 200px;
+    margin-right: 8px;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.adminNewHotelTagsTag {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.adminNewHotelMainTags {
+    display: flex;
+    margin-left: 10px;
+}
+
+.adminNewHotelTagsTagIcon {
+    padding: 5px;
+}
+
+.adminNewHotelTagsTagTitle {
+    padding: 5px;
+}
+
+.adminNewHotelPostedBy {
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.goToDashBoardButton {
+    padding: 7px;
+    min-width: 10%;
+    margin-left: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.dashboardIcon {
+    font-size: x-large;
+    margin-right: 10px;
+}
+
 
 /*Main Search Bar  */
-.searchMain{
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  margin-top: -25px;
-}
-.searchInput{
-  width: 80%;
-  height: 60px;
-  border-color: white;
-  border: none ;
-  padding: 10px;
-  border: 2px solid #3C6254;
-  border-radius: 10px 0px 0px 10px;
- 
-}
-.searchButton{
-  min-width: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 0px 10px 10px 0px;
-  cursor: pointer;
-  background-color: #3C6254;
-  color: aliceblue;
+
+.searchMain {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: -25px;
 }
 
-
-.searchMain2{
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  margin-top: 25px;
-}
-.searchInput2{
-  width: 80%;
-  height: 60px;
-  border-color: white;
-  border: none ;
-  padding: 10px;
-  border-radius: 10px 0px 0px 10px;
-  border: 2px solid #3C6254;
- 
-}
-.searchButton2{
-  min-width: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 0px 10px 10px 0px;
-  cursor: pointer;
-  background-color: #3C6254;
-  color: aliceblue;
-}
-.navProfileButton{
-  padding: 5px;
-  background-color: #ffffff;
-  color: #3C6254;
-  font-size: xx-large;
-  border-radius: 50%;
-  cursor: pointer;
-}
-.navAuthName{
-  position: relative;
-  bottom: 3px;
-  margin-right: 8px;
+.searchInput {
+    width: 80%;
+    height: 60px;
+    border-color: white;
+    border: none;
+    padding: 10px;
+    border: 2px solid #3C6254;
+    border-radius: 10px 0px 0px 10px;
 }
 
-.navAuthNameandIcon{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+.searchButton {
+    min-width: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0px 10px 10px 0px;
+    cursor: pointer;
+    background-color: #3C6254;
+    color: aliceblue;
 }
 
-.topCatMain{
-  font-family: "rubik",sans-serif;
-  margin-top: 50px;
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
+.searchMain2 {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 25px;
 }
-.topCatButtons{
+
+.searchInput2 {
+    width: 80%;
+    height: 60px;
+    border-color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 10px 0px 0px 10px;
+    border: 2px solid #3C6254;
+}
+
+.searchButton2 {
+    min-width: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0px 10px 10px 0px;
+    cursor: pointer;
+    background-color: #3C6254;
+    color: aliceblue;
+}
+
+.navProfileButton {
+    padding: 5px;
+    background-color: #ffffff;
+    color: #3C6254;
+    font-size: xx-large;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.navAuthName {
+    position: relative;
+    bottom: 3px;
+    margin-right: 8px;
+}
+
+.navAuthNameandIcon {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.topCatMain {
+    font-family: "rubik", sans-serif;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.topCatButtons {
     padding: 15px;
     min-width: 10%;
     border-radius: 5px;
     border: none;
 }
-.topCatButtons:hover{
-  cursor: pointer;
+
+.topCatButtons:hover {
+    cursor: pointer;
 }
 
-
-.mostVisitedMain{
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-.mostVisitedText{
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-top: 50px;
-
-}
-.mostVisitedSection{
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 30px;
-  min-width: 100%;
-  align-items: center;
-  justify-content: center;
-}
-.mostVisitedTiles{
-  min-width: 24%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 20px;
-  border-radius: 5px;
-  
-}
-.mostVisitedTiles:hover{
-  transform: scale(1.05);
-  transition: all .7s;
-  transition-timing-function: ease-in-out;
-  
-  
-}
-.mostVisitedTiles :hover{
-  cursor: pointer;
+.mostVisitedMain {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
-.mostVisitedTilesImages{
-  border-radius: 5px;
-  min-width: 25%;
-  margin-right: 10px;
-}
-.destinationImageTile{
-  border-radius: 5px;
-  width: 100%;
-  height: 100%;
-  
-}
-.mostVisitedTilesBtm{
-  display: flex;
-  justify-content: space-between;
-  width: 90%;
-  min-width: 90%;
-  
+.mostVisitedText {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
 }
 
-.likeButton{
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  top: -210px;
-  left: -30px;
-  height: 30px;
-  width: 30px;
-  border-radius: 50%;
-  background-color: white;
- 
+.mostVisitedSection {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    min-width: 100%;
+    align-items: center;
+    justify-content: center;
 }
 
+.mostVisitedTiles {
+    min-width: 24%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    border-radius: 5px;
+}
 
+.mostVisitedTiles:hover {
+    transform: scale(1.05);
+    transition: all .7s;
+    transition-timing-function: ease-in-out;
+}
 
+.mostVisitedTiles :hover {
+    cursor: pointer;
+}
 
-@media only screen and (max-width:1100px){
-  .likeButton{
+.mostVisitedTilesImages {
+    border-radius: 5px;
+    min-width: 25%;
+    margin-right: 10px;
+}
+
+.destinationImageTile {
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+}
+
+.mostVisitedTilesBtm {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    min-width: 90%;
+}
+
+.likeButton {
     position: relative;
     display: flex;
     align-items: center;
@@ -504,690 +524,759 @@ margin: 15px;
     width: 30px;
     border-radius: 50%;
     background-color: white;
-   
-  }
 }
 
-@media only screen and (max-width:1370px){
-  .likeButton{
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    top: -210px;
-    left: -40px;
-    height: 30px;
-    width: 30px;
-    border-radius: 50%;
-    background-color: white;
-   
-  }
+@media only screen and (max-width:1100px) {
+    .likeButton {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: -210px;
+        left: -30px;
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        background-color: white;
+    }
 }
 
-@media only screen and (min-width:1340px){
-  .likeButton{
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    top: -210px;
-    left: -55px;
-    height: 30px;
-    width: 30px;
-    border-radius: 50%;
-    background-color: white;
-   
-  }
-}
-@media only screen and (max-width:990px){
-  .likeButton{
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    top: -210px;
-    left: -95px;
-    height: 30px;
-    width: 30px;
-    border-radius: 50%;
-    background-color: white;
-   
-  }
+@media only screen and (max-width:1370px) {
+    .likeButton {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: -210px;
+        left: -40px;
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        background-color: white;
+    }
 }
 
-
-.likeButtonIcon{
-  font-size: 20px;
-  color: #cacaca;
+@media only screen and (min-width:1340px) {
+    .likeButton {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: -210px;
+        left: -55px;
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        background-color: white;
+    }
 }
 
-.likeButtonIcon :hover{
+@media only screen and (max-width:990px) {
+    .likeButton {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: -210px;
+        left: -95px;
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        background-color: white;
+    }
+}
+
+.likeButtonIcon {
+    font-size: 20px;
+    color: #cacaca;
+}
+
+.likeButtonIcon :hover {
     color: red;
     transition: 0.5s
-    
 }
-/* footer */
-.footerMain{
-  display: flex;
-  justify-content: center;
-  height: 30vh;
-  width: 100%;
-  background-color: cadetblue;
-  margin-top: 30px;
-  align-items: center;
 
+
+/* footer */
+
+.footerMain {
+    display: flex;
+    justify-content: center;
+    height: 30vh;
+    width: 100%;
+    background-color: cadetblue;
+    margin-top: 30px;
+    align-items: center;
 }
 
 
 /* Destination Page */
-.sliderContainer{
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+.sliderContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.sliderMain{
-  padding: 2% 5% 0% 6%;
-  min-height: 15vh;
-  margin-top: 15px;
-  width: 88%;
-  align-items: center;
-  justify-content: center;
+.sliderMain {
+    padding: 2% 5% 0% 6%;
+    min-height: 15vh;
+    margin-top: 15px;
+    width: 88%;
+    align-items: center;
+    justify-content: center;
 }
 
-.destDetail{
-  width: 100%;
-  margin-top: 20px;
-}
-.destDetailsMain{
-display: flex;
-justify-content: space-between;
-margin-left: 75px;
-margin-right: 75px;
-}
-.destDetailsLeft{
-  width: 60%;
-  max-height: 25%;
-}
-.horiLine{
-  
-  margin-top: 30px;
-  margin-bottom: 30px;
-  margin-left: 150px;
-  margin-right: 150px;
-  color: gray;
-  border-width: 1;
+.destDetail {
+    width: 100%;
+    margin-top: 20px;
 }
 
-.destReviewsSection{
-  margin-left: 80px;
-  margin-right:80px ;
-  margin-top: 30px;
+.destDetailsMain {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 75px;
+    margin-right: 75px;
 }
 
-.destReviewsReviewSection{
-  border: black 1px solid;
-  padding: 10px;
-  border-radius: 8px;
-  margin-bottom: 10px;
-  width: 55%;
+.destDetailsLeft {
+    width: 60%;
+    max-height: 25%;
 }
 
-.destReviewWriteReviews{
-  margin-top: 10px;
-  
-}
-.destReviewWriteReviewsinputs{
-  padding: 8px;
-  margin-bottom: 5px;
-  width: 100%;
-}
-.destReviewsMain{
-margin-top: 15px;
-}
-.reviewSubmitButton{
-  padding: 8px;
-  width: 100%;
-  margin-bottom: 10px;
-  cursor: pointer;
-}
-.destReviewsContainer{
-display: flex;
-height:140px ;
-border: solid 0.5px rgb(156, 156, 156) ;
-border-radius: 5px;
-margin-top: 15px;
-
-}
-.destReviewsContainerImageContainer{
-  width: 15%;
-  min-width: 15%;
-  background-color: skyblue;
-  padding: 5px;
-  display: inline-block;
-  min-width: 100px;
-  min-height: 100px;
-  
+.horiLine {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 150px;
+    margin-right: 150px;
+    color: gray;
+    border-width: 1;
 }
 
-.destReviewsContainerReview{
-  width: 70%;
-  padding: 15px;
- 
-}
-.destReviewsContainerRating{
-  width: 15%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
+.destReviewsSection {
+    margin-left: 80px;
+    margin-right: 80px;
+    margin-top: 30px;
 }
 
-.destRating{
-  margin-top: 15px;
-}
-.destAbout{
-  margin-top: 15px;
-}
-.destCTAButtons{
-  margin-top: 15px;
-}
-.destHotelsNearbyButton{
-  padding: 15px;
-  width: 45%;
-  background-color: #282828;
-  color: white;
-  border-radius: 5px;
-  border: 2px solid #777777;
-  cursor: pointer;
-}
-.destHotelsAddReviewsButton{
-  padding: 15px;
-  width: 45%;
-  color: white;
-  border-radius: 5px;
-  margin-left: 10px;
-  border: 2px solid #282828;
-  color: #282828;
-  background-color: white;
-  cursor: pointer;
+.destReviewsReviewSection {
+    border: black 1px solid;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    width: 55%;
 }
 
-.destShareButton{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 5px;
-  margin-left: 10px;
-  font-size: x-large;
-  border-radius: 5px;
-  cursor: pointer;
-}
-.destLikeButton{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 5px;
-  margin-left: 10px;
-  font-size: x-large;
-  border-radius: 5px;
-  cursor: pointer;
-}
-.destShareLikeButtonsMain{
-  display: flex;
-  height: 10%;
-}
-.destImportantInfo{
-  margin-top: 15px;
-  display: flex;
-  align-items: center;
- 
+.destReviewWriteReviews {
+    margin-top: 10px;
 }
 
-.destImportantInfoText{
-  margin-left: 10px;
-}
-.destfacilitiesSection{
-  margin-top: 15px;
-
-}
-.destfacilitiesMain{
-  display: flex;
-  border-radius: 3px;
-  min-width: 10%;
-  border: 1px solid black;
-  margin-right: 10px;
-  margin-top: 15px;
-  padding: 5px;
-}
-.destfacilitiesTitle{
-  margin-left: 5px;
-}
-.destFacilitiesMainContainer{
-  display: flex;
+.destReviewWriteReviewsinputs {
+    padding: 8px;
+    margin-bottom: 5px;
+    width: 100%;
 }
 
-.checkoutSection{
-  width: 100%;
-  justify-content: center;
-  display: flex;
-}
-.checkoutContainer{
-  margin: 10px;
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.checkoutContainerImage{
-  height: 30vh;
-  width: 100%;
-  background-color: #027249;
-}
-.checkoutContainerHotelName{
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  width: 100%;
+.destReviewsMain {
+    margin-top: 15px;
 }
 
-.checkoutContainerDateandTimeSection{
-  display: flex;
-  width: 100%;
-  margin-top: 10px;
+.reviewSubmitButton {
+    padding: 8px;
+    width: 100%;
+    margin-bottom: 10px;
+    cursor: pointer;
 }
-.checkoutContainerDateandTime-checkOut{
-  margin-left: 30px;
+
+.destReviewsContainer {
+    display: flex;
+    height: 140px;
+    border: solid 0.5px rgb(156, 156, 156);
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.destReviewsContainerImageContainer {
+    width: 15%;
+    min-width: 15%;
+    background-color: skyblue;
+    padding: 5px;
+    display: inline-block;
+    min-width: 100px;
+    min-height: 100px;
+}
+
+.destReviewsContainerReview {
+    width: 70%;
+    padding: 15px;
+}
+
+.destReviewsContainerRating {
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.destRating {
+    margin-top: 15px;
+}
+
+.destAbout {
+    margin-top: 15px;
+}
+
+.destCTAButtons {
+    margin-top: 15px;
+}
+
+.destHotelsNearbyButton {
+    padding: 15px;
+    width: 45%;
+    background-color: #282828;
+    color: white;
+    border-radius: 5px;
+    border: 2px solid #777777;
+    cursor: pointer;
+}
+
+.destHotelsAddReviewsButton {
+    padding: 15px;
+    width: 45%;
+    color: white;
+    border-radius: 5px;
+    margin-left: 10px;
+    border: 2px solid #282828;
+    color: #282828;
+    background-color: white;
+    cursor: pointer;
+}
+
+.destShareButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    margin-left: 10px;
+    font-size: x-large;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.destLikeButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    margin-left: 10px;
+    font-size: x-large;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.destShareLikeButtonsMain {
+    display: flex;
+    height: 10%;
+}
+
+.destImportantInfo {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.destImportantInfoText {
+    margin-left: 10px;
+}
+
+.destfacilitiesSection {
+    margin-top: 15px;
+}
+
+.destfacilitiesMain {
+    display: flex;
+    border-radius: 3px;
+    min-width: 10%;
+    border: 1px solid black;
+    margin-right: 10px;
+    margin-top: 15px;
+    padding: 5px;
+}
+
+.destfacilitiesTitle {
+    margin-left: 5px;
+}
+
+.destFacilitiesMainContainer {
+    display: flex;
+}
+
+.checkoutSection {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+}
+
+.checkoutContainer {
+    margin: 10px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.checkoutContainerImage {
+    height: 30vh;
+    width: 100%;
+    background-color: #027249;
+}
+
+.checkoutContainerHotelName {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.checkoutContainerDateandTimeSection {
+    display: flex;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.checkoutContainerDateandTime-checkOut {
+    margin-left: 30px;
+}
+
+.checkoutPaymentType {
+    width: 15%;
+}
+
+.checkoutPaymentTypeWays {
+    display: flex;
+    justify-content: space-between;
+}
+
+.changeButton {
+    background-color: rgb(212, 212, 212);
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 3px;
+    cursor: pointer;
+    width: 17%;
+}
+
+.datePicker {
+    margin-top: 10px;
+}
+
+.paymentMethodDivs {
+    display: flex;
+    justify-content: space-between;
+    border: 0.5px solid rgb(110, 110, 110);
+    padding: 5px;
+    margin-top: 3px;
+    border-radius: 5px;
+}
+
+.paymentMethodSection {
+    width: 50%;
+}
+
+.guestDetails {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.cashDetails {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.roomDetails {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.paymentType {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.checkoutSubmit {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.payNowButtonDiv {
+    width: 100%;
+}
+
+.payNowButton {
+    width: 100%;
+    margin-top: 10px;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #34ffb5;
+}
+
+.checkoutContainerMainContent-Rooms {
+    margin-top: 15px;
+}
+
+.checkoutContainerMainContent-Rooms {
+    display: flex;
+    width: 40%;
+    justify-content: space-between;
+}
+
+.checkoutContainerMainContent {
+    width: 70%;
+    margin-left: 10px;
+}
+
+.hotelDetailsBooked {
+    border: solid 2px rgb(0, 151, 13);
+    margin-top: 30px;
+    border-radius: 5px;
+}
+
+.hotelDetailsBookedMain {
+    padding: 10px;
+}
+
+.hotelMediaButtons {
+    display: flex;
+    justify-content: space-between;
+    min-width: 100%;
+}
+
+.loginSection {
+    width: 100%;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.userNameLoginName {
+    margin-top: 20px;
+}
+
+.userPasswordLogin {
+    margin-top: 10px;
+}
+
+.userNameLoginInput {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: #AFAFAF 2px solid;
+}
+
+.userPasswordLoginInput {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: #AFAFAF 2px solid;
+}
+
+.forgotPasswordLogin {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 3px;
+}
+
+.forgotPasswordButton {
+    cursor: pointer;
+    color: #3C6254;
+    background-color: white;
+}
+
+.loginPageButton {
+    width: 100%;
+    padding: 9px;
+    margin-top: 10px;
+    color: white;
+    background-color: #3C6254;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.loginPageButton:hover {
+    background-color: #1e5340;
+}
+
+.loginDontHaveAnAccount {
+    display: flex;
+    margin-top: 10px;
+    justify-content: center;
+}
+
+.loginDontHaveAnAccountBtn {
+    background-color: white;
+    margin-left: 5px;
+    color: #3C6254;
+    cursor: pointer;
+}
+
+.signUpRadioTraveller {
+    margin-right: 10px;
+    margin-top: 10px;
 }
 
 
-
-.checkoutPaymentType{
-  width: 15%;
-}
-.checkoutPaymentTypeWays{
-  display: flex;
-  justify-content: space-between;
-}
-
-.changeButton{
-  background-color: rgb(212, 212, 212);
-  padding: 10px;
-  margin-top: 5px;
-  border-radius: 3px;
-  cursor: pointer;
-  width: 17%;
-}
-.datePicker{
-  margin-top: 10px;
-}
-.paymentMethodDivs{
-  display: flex;
-  justify-content: space-between;
-  border: 0.5px solid rgb(110, 110, 110);
-  padding: 5px;
-  margin-top: 3px;
-  border-radius: 5px;
-}
-.paymentMethodSection{
-  width: 50%;
-}
-.guestDetails{
-  margin-top: 15px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  width: 100%;
-}
-.cashDetails{
-  margin-top: 15px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  width: 100%;
-}
-
-.roomDetails{
-  width: 100%;
-  margin-top: 10px;
-}
-
-.paymentType{
-  margin-top: 5px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  width: 100%;
-}
-.checkoutSubmit{
-  margin-top: 5px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  width: 100%;
-}
-
-.payNowButtonDiv{
-  width: 100%;
-
-}
-.payNowButton{
-  width: 100%;
-  margin-top: 10px;
-  padding: 15px;
-  border-radius: 5px;
-  cursor: pointer;
-  background-color: #34ffb5;
-}
-.checkoutContainerMainContent-Rooms{
-  margin-top: 15px;
-}
-.checkoutContainerMainContent-Rooms{
-  display: flex;
-  width: 40%;
-  justify-content: space-between;
-}
-.checkoutContainerMainContent{
-  width: 70%;
-  margin-left: 10px;
-}
-
-.hotelDetailsBooked{
-  border: solid 2px rgb(0, 151, 13);
-  margin-top: 30px;
-  border-radius: 5px;
-}
-.hotelDetailsBookedMain{
-  padding: 10px;
-}
-.hotelMediaButtons{
-  display: flex;
-  justify-content: space-between;
-  min-width: 100%;
-}
-.loginSection{
- width: 100%;
- min-height:70vh ;
- display: flex;
- align-items: center;
- justify-content: center;
- 
-}
-.userNameLoginName{
-  margin-top: 20px;
-}
-.userPasswordLogin{
-  margin-top: 10px;
-}
-.userNameLoginInput{
-  width: 100%;
-  padding: 8px;
-  margin-top: 5px;
-  border-radius: 5px;
-  border: #AFAFAF 2px solid;
-}
-.userPasswordLoginInput{
-  width: 100%;
-  padding: 8px;
-  margin-top: 5px;
-  border-radius: 5px;
-  border: #AFAFAF 2px solid;
-}
-.forgotPasswordLogin{
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 3px;
-  
-}
-.forgotPasswordButton{
-  cursor: pointer;
-  color: #3C6254;
-  background-color: white;
-}
-.loginPageButton{
-  width: 100%;
-  padding: 9px;
-  margin-top: 10px;
-  color: white;
-  background-color: #3C6254;
-  border-radius: 5px;
-  cursor: pointer;
-}
-.loginPageButton:hover{
-  background-color: #1e5340;
-
-}
-.loginDontHaveAnAccount{
-  display: flex;
-  margin-top: 10px;
-  justify-content: center;
-}
-.loginDontHaveAnAccountBtn{
-  background-color: white;
-  margin-left: 5px;
-  color: #3C6254;
-  cursor: pointer;
-}
-.signUpRadioTraveller{
-  margin-right: 10px;
-  margin-top: 10px;
-}
 /* Users  Profile Page*/
 
-.ProfileTabsSection{
-  margin: 50px;
-  justify-content: center;
-  margin-top: 30px;
+.ProfileTabsSection {
+    margin: 50px;
+    justify-content: center;
+    margin-top: 30px;
 }
 
 .container {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 70%;
-  height: 115vh;
-  background: #f1f1f1;
-  margin: 100px auto 0;
-  word-break: break-all;
-  border: 1px solid rgba(0, 0, 0, 0.274);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 70%;
+    height: 115vh;
+    background: #f1f1f1;
+    margin: 100px auto 0;
+    word-break: break-all;
+    border: 1px solid rgba(0, 0, 0, 0.274);
 }
 
 .bloc-tabs {
-  display: flex;
+    display: flex;
 }
+
 .tabs {
-
-  padding: 15px;
-  text-align: center;
-  width: 50%;
-  background: rgba(128, 128, 128, 0.075);
-  cursor: pointer;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.274);
-  box-sizing: content-box;
-  position: relative;
-  outline: none;
-}
-.tabs:not(:last-child){
-  border-right: 1px solid rgba(0, 0, 0, 0.274);
+    padding: 15px;
+    text-align: center;
+    width: 50%;
+    background: rgba(128, 128, 128, 0.075);
+    cursor: pointer;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.274);
+    box-sizing: content-box;
+    position: relative;
+    outline: none;
 }
 
-.active-tabs  {
-  background: white;
-  border-bottom: 1px solid transparent;
+.tabs:not(:last-child) {
+    border-right: 1px solid rgba(0, 0, 0, 0.274);
+}
+
+.active-tabs {
+    background: white;
+    border-bottom: 1px solid transparent;
 }
 
 .active-tabs::before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: -5px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: calc(100% + 2px);
-  height: 5px;
-  background: #3C6254;
+    content: "";
+    display: block;
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% + 2px);
+    height: 5px;
+    background: #3C6254;
 }
-.tabsContentBookingsMainViewHotel{
-  padding: 10px;
-  width: 100%;
-  background-color: #027249;
-  border-radius: 5px;
-  color: white;
-  border: 2px solid #027249;
-  cursor: pointer;
+
+.tabsContentBookingsMainViewHotel {
+    padding: 10px;
+    width: 100%;
+    background-color: #027249;
+    border-radius: 5px;
+    color: white;
+    border: 2px solid #027249;
+    cursor: pointer;
 }
-.tabsContentBookingsMainCancel{
-  margin-top: 8px;
-  cursor: pointer;
-  padding: 10px;
-  width: 100%;
-  background-color: #ffffff;
-  border-radius: 5px;
-  border: 2px solid rgb(78, 78, 78);
-  
+
+.tabsContentBookingsMainCancel {
+    margin-top: 8px;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 5px;
+    border: 2px solid rgb(78, 78, 78);
 }
 
 button {
-  border: none;
-  
+    border: none;
 }
+
 .content-tabs {
-  flex-grow : 1;
-
+    flex-grow: 1;
 }
+
 .content {
-  background: white;
-  padding: 20px;
-  width: 100%;
-  height: 100%;
-  display: none;
+    background: white;
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    display: none;
 }
+
 .content h2 {
-  padding: 0px 0 5px 0px;
+    padding: 0px 0 5px 0px;
 }
+
 .content hr {
-  width: 100px;
-  height: 2px;
-  background: #222;
-  margin-bottom: 5px;
+    width: 100px;
+    height: 2px;
+    background: #222;
+    margin-bottom: 5px;
 }
+
 .content p {
-  width: 100%;
-  height: 100%;
+    width: 100%;
+    height: 100%;
 }
+
 .active-content {
-  display: block;
+    display: block;
 }
 
-.tabsContentUserDetails{
-  margin-top: 15px;
-  display: flex;
-}
-.tabsContentUserDetailsImage{
-  min-width: 12%;
-  height: 100px;
-  background-color: #222;
-}
-.tabsContentUserMainDetails{
-  margin-left: 20px;
-}
-.tabsContentUserMainDetailsInformation{
-  margin-top: 10px;
-  
-}
-.tabsContentUserMainDetailsInformation-flex{
-  display: flex;
-}
-.tabsContentUserMainDetailsInformation-button{
-  margin-left: 10px;
-  color: blue;
-  cursor: pointer;
+.tabsContentUserDetails {
+    margin-top: 15px;
+    display: flex;
 }
 
-.tabsContentBookingsSection{
-  padding: 5px;
-  border: #222 1px solid;
-  border-radius: 5px;
-  margin-top: 10px;
-  min-height: 30vh;
-  
+.tabsContentUserDetailsImage {
+    min-width: 12%;
+    height: 100px;
+    background-color: #222;
 }
-.tabsContentBookingsMain{
-  display: flex; 
-  height: 15vh;
+
+.tabsContentUserMainDetails {
+    margin-left: 20px;
 }
-.tabsContentBookingsMain-Image{
-  width: 10%;
-  min-width: 100px;
-  
+
+.tabsContentUserMainDetailsInformation {
+    margin-top: 10px;
 }
-.tabsContentBookingsMainImageMain{
-  min-width: 100%;
-  max-width: 60%;
+
+.tabsContentUserMainDetailsInformation-flex {
+    display: flex;
 }
-.tabsContentBookingsMain-Details{
-  margin-left: 20px;
-  width: 75%;
+
+.tabsContentUserMainDetailsInformation-button {
+    margin-left: 10px;
+    color: blue;
+    cursor: pointer;
 }
-.profileViewDestination{
-  margin-bottom: 10px;
+
+.tabsContentBookingsSection {
+    padding: 5px;
+    border: #222 1px solid;
+    border-radius: 5px;
+    margin-top: 10px;
+    min-height: 30vh;
 }
+
+.tabsContentBookingsMain {
+    display: flex;
+    height: 15vh;
+}
+
+.tabsContentBookingsMain-Image {
+    width: 10%;
+    min-width: 100px;
+}
+
+.tabsContentBookingsMainImageMain {
+    min-width: 100%;
+    max-width: 60%;
+}
+
+.tabsContentBookingsMain-Details {
+    margin-left: 20px;
+    width: 75%;
+}
+
+.profileViewDestination {
+    margin-bottom: 10px;
+}
+
 
 /* hotel admin */
 
-.hotelAdminNewBookingsMain{
-  margin: 15px;
-}
-.hotelAdminNewBookingsDetails{
-  width: 50%;
-}
-.hotelAdminMainContentDetails{
-  min-width: 60%;
-  margin-left: 10px;
+.hotelAdminNewBookingsMain {
+    margin: 15px;
 }
 
-.addDestination{
-  display: flex;
-  flex-direction: column;
-}
-.addDestinationInput{
-  padding: 10px;
-  border-radius: 5px;
-  margin-top: 3px;
-}
-.addDestinationLabels{
-  margin-top: 5px;
-}
-.addDestinationTagsMain{
-  padding: 5px;
-  background-color: #529c81;
-  min-width: 6%;
-  max-width: 10%;
-  margin-top: 4px;
-  border-radius: 5px;
+.hotelAdminNewBookingsDetails {
+    width: 50%;
 }
 
-.addDestinationTags{
-  display: flex;
+.hotelAdminMainContentDetails {
+    min-width: 60%;
+    margin-left: 10px;
 }
-.addDestinationImageAddMain{
-  margin-top: 10px;
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  
+
+.addDestination {
+    display: flex;
+    flex-direction: column;
 }
-.addDestinationImageAdd{
-  width: 20%;
-  background-color: #a9ffe0;
-  height: 7em;
-  
+
+.addDestinationInput {
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 3px;
 }
-.addDestinationSubmitBtn{
-  margin-top: 10px;
-  padding: 12px;
-  cursor: pointer;
-  background-color: #0ca06a;
-  border-radius: 5px;
-  color: white;
+
+.addDestinationLabels {
+    margin-top: 5px;
+}
+
+.addDestinationTagsMain {
+    padding: 5px;
+    background-color: #529c81;
+    min-width: 6%;
+    max-width: 10%;
+    margin-top: 4px;
+    border-radius: 5px;
+}
+
+.addDestinationTags {
+    display: flex;
+}
+
+.addDestinationImageAddMain {
+    margin-top: 10px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.addDestinationImageAdd {
+    width: 20%;
+    background-color: #a9ffe0;
+    height: 7em;
+}
+
+.addDestinationSubmitBtn {
+    margin-top: 10px;
+    padding: 12px;
+    cursor: pointer;
+    background-color: #0ca06a;
+    border-radius: 5px;
+    color: white;
 }

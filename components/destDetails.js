@@ -31,7 +31,7 @@ export default function DestDetails(props) {
       }
       if(likeId) {data.id = likeId}
     const likeData = await API.graphql({
-        query: likeId ? updateLike : craeteLike,
+        query: likeId ? updateLike : createLike,
         variables: {input: data},
         authMode: 'AMAZON_COGNITO_USER_POOLS',
     })
