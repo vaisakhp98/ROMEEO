@@ -6,10 +6,10 @@ import { getLocation, listLocations } from "../../graphql/queries";
 import {API, Auth , currentUserInfo} from 'aws-amplify'
 import AddDestination from "./addDestination";
 import ViewDestination from "./viewDestination";
+import Profile from "./profile";
 
 Auth.updateUserAttributes
 const Tabs=(props)=> {
-  const [user, setUser] = useState({})
   
   const [toggleState, setToggleState] = useState(1);
 
@@ -36,16 +36,6 @@ const Tabs=(props)=> {
       alert("Your item has been Deleted")
     }
     
-    useEffect(()=> {
-      const getUser = () => (
-        new Promise(async (resolve, reject) => {
-          const { attributes } = await Auth.currentAuthenticatedUser()
-          resolve(attributes)
-        })
-      )
-      getUser()
-      .then(res=> setUser(res))
-    }, [])
 
    
   return (
@@ -88,46 +78,7 @@ const Tabs=(props)=> {
         <div
           className={toggleState === 1 ? "content  active-content" : "content"}
         >
-          <h2>Hello User</h2>
-          <hr />
-          <div className="tabsContentUserDetails">
-            <div className="tabsContentUserDetailsImage">
-              Image
-            </div>
-            
-            <div className="tabsContentUserMainDetails">
-              <div>
-                <div className="tabsContentUserMainDetailsInformation">
-                  <h5>User Name : </h5>
-                    <div className="tabsContentUserMainDetailsInformation-flex">
-                      <h4>{user.name}</h4>
-                      <button className="tabsContentUserMainDetailsInformation-button">edit</button>
-                    </div>
-                </div>
-                <div className="tabsContentUserMainDetailsInformation">
-                <h5>Email : </h5>
-                    <div className="tabsContentUserMainDetailsInformation-flex">
-                      <h4>{user.email}</h4>
-                      <button className="tabsContentUserMainDetailsInformation-button">edit</button>
-                    </div>
-                </div>
-                <div className="tabsContentUserMainDetailsInformation">
-                <h5>phone : </h5>
-                    <div className="tabsContentUserMainDetailsInformation-flex">
-                      <h4>{user.phone_number}</h4>
-                      <button className="tabsContentUserMainDetailsInformation-button">edit</button>
-                    </div>
-                </div>
-                {/* <div className="tabsContentUserMainDetailsInformation">
-                <h5>Address : </h5>
-                    <div className="tabsContentUserMainDetailsInformation-flex">
-                      <h4>Lorem Ipsum road , septum strret 544 , building 52 , room 63</h4>
-                      <button className="tabsContentUserMainDetailsInformation-button">edit</button>
-                    </div>
-                </div> */}
-              </div>
-            </div>
-          </div>
+          <Profile/>
 
         </div>
 

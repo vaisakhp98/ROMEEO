@@ -5,7 +5,7 @@ import Footer from '@components/footer'
 import DestHero from '@components/destHero'
 import TopCategories from '@components/topCategories'
 import DestDetails from '@components/destDetails'
-import DestReviews from '@components/destReviews'
+import DestReviews from '@components/Reviews'
 
 import { useState,useEffect, useContext } from "react";
 import axios from 'axios'
@@ -14,6 +14,7 @@ import { useRouter } from 'next/router'
 import { API, graphqlOperation } from 'aws-amplify'
 import { createReview } from '@graphql/mutations'
 import { UserContext } from '@lib/context/authContext'
+import AuthNavigation from '@components/authNavigation'
 
 
 
@@ -75,7 +76,7 @@ export default function Destination() {
 
 
     <div className={styles.container}>
-      <Navigation/>
+      <AuthNavigation/>
       <SearchBox2/>
       <TopCategories/>
       <DestHero 

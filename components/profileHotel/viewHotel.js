@@ -1,6 +1,6 @@
 import { API } from "aws-amplify"
-import { deleteLocation } from "graphql/mutations"
-import { listLocations } from "graphql/queries"
+import { deleteHotel, deleteLocation } from "graphql/mutations"
+import { listHotels, listLocations } from "graphql/queries"
 import { useEffect, useState } from "react"
 import {toast} from 'react-toastify'
 import Destination from "./hotel"
@@ -16,10 +16,10 @@ const ViewHotel = (props) => {
     useEffect(()=>{
         const fetchDestinations = async () => {
             const destinationData = await API.graphql({
-               query: listLocations  
+               query: listHotels  
            })
 
-            await setDestinations(destinationData.data.listLocations.items)
+            await setDestinations(destinationData.data.listHotels.items)
         }
 
         fetchDestinations()
@@ -38,7 +38,7 @@ const ViewHotel = (props) => {
 
         try{ 
             await API.graphql({
-                query: deleteLocation,
+                query: deleteHotel,
                 variables: {input: {id}},
                 authMode: 'AMAZON_COGNITO_USER_POOLS'
             })

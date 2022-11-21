@@ -7,6 +7,7 @@ import Navigation from '../components/Navigation'
 import ProfileTabs from '../components/profile'
 import { useState,useEffect } from 'react'
 import axios from 'axios'
+import AuthNavigation from '@components/authNavigation'
 
 
 
@@ -24,7 +25,10 @@ export default function Profile() {
   return (
     <div className={styles.container}>
       
-      <Navigation/>
+      {/* <Navigation/>
+       */}
+      <AuthNavigation/>
+
       <Authenticator loginMechanism = {['email']}  signUpAttributes={['name', 'phone_number']}>
         {({signOut,user})=>(
             <ProfileTabs 

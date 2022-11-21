@@ -63,12 +63,19 @@ type Hotel @model @auth(
   id: ID!
   name: String!
   district: String!
+  pincode: Int
+  tags: [String]
   price: Int
   desciption: String
   max:Int
+  userId: String
   image: [String] 
   location: Location @belongsTo
   rating: Int
+  review: [HotelReview] @hasMany
+  like: [HotelLike] @hasMany
+  approval: String
+  reviewCount: Int
 }
 
 type State @model @auth(
@@ -153,4 +160,56 @@ type Like @model @auth(
     userId: String
     status: Boolean
     location: Location @belongsTo
+}
+
+type HotelReview @model @auth(
+    rules : [
+        # allow all authenticated users the ability to create posts
+        # allow owners ability to update and delete their posts
+        {
+            allow : owner  
+        },
+
+        # allow all authenticated users to read posts
+        {
+            allow : private, operations: [create, update, read, delete]
+        },
+
+        # allow all guest users (not authenticated) to read posts
+        {
+            allow : public, operations: [read]
+        },
+    ]
+) {
+  id: ID!
+  hotel: Hotel @belongsTo
+  title: String
+  content: String!
+  userId: String
+  image: String
+}
+
+type HotelLike @model @auth(
+    rules : [
+        # allow all authenticated users the ability to create posts
+        # allow owners ability to update and delete their posts
+        {
+            allow : owner  
+        },
+
+        # allow all authenticated users to read posts
+        {
+            allow : private, operations: [create, update, read, delete]
+        },
+
+        # allow all guest users (not authenticated) to read posts
+        {
+            allow : public, operations: [read]
+        },
+    ]
+) {
+    id: ID!
+    userId: String
+    status: Boolean
+    hotel: Hotel @belongsTo
 }

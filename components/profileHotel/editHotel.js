@@ -1,10 +1,15 @@
+import { UserContext } from "@lib/context/authContext"
 import { uploadImages } from "@lib/image"
 import { API } from "aws-amplify"
-import { updateLocation } from "graphql/mutations"
-import { getLocation } from "graphql/queries"
-import { useEffect, useState } from "react"
+import { updateHotel, updateLocation } from "graphql/mutations"
+import { getHotel, getLocation } from "graphql/queries"
+import { useRouter } from "next/router"
+import { useContext, useEffect, useState } from "react"
 
 const EditHotel = (props) => {
+  const context = useContext(UserContext)
+  const router = useRouter()
+
   const {id} = props
 
   const [editData, setEditData] = useState({})
@@ -14,13 +19,13 @@ const EditHotel = (props) => {
   // fetch edit data
   useEffect(()=>{
     const fetchEditData = async () => {
-      const postData = await API.graphql({query: getLocation, variables: {id: id}})
-      setEditData(postData.data.getLocation)
-      setDescription(postData.data.getLocation.description)
+      const postData = await API.graphql({query: getHotel, variables: {id: id}})
+      setEditData(postData.data.getHotel)
+      setDescription(postData.data.getHotel.description)
     }
 
     fetchEditData()
-  }, [])
+  }, [id])
 
     /**
      * Validate the form 
@@ -33,7 +38,10 @@ const EditHotel = (props) => {
         //   state: form.state.value,
           district: form.district.value,
           pincode: form.pincode.value,
-          description: form.description.value,
+          desciption: form.description.value,
+          userId: context.user.sub,
+          max: form.max.value,
+          price: form.price.value,
           image: []
         }
   
@@ -43,22 +51,14 @@ const EditHotel = (props) => {
           return false
         }
   
-        if(form.image1.files[0] || form.image2.files[0]){
-          values.image.push(form.image1.files[0])
-          values.image.push(form.image2.files[0])
-        }
-        else{
-          console.log("images 1 and 2 mandatory")
-          return false
-        }
-  
-        if(form.image3.files[0]){
-          values.image.push(form.image3.files[0])
-        }
-  
-        if(form.image4.files[0]){
-          values.image.push(form.image4.files[0])
-        }
+        [...new Array(4)].map((_, key)=>{
+          if(form.image[key].files[0]){
+            values.image.push(form.image[key].files[0])
+          }
+          else if(editData.image[key]){
+            values.image.push(editData.image[key])
+          }
+        })
   
         return values
     }
@@ -89,9 +89,11 @@ const EditHotel = (props) => {
             // call api
             await API.graphql({
             authMode: 'AMAZON_COGNITO_USER_POOLS',
-            query: updateLocation,
+            query: updateHotel,
             variables : {input: {id: editData.id, ...data}}
             })
+
+            props.setEdit(false)
         })
         .catch(err => console.log(err))
       }
@@ -112,36 +114,41 @@ const EditHotel = (props) => {
           <hr />
           <form className="addDestination" onSubmit={handleEditDestination}>
             <label className="addDestinationLabels">Hotel Name: </label>
-            <input type='text' name="dest_name" defaultValue = {editData.name} placeholder="Destination" className="addDestinationInput"/>
+            <input type='text' name="dest_name" defaultValue = {editData.name} placeholder="Destination" className="addDestinationInput border"/>
 
             <label className="addDestinationLabels">State : </label>
-            <input type='text' name="state" placeholder="State" defaultValue = {editData.state ?? ""} className="addDestinationInput"/>
+            <input type='text' name="state" placeholder="State" defaultValue = {editData.state ?? ""} className="addDestinationInput border"/>
 
             <label className="addDestinationLabels">District : </label>
-            <input type='text' name="district" placeholder="District" defaultValue = {editData.district} className="addDestinationInput"/>
+            <input type='text' name="district" placeholder="District" defaultValue = {editData.district} className="addDestinationInput border"/>
 
             <label className="addDestinationLabels">Pincode : </label>
-            <input type='number' name="pincode" placeholder="Pincode" defaultValue = {editData.pincode} className="addDestinationInput"/>
+            <input type='number' name="pincode" placeholder="Pincode" defaultValue = {editData.pincode} className="addDestinationInput border"/>
+            <label className="addDestinationLabels">Price : </label>
+            <input type='number' name="price" placeholder="Pincode" defaultValue = {editData.price} className="addDestinationInput border"/>
+
+            <label className="addDestinationLabels">Max guests in one room : </label>
+            <input type='number' name="max" placeholder="Max" defaultValue = {editData.max} className="addDestinationInput border"/>
 
             <label className="addDestinationLabels">Description : </label>
-            <textarea name="description" placeholder="Description" value = {description} onChange={(e) => setDescription(e.target.value)}> </textarea>
+            <textarea name="description" className="border" placeholder="Description" value = {description} onChange={(e) => setDescription(e.target.value)}> </textarea>
 
             <label className="addDestinationLabels">Tags : </label>
-            <input type='text' placeholder="Tags" className="addDestinationInput"/>
+            <input type='text' placeholder="Tags" className="addDestinationInput border"/>
             <div className="addDestinationTagsMain">
-              <div className="addDestinationTags">
+              <div className="addDestinationTags ">
                 <div>Tags</div>
                 <button>X</button>
               </div>
             </div>
             <div className="space-y-4 py-5">
-              <input type="file" name="image1"/>
-              <input type="file" name="image2"/>
-              <input type="file" name="image3"/>
-              <input type="file" name="image4"/>
+              <input type="file" name="image"/>
+              <input type="file" name="image"/>
+              <input type="file" name="image"/>
+              <input type="file" name="image"/>
             </div>
             
-            <button className="addDestinationSubmitBtn">Save Changes</button>
+            <button className="addDestinationSubmitBtn">Update Changes</button>
             <button type="button" onClick={handleCancel} className="tabsContentBookingsMainCancel">cancel</button>
 
           </form> 

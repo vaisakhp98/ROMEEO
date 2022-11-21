@@ -21,11 +21,16 @@ export const createLocation = /* GraphQL */ `
           id
           name
           district
+          pincode
+          tags
           price
           desciption
           max
+          userId
           image
           rating
+          approval
+          reviewCount
           createdAt
           updatedAt
           locationHotelId
@@ -98,11 +103,16 @@ export const updateLocation = /* GraphQL */ `
           id
           name
           district
+          pincode
+          tags
           price
           desciption
           max
+          userId
           image
           rating
+          approval
+          reviewCount
           createdAt
           updatedAt
           locationHotelId
@@ -175,11 +185,16 @@ export const deleteLocation = /* GraphQL */ `
           id
           name
           district
+          pincode
+          tags
           price
           desciption
           max
+          userId
           image
           rating
+          approval
+          reviewCount
           createdAt
           updatedAt
           locationHotelId
@@ -241,9 +256,12 @@ export const createHotel = /* GraphQL */ `
       id
       name
       district
+      pincode
+      tags
       price
       desciption
       max
+      userId
       image
       location {
         id
@@ -279,6 +297,34 @@ export const createHotel = /* GraphQL */ `
         owner
       }
       rating
+      review {
+        items {
+          id
+          title
+          content
+          userId
+          image
+          createdAt
+          updatedAt
+          hotelReviewId
+          owner
+        }
+        nextToken
+      }
+      like {
+        items {
+          id
+          userId
+          status
+          createdAt
+          updatedAt
+          hotelLikeId
+          owner
+        }
+        nextToken
+      }
+      approval
+      reviewCount
       createdAt
       updatedAt
       locationHotelId
@@ -295,9 +341,12 @@ export const updateHotel = /* GraphQL */ `
       id
       name
       district
+      pincode
+      tags
       price
       desciption
       max
+      userId
       image
       location {
         id
@@ -333,6 +382,34 @@ export const updateHotel = /* GraphQL */ `
         owner
       }
       rating
+      review {
+        items {
+          id
+          title
+          content
+          userId
+          image
+          createdAt
+          updatedAt
+          hotelReviewId
+          owner
+        }
+        nextToken
+      }
+      like {
+        items {
+          id
+          userId
+          status
+          createdAt
+          updatedAt
+          hotelLikeId
+          owner
+        }
+        nextToken
+      }
+      approval
+      reviewCount
       createdAt
       updatedAt
       locationHotelId
@@ -349,9 +426,12 @@ export const deleteHotel = /* GraphQL */ `
       id
       name
       district
+      pincode
+      tags
       price
       desciption
       max
+      userId
       image
       location {
         id
@@ -387,6 +467,34 @@ export const deleteHotel = /* GraphQL */ `
         owner
       }
       rating
+      review {
+        items {
+          id
+          title
+          content
+          userId
+          image
+          createdAt
+          updatedAt
+          hotelReviewId
+          owner
+        }
+        nextToken
+      }
+      like {
+        items {
+          id
+          userId
+          status
+          createdAt
+          updatedAt
+          hotelLikeId
+          owner
+        }
+        nextToken
+      }
+      approval
+      reviewCount
       createdAt
       updatedAt
       locationHotelId
@@ -792,6 +900,360 @@ export const deleteLike = /* GraphQL */ `
       createdAt
       updatedAt
       locationLikeId
+      owner
+    }
+  }
+`;
+export const createHotelReview = /* GraphQL */ `
+  mutation CreateHotelReview(
+    $input: CreateHotelReviewInput!
+    $condition: ModelHotelReviewConditionInput
+  ) {
+    createHotelReview(input: $input, condition: $condition) {
+      id
+      hotel {
+        id
+        name
+        district
+        pincode
+        tags
+        price
+        desciption
+        max
+        userId
+        image
+        location {
+          id
+          name
+          district
+          pincode
+          Tags
+          description
+          userId
+          image
+          rating
+          approval
+          reviewCount
+          createdAt
+          updatedAt
+          stateLocationId
+          owner
+        }
+        rating
+        review {
+          nextToken
+        }
+        like {
+          nextToken
+        }
+        approval
+        reviewCount
+        createdAt
+        updatedAt
+        locationHotelId
+        owner
+      }
+      title
+      content
+      userId
+      image
+      createdAt
+      updatedAt
+      hotelReviewId
+      owner
+    }
+  }
+`;
+export const updateHotelReview = /* GraphQL */ `
+  mutation UpdateHotelReview(
+    $input: UpdateHotelReviewInput!
+    $condition: ModelHotelReviewConditionInput
+  ) {
+    updateHotelReview(input: $input, condition: $condition) {
+      id
+      hotel {
+        id
+        name
+        district
+        pincode
+        tags
+        price
+        desciption
+        max
+        userId
+        image
+        location {
+          id
+          name
+          district
+          pincode
+          Tags
+          description
+          userId
+          image
+          rating
+          approval
+          reviewCount
+          createdAt
+          updatedAt
+          stateLocationId
+          owner
+        }
+        rating
+        review {
+          nextToken
+        }
+        like {
+          nextToken
+        }
+        approval
+        reviewCount
+        createdAt
+        updatedAt
+        locationHotelId
+        owner
+      }
+      title
+      content
+      userId
+      image
+      createdAt
+      updatedAt
+      hotelReviewId
+      owner
+    }
+  }
+`;
+export const deleteHotelReview = /* GraphQL */ `
+  mutation DeleteHotelReview(
+    $input: DeleteHotelReviewInput!
+    $condition: ModelHotelReviewConditionInput
+  ) {
+    deleteHotelReview(input: $input, condition: $condition) {
+      id
+      hotel {
+        id
+        name
+        district
+        pincode
+        tags
+        price
+        desciption
+        max
+        userId
+        image
+        location {
+          id
+          name
+          district
+          pincode
+          Tags
+          description
+          userId
+          image
+          rating
+          approval
+          reviewCount
+          createdAt
+          updatedAt
+          stateLocationId
+          owner
+        }
+        rating
+        review {
+          nextToken
+        }
+        like {
+          nextToken
+        }
+        approval
+        reviewCount
+        createdAt
+        updatedAt
+        locationHotelId
+        owner
+      }
+      title
+      content
+      userId
+      image
+      createdAt
+      updatedAt
+      hotelReviewId
+      owner
+    }
+  }
+`;
+export const createHotelLike = /* GraphQL */ `
+  mutation CreateHotelLike(
+    $input: CreateHotelLikeInput!
+    $condition: ModelHotelLikeConditionInput
+  ) {
+    createHotelLike(input: $input, condition: $condition) {
+      id
+      userId
+      status
+      hotel {
+        id
+        name
+        district
+        pincode
+        tags
+        price
+        desciption
+        max
+        userId
+        image
+        location {
+          id
+          name
+          district
+          pincode
+          Tags
+          description
+          userId
+          image
+          rating
+          approval
+          reviewCount
+          createdAt
+          updatedAt
+          stateLocationId
+          owner
+        }
+        rating
+        review {
+          nextToken
+        }
+        like {
+          nextToken
+        }
+        approval
+        reviewCount
+        createdAt
+        updatedAt
+        locationHotelId
+        owner
+      }
+      createdAt
+      updatedAt
+      hotelLikeId
+      owner
+    }
+  }
+`;
+export const updateHotelLike = /* GraphQL */ `
+  mutation UpdateHotelLike(
+    $input: UpdateHotelLikeInput!
+    $condition: ModelHotelLikeConditionInput
+  ) {
+    updateHotelLike(input: $input, condition: $condition) {
+      id
+      userId
+      status
+      hotel {
+        id
+        name
+        district
+        pincode
+        tags
+        price
+        desciption
+        max
+        userId
+        image
+        location {
+          id
+          name
+          district
+          pincode
+          Tags
+          description
+          userId
+          image
+          rating
+          approval
+          reviewCount
+          createdAt
+          updatedAt
+          stateLocationId
+          owner
+        }
+        rating
+        review {
+          nextToken
+        }
+        like {
+          nextToken
+        }
+        approval
+        reviewCount
+        createdAt
+        updatedAt
+        locationHotelId
+        owner
+      }
+      createdAt
+      updatedAt
+      hotelLikeId
+      owner
+    }
+  }
+`;
+export const deleteHotelLike = /* GraphQL */ `
+  mutation DeleteHotelLike(
+    $input: DeleteHotelLikeInput!
+    $condition: ModelHotelLikeConditionInput
+  ) {
+    deleteHotelLike(input: $input, condition: $condition) {
+      id
+      userId
+      status
+      hotel {
+        id
+        name
+        district
+        pincode
+        tags
+        price
+        desciption
+        max
+        userId
+        image
+        location {
+          id
+          name
+          district
+          pincode
+          Tags
+          description
+          userId
+          image
+          rating
+          approval
+          reviewCount
+          createdAt
+          updatedAt
+          stateLocationId
+          owner
+        }
+        rating
+        review {
+          nextToken
+        }
+        like {
+          nextToken
+        }
+        approval
+        reviewCount
+        createdAt
+        updatedAt
+        locationHotelId
+        owner
+      }
+      createdAt
+      updatedAt
+      hotelLikeId
       owner
     }
   }

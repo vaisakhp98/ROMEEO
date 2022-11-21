@@ -8,6 +8,7 @@ import HotelDetails from '../components/hotelDetails'
 import HotelReviews from '../components/hotelReviews'
 import { useState,useEffect } from 'react'
 import axios from 'axios'
+import DestReviews from '@components/Reviews'
 
 
 
@@ -40,8 +41,9 @@ export default function Hotel() {
       <HotelDetails
         hotelDetails={hotelDetails}
       />
-      <HotelReviews 
+      <DestReviews 
         hotelReview={hotelReview}
+        reviews={[]}
       />
       
       <Footer/>

@@ -1,8 +1,11 @@
+import { UserContext } from "@lib/context/authContext"
 import { uploadImages } from "@lib/image"
 import { API } from "aws-amplify"
-import { createLocation } from "graphql/mutations"
+import { createHotel, createLocation } from "graphql/mutations"
+import { useContext } from "react"
 
 const AddHotel = () => {
+  const context = useContext(UserContext)
     /**
      * Validate the form 
      * @param {Form object} form 
@@ -11,10 +14,14 @@ const AddHotel = () => {
     const validateForm = (form) => {
         const values = {
           name: form.dest_name.value,
-        //   state: form.state.value,
+          // state: form.state.value,
+          approval: "pending",
           district: form.district.value,
           pincode: form.pincode.value,
-          description: form.description.value,
+          desciption: form.description.value,
+          userId: context.user.sub,
+          max: form.max.value,
+          price: form.price.value,
           image: []
         }
   
@@ -67,35 +74,39 @@ const AddHotel = () => {
             // call api
             await API.graphql({
             authMode: 'AMAZON_COGNITO_USER_POOLS',
-            query: createLocation ,
+            query: createHotel,
             variables : {input: data}
             })
         })
         .catch(err => console.log(err))
       }
-  
     return (
         <>
         <h2>Add Hotel</h2>
           <hr />
           <form className="addDestination" onSubmit={handleAddDestination}>
-            <label className="addDestinationLabels">Destination Name: </label>
-            <input type='text' name="dest_name" placeholder="Destination" className="addDestinationInput"/>
+            <label className="addDestinationLabels">Hotel Name: </label>
+            <input type='text' name="dest_name" placeholder="Hotel" className="addDestinationInput border"/>
 
             <label className="addDestinationLabels">State : </label>
-            <input type='text' name="state" placeholder="State" className="addDestinationInput"/>
+            <input type='text' name="state" placeholder="State" className="addDestinationInput border"/>
 
             <label className="addDestinationLabels">District : </label>
-            <input type='text' name="district" placeholder="District" className="addDestinationInput"/>
+            <input type='text' name="district" placeholder="District" className="addDestinationInput border"/>
 
             <label className="addDestinationLabels">Pincode : </label>
-            <input type='number' name="pincode" placeholder="Pincode" className="addDestinationInput"/>
+            <input type='number' name="pincode" placeholder="Pincode" className="addDestinationInput border"/>
+            <label className="addDestinationLabels">Price : </label>
+            <input type='number' name="price" placeholder="Pincode" className="addDestinationInput border"/>
+
+            <label className="addDestinationLabels">Max guests in one room : </label>
+            <input type='number' name="max" placeholder="Max" className="addDestinationInput border"/>
 
             <label className="addDestinationLabels">Description : </label>
-            <textarea name="description" placeholder="Description"> </textarea>
+            <textarea name="description" placeholder="Description" className="border"> </textarea>
 
             <label className="addDestinationLabels">Tags : </label>
-            <input type='text' placeholder="Tags" className="addDestinationInput"/>
+            <input type='text' placeholder="Tags" className="addDestinationInput border"/>
             <div className="addDestinationTagsMain">
               <div className="addDestinationTags">
                 <div>Tags</div>

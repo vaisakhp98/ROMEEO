@@ -18,11 +18,16 @@ export const getLocation = /* GraphQL */ `
           id
           name
           district
+          pincode
+          tags
           price
           desciption
           max
+          userId
           image
           rating
+          approval
+          reviewCount
           createdAt
           updatedAt
           locationHotelId
@@ -125,9 +130,12 @@ export const getHotel = /* GraphQL */ `
       id
       name
       district
+      pincode
+      tags
       price
       desciption
       max
+      userId
       image
       location {
         id
@@ -163,6 +171,34 @@ export const getHotel = /* GraphQL */ `
         owner
       }
       rating
+      review {
+        items {
+          id
+          title
+          content
+          userId
+          image
+          createdAt
+          updatedAt
+          hotelReviewId
+          owner
+        }
+        nextToken
+      }
+      like {
+        items {
+          id
+          userId
+          status
+          createdAt
+          updatedAt
+          hotelLikeId
+          owner
+        }
+        nextToken
+      }
+      approval
+      reviewCount
       createdAt
       updatedAt
       locationHotelId
@@ -181,9 +217,12 @@ export const listHotels = /* GraphQL */ `
         id
         name
         district
+        pincode
+        tags
         price
         desciption
         max
+        userId
         image
         location {
           id
@@ -203,6 +242,14 @@ export const listHotels = /* GraphQL */ `
           owner
         }
         rating
+        review {
+          nextToken
+        }
+        like {
+          nextToken
+        }
+        approval
+        reviewCount
         createdAt
         updatedAt
         locationHotelId
@@ -428,6 +475,198 @@ export const listLikes = /* GraphQL */ `
         createdAt
         updatedAt
         locationLikeId
+        owner
+      }
+      nextToken
+    }
+  }
+`;
+export const getHotelReview = /* GraphQL */ `
+  query GetHotelReview($id: ID!) {
+    getHotelReview(id: $id) {
+      id
+      hotel {
+        id
+        name
+        district
+        pincode
+        tags
+        price
+        desciption
+        max
+        userId
+        image
+        location {
+          id
+          name
+          district
+          pincode
+          Tags
+          description
+          userId
+          image
+          rating
+          approval
+          reviewCount
+          createdAt
+          updatedAt
+          stateLocationId
+          owner
+        }
+        rating
+        review {
+          nextToken
+        }
+        like {
+          nextToken
+        }
+        approval
+        reviewCount
+        createdAt
+        updatedAt
+        locationHotelId
+        owner
+      }
+      title
+      content
+      userId
+      image
+      createdAt
+      updatedAt
+      hotelReviewId
+      owner
+    }
+  }
+`;
+export const listHotelReviews = /* GraphQL */ `
+  query ListHotelReviews(
+    $filter: ModelHotelReviewFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listHotelReviews(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        hotel {
+          id
+          name
+          district
+          pincode
+          tags
+          price
+          desciption
+          max
+          userId
+          image
+          rating
+          approval
+          reviewCount
+          createdAt
+          updatedAt
+          locationHotelId
+          owner
+        }
+        title
+        content
+        userId
+        image
+        createdAt
+        updatedAt
+        hotelReviewId
+        owner
+      }
+      nextToken
+    }
+  }
+`;
+export const getHotelLike = /* GraphQL */ `
+  query GetHotelLike($id: ID!) {
+    getHotelLike(id: $id) {
+      id
+      userId
+      status
+      hotel {
+        id
+        name
+        district
+        pincode
+        tags
+        price
+        desciption
+        max
+        userId
+        image
+        location {
+          id
+          name
+          district
+          pincode
+          Tags
+          description
+          userId
+          image
+          rating
+          approval
+          reviewCount
+          createdAt
+          updatedAt
+          stateLocationId
+          owner
+        }
+        rating
+        review {
+          nextToken
+        }
+        like {
+          nextToken
+        }
+        approval
+        reviewCount
+        createdAt
+        updatedAt
+        locationHotelId
+        owner
+      }
+      createdAt
+      updatedAt
+      hotelLikeId
+      owner
+    }
+  }
+`;
+export const listHotelLikes = /* GraphQL */ `
+  query ListHotelLikes(
+    $filter: ModelHotelLikeFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listHotelLikes(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        userId
+        status
+        hotel {
+          id
+          name
+          district
+          pincode
+          tags
+          price
+          desciption
+          max
+          userId
+          image
+          rating
+          approval
+          reviewCount
+          createdAt
+          updatedAt
+          locationHotelId
+          owner
+        }
+        createdAt
+        updatedAt
+        hotelLikeId
         owner
       }
       nextToken

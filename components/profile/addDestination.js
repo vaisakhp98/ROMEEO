@@ -2,6 +2,7 @@ import { UserContext } from "@lib/context/authContext"
 import { uploadImages } from "@lib/image"
 import { API } from "aws-amplify"
 import { createLocation } from "graphql/mutations"
+import { useContext } from "react"
 
 const AddDestination = () => {
   const context = useContext(UserContext)
@@ -84,22 +85,22 @@ const AddDestination = () => {
           <hr />
           <form className="addDestination" onSubmit={handleAddDestination}>
             <label className="addDestinationLabels">Destination Name: </label>
-            <input type='text' name="dest_name" placeholder="Destination" className="addDestinationInput"/>
+            <input type='text' name="dest_name" placeholder="Destination" className="addDestinationInput border"/>
 
             <label className="addDestinationLabels">State : </label>
-            <input type='text' name="state" placeholder="State" className="addDestinationInput"/>
+            <input type='text' name="state" placeholder="State" className="addDestinationInput border"/>
 
             <label className="addDestinationLabels">District : </label>
-            <input type='text' name="district" placeholder="District" className="addDestinationInput"/>
+            <input type='text' name="district" placeholder="District" className="addDestinationInput border"/>
 
             <label className="addDestinationLabels">Pincode : </label>
-            <input type='number' name="pincode" placeholder="Pincode" className="addDestinationInput"/>
+            <input type='number' name="pincode" placeholder="Pincode" className="addDestinationInput border"/>
 
             <label className="addDestinationLabels">Description : </label>
-            <textarea name="description" placeholder="Description"> </textarea>
+            <textarea name="description" placeholder="Description" className="border"> </textarea>
 
             <label className="addDestinationLabels">Tags : </label>
-            <input type='text' placeholder="Tags" className="addDestinationInput"/>
+            <input type='text' placeholder="Tags" className="addDestinationInput border"/>
             <div className="addDestinationTagsMain">
               <div className="addDestinationTags">
                 <div>Tags</div>

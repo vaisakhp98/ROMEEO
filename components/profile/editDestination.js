@@ -104,19 +104,19 @@ const EditDestination = (props) => {
           <hr />
           <form className="addDestination" onSubmit={handleEditDestination}>
             <label className="addDestinationLabels">Destination Name: </label>
-            <input type='text' name="dest_name" defaultValue = {editData.name} placeholder="Destination" className="addDestinationInput"/>
+            <input type='text' name="dest_name" defaultValue = {editData.name} placeholder="Destination" className="addDestinationInput border"/>
 
             <label className="addDestinationLabels">State : </label>
-            <input type='text' name="state" placeholder="State" defaultValue = {editData.state ?? ""} className="addDestinationInput"/>
+            <input type='text' name="state" placeholder="State" defaultValue = {editData.state ?? ""} className="addDestinationInput border"/>
 
             <label className="addDestinationLabels">District : </label>
-            <input type='text' name="district" placeholder="District" defaultValue = {editData.district} className="addDestinationInput"/>
+            <input type='text' name="district" placeholder="District" defaultValue = {editData.district} className="addDestinationInput border"/>
 
             <label className="addDestinationLabels">Pincode : </label>
-            <input type='number' name="pincode" placeholder="Pincode" defaultValue = {editData.pincode} className="addDestinationInput"/>
+            <input type='number' name="pincode" placeholder="Pincode" defaultValue = {editData.pincode} className="addDestinationInput border"/>
 
             <label className="addDestinationLabels">Description : </label>
-            <textarea name="description" placeholder="Description" value = {description} onChange={(e) => setDescription(e.target.value)}> </textarea>
+            <textarea name="description" placeholder="Description" className="border" value = {description} onChange={(e) => setDescription(e.target.value)}> </textarea>
 
             <label className="addDestinationLabels">Tags : </label>
             <input type='text' placeholder="Tags" className="addDestinationInput"/>

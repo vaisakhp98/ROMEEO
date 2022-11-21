@@ -45,13 +45,15 @@ export default function DestDetails(props) {
                 
                         <div className="destDetailsLeft">
                         <h3>{props.item.name}</h3>
-                        <p><MdLocationOn/>{props.item.district}</p>
+                        <p className="flex space-x-3 items-center">
+                          {/* <MdLocationOn/> */}
+                          <span>{props.item.district}</span></p>
 
                         <h3 className="destRating">
                             <StarRating/>
                         </h3>
 
-                        <h3 className="destAbout">About Place</h3>
+                        <h3 className="destAbout text-gray-500">About Place</h3>
                         <p>{props.item.description}</p>
 
                          <div className="destfacilitiesSection">

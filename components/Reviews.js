@@ -11,12 +11,12 @@ export default function DestReviews(props) {
             <h3>Enter Review</h3>
             <div className='destReviewWriteReviews'>
                 <div>
-                    <input name = "title" type="text" placeholder = "Enter the Title" className='destReviewWriteReviewsinputs'/>
+                    <input name = "title" type="text" placeholder = "Enter the Title" className='destReviewWriteReviewsinputs border border-gray-500'/>
                 </div>
                 <div>
-                    <textarea name="content"  placeholder = "Enter the description" className='destReviewWriteReviewsinputs' />
+                    <textarea name="content"  placeholder = "Enter the description" className='destReviewWriteReviewsinputs border border-gray-500' />
                 </div>
-                <div>
+                <div className="flex items-center py-3 space-x-2">
                     <h5>Rating</h5>
                     <AiFillStar/>
                     <AiFillStar/>
@@ -26,7 +26,7 @@ export default function DestReviews(props) {
                 </div>
             
             </div>
-            <button type="submit" className='reviewSubmitButton'>Submit</button>
+            <button type="submit" className='reviewSubmitButton bg-green-800 text-white rounded'>Submit</button>
 
         </form>
 

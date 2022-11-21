@@ -5,7 +5,7 @@ export default function StarRating() {
     return (
       <div>
         <h4>Rating</h4>
-        <div>{
+        <div className="flex py-2">{
         [...Array(5)].map((e, i) => <span className="busterCards" key={i}> <AiFillStar/></span>
         )}
             
