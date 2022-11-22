@@ -4,18 +4,14 @@ import { useRouter } from 'next/router';
 import{AiFillStar,AiFillHeart} from 'react-icons/ai'
 import { IconContext } from 'react-icons'
 import axios from 'axios';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { loadImage } from '@lib/image';
 
 export default function HotelsListTile(props) {
 
-    const image = './Pages/api/homePageMostVisited'
+    // const image = './Pages/api/homePageMostVisited'
 
-    const router = useRouter()
 
-    const handleMostVisitedClick = (e)=>{
-        e.preventDefault()
-        router.push('/hotel')
-    }
     return (
       
         <div className="mostVisitedMain" style={{fontFamily:'rubik',fontWeight:300}} >
@@ -24,13 +20,43 @@ export default function HotelsListTile(props) {
         </div>
         <div className="mostVisitedSection">
             {
-            props.hotelList.map((item, key)=>{ 
-                console.log(item.image)
-            return(<div key={key} className="mostVisitedTiles" onClick={handleMostVisitedClick}>
+            props.hotelList.map((item, key)=><Item key={key} item={item}/>)
+            
+            }
+
+        </div>
+      </div>
+    )
+  }
+  
+
+  const Item = (props) => {
+    const {item} = props
+
+    const [image, setImage] = useState()
+    const router = useRouter()
+
+
+    useEffect(()=>{
+        const fetchImage = async () => {
+            const url = await loadImage(item.image[0])
+            setImage(url)
+        }
+
+        fetchImage()
+    },[item.image])
+
+    const handleMostVisitedClick = (e)=>{
+        e.preventDefault()
+        router.push('/hotel')
+    }
+
+    return (
+        <div className="mostVisitedTiles" onClick={handleMostVisitedClick}>
             <div className="mostVisitedTilesImagesDiv">
                 <img 
                 className="mostVisitedTilesImages"
-                src={item.image}
+                src={image}
                 width={290}
                 height={200}
                 />
@@ -38,8 +64,8 @@ export default function HotelsListTile(props) {
             
             <div className='mostVisitedTilesBtm'>
                 <div>
-                    <h4>{item.hotelName}</h4> 
-                    <h6>{item.hotelLocation}</h6>
+                    <h4>{item.name}</h4> 
+                    <h6>{item.district}</h6>
                 </div>
                 <div className='likeButtonSection'>
                     <p>{item.rating} <AiFillStar/> </p>
@@ -50,12 +76,6 @@ export default function HotelsListTile(props) {
                         </button>
                 </div>
             </div>
-        </div>)})
-            
-            }
-
         </div>
-      </div>
     )
   }
-  
