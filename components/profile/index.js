@@ -7,6 +7,7 @@ import {API, Auth , currentUserInfo} from 'aws-amplify'
 import AddDestination from "./addDestination";
 import ViewDestination from "./viewDestination";
 import Profile from "./profile";
+import LikedLocations from "./LikedLocations";
 
 Auth.updateUserAttributes
 const Tabs=(props)=> {
@@ -153,7 +154,13 @@ const Tabs=(props)=> {
         <div
           className={toggleState === 5 ? "content  active-content" : "content"}
         >
-        
+           {
+            toggleState === 5 &&
+          <LikedLocations
+            toggleState = {toggleState}
+          />
+           }
+{/*         
           {props.profileBookings.map((item,key)=> 
           
           <div key={key} className="tabsContentBookingsSection">
@@ -175,7 +182,7 @@ const Tabs=(props)=> {
               </div>
             </div>
           </div>
-          )}
+          )} */}
           
           
           

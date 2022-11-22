@@ -4,15 +4,21 @@ import {AiFillHeart,AiFillCar} from 'react-icons/ai'
 import {BsHash} from 'react-icons/bs'
 import StarRating from "./ratingsStars";
 import "@fontsource/rubik"
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { UserContext } from "@lib/context/authContext";
 import { API } from "aws-amplify";
 import { createLike, updateLike } from "@graphql/mutations";
 
 
 export default function DestDetails(props) {
-    const [like, setLike] = useState(props.item.like?.items.length!=0)
-    const [likeId, setLikeId] = useState(props.item.like?.items[0].id)
+    const [like, setLike] = useState(props.item.like?.items.length!=0 ?? false)
+    const [likeId, setLikeId] = useState(props.item.like?.items[0]?.id ?? undefined)
+
+    useEffect(()=>{
+      console.log("updated like")
+      setLike(props.item.like?.items.length!=0)
+      setLikeId(props.item.like?.items[0]?.id)
+    }, [props.item.like])
     
     const context = useContext(UserContext)
     const router = useRouter()

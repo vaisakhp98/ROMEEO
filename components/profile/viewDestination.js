@@ -1,13 +1,15 @@
-import { API } from "aws-amplify"
+import { UserContext } from "@lib/context/authContext"
+import { API, graphqlOperation } from "aws-amplify"
 import { deleteLocation } from "graphql/mutations"
 import { listLocations } from "graphql/queries"
-import { useEffect, useState } from "react"
-import {toast} from 'react-toastify'
+import { useContext, useEffect, useState } from "react"
+import toast from "@components/Toast" 
 import Destination from "./destination"
 import EditDestination from "./editDestination"
 
 
 const ViewDestination = (props) => {
+    const context = useContext(UserContext)
     const [destinations, setDestinations] = useState([])
     const [edit, setEdit ] = useState(false)
     const [editId, setEditId] = useState(undefined)
@@ -15,15 +17,17 @@ const ViewDestination = (props) => {
     // fetch destinations
     useEffect(()=>{
         const fetchDestinations = async () => {
-            const destinationData = await API.graphql({
-               query: listLocations  
-           })
+            const destinationData = await API.graphql(graphqlOperation( listLocations ,{
+               filter: {
+                    userId: {eq: context.user.sub}
+                },
+           }))
 
             await setDestinations(destinationData.data.listLocations.items)
         }
 
         fetchDestinations()
-    }, [props.toggleState])
+    }, [props.toggleState, context.user.sub])
 
     const handleEdit = (e, locationId) => {
         e.preventDefault()

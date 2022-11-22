@@ -7,6 +7,9 @@ import "nprogress/nprogress.css";
 import { Router } from 'next/router';
 import UserProvider from '@lib/context/authContext';
 
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 
 NProgress.configure({
   minimum : 0.3,
@@ -22,6 +25,16 @@ Router.events.on('routeChangeError',()=>NProgress.start());
 function MyApp({ Component, pageProps }) {
   return <UserProvider>
       <Component {...pageProps} />
+      <ToastContainer
+        position="top-right"
+        autoClose={8000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        draggable={false}
+        pauseOnVisibilityChange
+        closeOnClick
+        pauseOnHover
+      />
     </UserProvider>
 }
 

@@ -1,3 +1,4 @@
+import ToastMessage from "@components/Toast"
 import { uploadImages } from "@lib/image"
 import { API } from "aws-amplify"
 import { updateLocation } from "graphql/mutations"
@@ -84,6 +85,9 @@ const EditDestination = (props) => {
             query: updateLocation,
             variables : {input: {id: editData.id, ...data}}
             })
+
+            ToastMessage("edited", {type: 'success'})
+            props.setEdit(false)
         })
         .catch(err => console.log(err))
       }
