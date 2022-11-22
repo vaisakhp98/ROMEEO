@@ -4,7 +4,7 @@ import { API } from "aws-amplify"
 import { createLocation } from "graphql/mutations"
 import { useContext } from "react"
 
-const AddDestination = () => {
+const AddDestination = (props) => {
   const context = useContext(UserContext)
     /**
      * Validate the form 
@@ -70,11 +70,13 @@ const AddDestination = () => {
             data.image=res
 
             // call api
-            await API.graphql({
+            const result = await API.graphql({
             authMode: 'AMAZON_COGNITO_USER_POOLS',
             query: createLocation ,
             variables : {input: data}
             })
+
+            await props.toggleTab(4)
         })
         .catch(err => console.log(err))
       }

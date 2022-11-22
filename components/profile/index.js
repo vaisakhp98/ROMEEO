@@ -88,7 +88,7 @@ const Tabs=(props)=> {
           <h2>Your Bookings</h2>
           <hr />
           {props.profileBookings.map((item,key)=> 
-          <div key={key} className="tabsContentBookingsSection">
+          <div key={key} className="tabsContentBookingsSection h-52">
             <div className="tabsContentBookingsMain">
               <div className="tabsContentBookingsMain-Image">Image</div>
               <div className="tabsContentBookingsMain-Details">
@@ -133,7 +133,9 @@ const Tabs=(props)=> {
         <div
           className={toggleState === 3 ? "content  active-content" : "content"}
         >
-          <AddDestination/>
+          <AddDestination
+            toggleTab = {toggleTab}
+          />
         </div>
 
         {/* <h1>View Locations</h1> */}

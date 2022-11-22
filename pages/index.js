@@ -27,7 +27,7 @@ export default function Home() {
         }
       }
     ))
-
+      console.log(locationData)
     setVisited(locationData.data.listLocations.items)
   }
 

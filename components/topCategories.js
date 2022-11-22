@@ -5,19 +5,19 @@ export default function TopCategories() {
       <div className="topCatMain">
 
         <Link href="/selectedCategory">
-        <button className="topCatButtons"> Adventure </button>
+        <button className="topCatButtons bg-gray-300"> Adventure </button>
         </Link>
 
         <Link href="/selectedCategory">
-        <button className="topCatButtons"> Family </button>
+        <button className="topCatButtons bg-gray-300"> Family </button>
         </Link>
 
         <Link href="/selectedCategory">
-        <button className="topCatButtons"> Romantic </button>
+        <button className="topCatButtons bg-gray-300"> Romantic </button>
         </Link>
 
         <Link href="/selectedCategory">
-        <button className="topCatButtons"> Signt Seeing </button>
+        <button className="topCatButtons bg-gray-300"> Signt Seeing </button>
         </Link>
         
        

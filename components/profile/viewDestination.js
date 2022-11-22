@@ -50,7 +50,8 @@ const ViewDestination = (props) => {
 
         // delete from the array
         setDestinations((prevState) => {
-            prevState = prevState.reduce((item, key) => key!=id)
+            prevState = prevState.splice(id, 1)
+            console.log(prevState)
             return prevState
         })
 
