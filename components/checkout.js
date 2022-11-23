@@ -122,7 +122,7 @@ export default function Checkout() {
             <div className="paymentType">
                 <hr/>
                 <hr/>
-                <h4 >Payment type :</h4>
+                <h4 >Payment Method :</h4>
                 <div className="paymentMethodSection w-full">
                     <div className="paymentMethodDivs w-full p-2">
                         <div className="flex items-center">
