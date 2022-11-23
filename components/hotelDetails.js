@@ -3,17 +3,12 @@ import { useState } from "react";
 import {MdIosShare , MdOutlinePool ,MdLocalParking ,MdSmokingRooms} from 'react-icons/md'
 import {AiFillHeart , AiFillInfoCircle ,AiFillCar} from 'react-icons/ai'
 import {FaHotTub} from 'react-icons/fa'
+import Link from "next/link";
 
 export default function HotelDetails(props) {
     
 
   const[isHidden,setisHidden] = useState(false)
-
-  const router = useRouter()
-  const handleClick = (e)=>{
-      e.preventDefault()
-      router.push('/hotelCheckout')
-  }
 
     if(!props.hotelDetails) return <></>
 
@@ -96,7 +91,7 @@ export default function HotelDetails(props) {
                          
 
                          <div className="destCTAButtons">
-                            {/* <button type="button" onClick={handleClick} className="destHotelsNearbyButton">Book Hotel</button> */}
+                            <Link href={`/hotel/checkout/${props.hotelDetails.id}`} passHref><a className="destHotelsNearbyButton">Book Hotel</a></Link>
                             <button className="destHotelsAddReviewsButton">Add Review</button>
                          </div>
                     </div>

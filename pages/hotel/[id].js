@@ -15,8 +15,7 @@ import { UserContext } from '@lib/context/authContext';
 import { API, graphqlOperation } from 'aws-amplify'
 import { listHotelReviews } from '@graphql/queries'
 import { createHotelReview } from '@graphql/mutations'
-
-
+import AuthNavigation from '@components/authNavigation'
 
 
 
@@ -77,7 +76,7 @@ export default function Hotel() {
 
   return (
     <div className={styles.container}>
-      <Navigation/>
+      <AuthNavigation/>
       <SearchBox2/>
       <TopCategories/>
       <HotelHero

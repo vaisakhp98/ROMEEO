@@ -1,13 +1,15 @@
 import Image from 'next/image'
 import thumbnail from '../assets/thumbnail.jpg'
 import {AiFillStar} from 'react-icons/ai'
+import { useContext } from 'react';
+import { UserContext } from '@lib/context/authContext';
 
 
 export default function DestReviews(props) {
-  
+    const context = useContext(UserContext)
     return (
       <div className="destReviewsSection" style={{fontFamily:'rubik',fontWeight:300}}>
-        <form className='destReviewsReviewSection' onSubmit={props.addReview}>
+        { context.user && <form className='destReviewsReviewSection' onSubmit={props.addReview}>
             <h3>Enter Review</h3>
             <div className='destReviewWriteReviews'>
                 <div>
@@ -29,7 +31,7 @@ export default function DestReviews(props) {
             <button type="submit" className='reviewSubmitButton bg-green-800 text-white rounded'>Submit</button>
 
         </form>
-
+}
           <div>
             <h3>Reviews</h3>
           </div>

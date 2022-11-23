@@ -26,7 +26,8 @@ export default function AuthNavigation() {
 
   const Logout = (e) => {
     e.preventDefault()
-    context.Logout()
+
+    Auth.signOut()
   }
 
   return (
