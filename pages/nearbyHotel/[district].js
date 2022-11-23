@@ -9,7 +9,9 @@ import axios from 'axios'
 import { listHotels } from '@graphql/queries'
 import AuthNavigation from '@components/authNavigation'
 import { useRouter } from 'next/router'
-import { API } from 'aws-amplify'
+import { API, graphqlOperation } from 'aws-amplify'
+import { set } from 'nprogress'
+import { searchHotel } from '../../lib/helpers/hotels'
 
 
 export default function HotelsList() {
@@ -19,22 +21,34 @@ export default function HotelsList() {
   const [hotelList, setHotelList]=useState([])
   useEffect(()=>{
     const fetchDestinations = async () => {
-        const destinationData = await API.graphql({
-            query: listHotels,
+        const destinationData = await API.graphql(graphqlOperation(listHotels ,{
             filter: {
-              district: {eq: "Trissur"},
+              district: {eq:  district},
             }
-        })
+        }))
         await setHotelList(destinationData.data.listHotels.items)
     }
 
     fetchDestinations()
   }, [district])
 
+  const [search, setSearch] = useState("")
+
+  const handleSearch = async () => {
+    searchHotel(search, { district })
+    .then((res)=> setHotelList(res))
+    .catch((err)=> console.log(err))
+  }
+  const handleChange = () => {
+    setSearch(e.target.value)
+  }
   return (
     <div className={styles.container}>
       <AuthNavigation/>
-      <SearchBox2/>
+      <SearchBox2
+        handleSearch={handleSearch}
+        handleChange={handleChange}
+      />
       <HotelsListTile 
         hotelList = {hotelList}
       />

@@ -4,6 +4,7 @@ import { API, graphqlOperation } from "aws-amplify"
 import React, { useCallback, useContext, useEffect, useState } from "react"
 import Destination from "./destinationv2"
 import {updateLike} from '@graphql/mutations'
+import { useRouter } from "next/router"
 
 type MyProps = {
     toggleState: number,
@@ -13,6 +14,8 @@ const LikedLocations = (props: MyProps) => {
     const context = useContext(UserContext)
     const [destinations, setDestinations] = useState([])
     const [like, setLike] = useState(false)
+
+    const router = useRouter()
 
     const fetchDestinations = useCallback(async () => {
         // console.log("liked locations: fetch destination");
@@ -28,7 +31,7 @@ const LikedLocations = (props: MyProps) => {
 
        let destins = destinationData.data.listLikes?.items.map((item, key) => {
             if(!item.location) return
-            return {...item.location, id: item.id}
+            return {...item.location, id: item.id, destId: item.location.id}
         })
         await setDestinations(destins)
     }, [context.user.sub, like])
@@ -39,8 +42,11 @@ const LikedLocations = (props: MyProps) => {
     }, [props.toggleState, context.user?.sub, fetchDestinations])
 
 
-    const handleButton1 = () => {
+    const handleButton1 = (e) => {
+        e.preventDefault()
+        console.log(e.target.dataset)
 
+        router.push(`/destination/${e.target.dataset.destid }`)
     }
 
     const handleButton2: React.MouseEventHandler<HTMLButtonElement> = async(e) => {
@@ -71,8 +77,8 @@ const LikedLocations = (props: MyProps) => {
                 <Destination 
                 key={key}
                 item={item} 
-                // button1 = "Book Hotel"
-                // handleButton1={handleButton1}
+                button1 = "View"
+                handleButton1={handleButton1}
                 button2 = "Remove"
                 handleButton2={handleButton2}
                 itemIndex={key}/>

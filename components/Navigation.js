@@ -23,7 +23,7 @@ const handleSignupClick = (e)=>{
   return (
     <div className="navMain">
       <Link href="/">
-      <div className="navLeft"> Logo </div>
+      <div className="navLeft"> <b>ROMEEO</b> </div>
       </Link>
       <div className="navRight"  style={{fontFamily:'rubik',fontWeight:300}}>
          <div className='navLinksSection'> 

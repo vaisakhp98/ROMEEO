@@ -57,12 +57,12 @@ const Hoteltabs=(props)=> {
         >
           User Details
         </button>
-        <button
+        {/* <button
           className={toggleState === 2 ? "tabs active-tabs" : "tabs"}
           onClick={() => toggleTab(2)}
         >
           Bookings
-        </button>
+        </button> */}
         <button
           className={toggleState === 3 ? "tabs active-tabs" : "tabs"}
           onClick={() => toggleTab(3)}
@@ -130,7 +130,7 @@ const Hoteltabs=(props)=> {
           </div>
 
         </div>
-
+{/* 
         <div
           className={toggleState === 2 ? "content  active-content" : "content"}
         >
@@ -174,7 +174,7 @@ const Hoteltabs=(props)=> {
           </div>
           )}
           
-        </div>
+        </div> */}
 
 
 

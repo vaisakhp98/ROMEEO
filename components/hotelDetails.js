@@ -96,7 +96,7 @@ export default function HotelDetails(props) {
                          
 
                          <div className="destCTAButtons">
-                            <button type="button" onClick={handleClick} className="destHotelsNearbyButton">Book Hotel</button>
+                            {/* <button type="button" onClick={handleClick} className="destHotelsNearbyButton">Book Hotel</button> */}
                             <button className="destHotelsAddReviewsButton">Add Review</button>
                          </div>
                     </div>

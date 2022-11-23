@@ -60,8 +60,8 @@ const Destination = (props: MyProps) => {
                     
                 </div>
                 <div className="tabsContentBookingsMain-Buttons">
-                    {props.button1 && <button data-itemid = {item.id} data-key={props.itemIndex}  onClick={props.handleButton1} className="tabsContentBookingsMainViewHotel">{props.button1}</button>}
-                    <button data-itemid = {item.id} data-key={props.itemIndex}  onClick={props.handleButton2} className="tabsContentBookingsMainCancel">{props.button2}</button>
+                    {props.button1 && <button data-destId = {item.destId} data-itemid = {item.id} data-key={props.itemIndex}  onClick={props.handleButton1} className="tabsContentBookingsMainViewHotel">{props.button1}</button>}
+                    <button data-destId = {item.destId}  data-itemid = {item.id} data-key={props.itemIndex}  onClick={props.handleButton2} className="tabsContentBookingsMainCancel">{props.button2}</button>
                 </div>
                 </div>
             </div>

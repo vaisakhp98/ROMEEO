@@ -14,11 +14,11 @@ import Item from './singleItem';
 export default function ItemList(props) {
     return (
       
-      <div className="mostVisitedMain" style={{fontFamily:'rubik',fontWeight:300}}>
+      <div className="mostVisitedMain max-w-7xl m-auto" style={{fontFamily:'rubik',fontWeight:300}}>
         <div className="mostVisitedText">
             {props.title ?? "Name"}
         </div>
-        <div className="mostVisitedSection">
+        <div className=" grid md:grid-cols-4 grid-cols-2 gap-6">
             {
               props.items.map((item, key)=><Item item={item} key={key}/>)
             }

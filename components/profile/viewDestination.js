@@ -37,7 +37,7 @@ const ViewDestination = (props) => {
         setEdit(true)
     }
 
-    const handleDelete = async (e, id) => {
+    const handleDelete = async (e, id, index) => {
         e.preventDefault()
 
         try{ 
@@ -54,11 +54,9 @@ const ViewDestination = (props) => {
 
         // delete from the array
         setDestinations((prevState) => {
-            prevState = prevState.splice(id, 1)
-            console.log(prevState)
+            prevState = prevState.filter((item, key) => key!=index)
             return prevState
         })
-
         await toast("Deleted", {type:"success",theme:"colored"})
     }
 

@@ -32,7 +32,7 @@ export default function AuthNavigation() {
   return (
     <div className="navMain"  style={{fontFamily:'rubik',fontWeight:300}}>
       <Link href="/">
-      <div className="navLeft"> Logo </div>
+      <div className="navLeft"> <b>ROMEEO</b> </div>
       </Link>
       <div className="navRight">
          <div className='navLinksSection'> 

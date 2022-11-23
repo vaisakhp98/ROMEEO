@@ -48,12 +48,12 @@ const Tabs=(props)=> {
         >
           User Details
         </button>
-        <button
+        {/* <button
           className={toggleState === 2 ? "tabs active-tabs" : "tabs"}
           onClick={() => toggleTab(2)}
         >
           Bookings
-        </button>
+        </button> */}
         <button
           className={toggleState === 3 ? "tabs active-tabs" : "tabs"}
           onClick={() => toggleTab(3)}
@@ -83,7 +83,7 @@ const Tabs=(props)=> {
 
         </div>
 
-        <div
+        {/* <div
           className={toggleState === 2 ? "content  active-content" : "content"}
         >
           <h2>Your Bookings</h2>
@@ -126,7 +126,7 @@ const Tabs=(props)=> {
           </div>
           )}
           
-        </div>
+        </div> */}
 
 
 

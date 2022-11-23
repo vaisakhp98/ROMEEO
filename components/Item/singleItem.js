@@ -25,10 +25,10 @@ const SingleItem = (props) => {
 
     return(
         <Link href={`/destination/${item.id}`}>
-        <a className="mostVisitedTiles">
+        <a className="mostVisitedTiles relative">
         <div className="mostVisitedTilesImagesDiv">
             <img 
-            className="mostVisitedTilesImages"
+            className="mostVisitedTilesImages  w-full aspect-square overflow-hidden object-cover"
             src={image}
             width={290}
             height={200}
@@ -38,12 +38,12 @@ const SingleItem = (props) => {
         <div className='mostVisitedTilesBtm'>
             <div>
                 
-                <h4>{item.name}</h4> 
-                <h6> <MdLocationOn/> {item.district}</h6>
+                <h4 className="font-bold">{item.name}</h4> 
+                <h6  className="flex items-center space-x-2"> <MdLocationOn/> <span>{item.district}</span></h6>
             </div>
             <div className='likeButtonSection'>
                 <p>{item.rating} <AiFillStar/> </p>
-                <button className='likeButton' >
+                <button className='!absolute top-5 right-5' >
                     <IconContext.Provider value={{className : "likeButtonIcon"}}>
                         <AiFillHeart/> 
                     </IconContext.Provider>

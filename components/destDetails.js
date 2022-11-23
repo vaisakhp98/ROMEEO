@@ -8,6 +8,7 @@ import { useContext, useEffect, useState } from "react";
 import { UserContext } from "@lib/context/authContext";
 import { API } from "aws-amplify";
 import { createLike, updateLike } from "@graphql/mutations";
+import Link from "next/link";
 
 
 export default function DestDetails(props) {
@@ -78,7 +79,7 @@ export default function DestDetails(props) {
                             </div>
                          </div>
                          <div className="destCTAButtons">
-                            <button type="button" onClick={handleClick} className="destHotelsNearbyButton">Hotels Nearby</button>   
+                            <Link href={`/nearbyHotel/${props.item.district}`} passHref><a className="destHotelsNearbyButton">Hotels Nearby</a></Link>  
                          </div>
                     </div>
                     <div className="destShareLikeButtonsMain">

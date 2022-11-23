@@ -33,7 +33,7 @@ const ViewHotel = (props) => {
         setEdit(true)
     }
 
-    const handleDelete = async (e, id) => {
+    const handleDelete = async (e, id, index) => {
         e.preventDefault()
 
         try{ 
@@ -50,7 +50,7 @@ const ViewHotel = (props) => {
 
         // delete from the array
         setDestinations((prevState) => {
-            prevState = prevState.reduce((item, key) => key!=id)
+            prevState = prevState.filter((item, key) => key!=index)
             return prevState
         })
 

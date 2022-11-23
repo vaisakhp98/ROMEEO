@@ -39,7 +39,7 @@ const Hotel = (props) => {
 
                     <div className="profileViewDestination">
                     <p>Discription :</p>
-                    <h4>{item.description}</h4>
+                    <h4>{item.desciption}</h4>
                     </div>
 
                     <div className="profileViewDestination">
