@@ -6,8 +6,6 @@ import { loadImage } from "@lib/image";
 
 export default function DestHero(props) {
   const {item} = props
-  const [image, setImage] = useState()
-
 
     var settings = {
         dots:true,

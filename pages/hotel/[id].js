@@ -6,9 +6,16 @@ import TopCategories from '@components/topCategories'
 import HotelHero from '@components/hotelHero'
 import HotelDetails from '@components/hotelDetails'
 import HotelReviews from '@components/hotelReviews'
-import { useState,useEffect } from 'react'
+import { useState,useEffect, useContext } from 'react'
 import axios from 'axios'
 import DestReviews from '@components/Reviews'
+import { useRouter } from 'next/router'
+import { getHotel } from '@graphql/queries'
+import { UserContext } from '@lib/context/authContext';
+import { API, graphqlOperation } from 'aws-amplify'
+import { listHotelReviews } from '@graphql/queries'
+import { createHotelReview } from '@graphql/mutations'
+
 
 
 
@@ -17,19 +24,55 @@ export default function Hotel() {
     const router = useRouter()
     const { id } = router.query
     const context = useContext(UserContext)
-  
+
     const [destination, setDestination] = useState({})
       useEffect(()=>{
         const fetchDestinations = async () => {
             const destinationData = await API.graphql({
-                query: getLocation  ,
+                query: getHotel,
                 variables: { id: id }
             })
-            await setDestination(destinationData.data.getLocation)
+            await setDestination(destinationData.data.getHotel)
         }
   
         fetchDestinations()
       }, [id])
+
+      const [reviews, setReviews] = useState([])
+
+    useEffect(()=>{
+      const fetchReviews = async () => {
+          const destinationData = await API.graphql(graphqlOperation(listHotelReviews,{
+              filter: { hotelReviewId: id }
+          }))
+          await setReviews(destinationData.data.listHotelReviews.items)
+      }
+
+      fetchReviews()
+    }, [id])
+
+    const addReview = async (e) => {
+      e.preventDefault()
+      const data = {
+        title: e.target.title.value,
+        content: e.target.content.value,
+        hotelReviewId: id,
+        userId: context.user.sub
+      }
+
+      const destinationData = await API.graphql({
+          query: createHotelReview,
+          variables: {input: data},
+          authMode: 'AMAZON_COGNITO_USER_POOLS',
+      })
+
+      setReviews((prevState=>{
+        return [
+          destinationData.data.createHotelReview,
+          ...prevState,
+        ]
+      }))
+  }
 
 
   return (
@@ -44,8 +87,8 @@ export default function Hotel() {
         hotelDetails={destination}
       />
       <DestReviews 
-        hotelReview={hotelReview}
-        reviews={[]}
+        reviews={reviews}
+        addReview = {addReview}
       />
       
       <Footer/>

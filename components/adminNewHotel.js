@@ -2,6 +2,7 @@ import {MdIosShare , MdOutlinePool ,MdLocalParking ,MdSmokingRooms} from 'react-
 import {AiFillHeart , AiFillInfoCircle ,AiFillCar,AiOutlineDashboard} from 'react-icons/ai'
 import {FaHotTub} from 'react-icons/fa'
 import { useRouter } from 'next/router'
+import Link from 'next/link'
 
 
 export default function AdminNewHotel(props) {
@@ -32,7 +33,7 @@ export default function AdminNewHotel(props) {
         
       </div>
         {
-            props.adminNewHotel.map((item,key)=>
+            props.hotels.map((item,key)=>
       <div key={key} className='adminNewHotelMainContainer'>
         
         <div  className='adminNewHotelMainContent'>
@@ -41,20 +42,25 @@ export default function AdminNewHotel(props) {
             <div className='adminNewHotelMainContentDetails'>
                 <div className='adminNewHotelMainContentDetailsDetail'>
                     <p>Name :</p>
-                    <h4>{item.hotelName}</h4>
+                    <h4>{item.name}</h4>
                 </div>
 
                 <div className='adminNewHotelMainContentDetailsDetail'>
                     <p>Location :</p>
-                    <h4>{item.location}</h4>
+                    <h4>{item.district}</h4>
                 </div>
 
                 <div className='adminNewHotelMainContentDetailsDetail'>
                     <p>Description :</p>
-                    <h4>{item.description}</h4>
+                    <h4>{item.desciption}</h4>
                 </div>
 
                 <div className='adminNewHotelMainContentDetailsDetail'>
+                    <p>Max :</p>
+                    <h4>{item.max}</h4>
+                </div>
+
+                {/* <div className='adminNewHotelMainContentDetailsDetail'>
                     <p>Total Rooms :</p>
                     <h4>{item.totalRooms}</h4>
                 </div>
@@ -62,13 +68,13 @@ export default function AdminNewHotel(props) {
                 <div className='adminNewHotelMainContentDetailsDetail'>
                     <p>Type of Rooms :</p>
                     <h4>{item.typeofRooms}</h4>
-                </div>
+                </div> */}
 
             </div>
             <div className='adminNewHotelMainContentButtons'>
-                <button className='adminNewHotelMainContentButtonsApprove'>Approve</button>
-                <button className='adminNewHotelMainContentButtonsView'>View</button>
-                <button className='adminNewHotelMainContentButtonsDelete'>Delete</button>
+                <button data-key={key} data-itemid={item.id} data-approval={item.approval} className='adminNewHotelMainContentButtonsApprove' onClick={props.handleApproval}>{(item.approval == "approved") ? "Disapprove" : "Approve"}</button>
+                <Link href={`/hotel/${item.id}`} passHref><a target="_blank" className='adminNewHotelMainContentButtonsView text-center' >View</a></Link>
+                <button  data-key={key} data-itemid={item.id} data-approval={item.approval}  className='adminNewHotelMainContentButtonsDelete' onClick={props.handleDelete}>Delete</button>
             </div>
         </div>
         <div className='adminNewHotelTagsMain'>
@@ -102,7 +108,7 @@ export default function AdminNewHotel(props) {
             
         </div>
         <div className='adminNewHotelPostedBy'> 
-            <h4>Posted By : {item.postedBy}</h4>
+            <h4>Posted By : {item.userId}</h4>
         </div>
 
       </div>)}

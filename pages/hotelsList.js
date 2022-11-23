@@ -5,16 +5,28 @@ import Footer from '../components/footer'
 import HotelsListTile from '../components/hotelsListTile'
 import { useState,useEffect } from 'react'
 import axios from 'axios'
+import { listHotels } from '../graphql/queries'
+import { API, graphqlOperation } from 'aws-amplify'
 
 
 export default function HotelsList() {
 
   const [hotelList, setHotelList]=useState([])
+  const fetchHotels = async () => {
+    const locationData = await API.graphql(graphqlOperation(
+      listHotels,
+      {
+        filter: {
+          approval: {eq: "approved"}
+        }
+      }
+    ))
+      setHotelList(locationData.data.listHotels.items)
+  }
+
   useEffect(()=>{
-    axios.get('/api/hotelList')
-    .then((res)=>{setHotelList(res.data)})
-    .catch((err)=>console.log("An error has occured"))
-  },[])
+    fetchHotels()
+  }, [])
 
   return (
     <div className={styles.container}>

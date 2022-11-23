@@ -1,4 +1,5 @@
 import { deleteLocation } from '@graphql/mutations'
+import ToastMessage from "@components/Toast"
 import { listLocations } from '@graphql/queries'
 import { API } from 'aws-amplify'
 import { useRouter } from 'next/router'
@@ -50,7 +51,7 @@ export default function AdminNewDestination(props) {
         return prevState
     })
 
-    await toast("Deleted", {type:"success",theme:"colored"})
+    await ToastMessage("Deleted", {type:"success",theme:"colored"})
 }
 
 

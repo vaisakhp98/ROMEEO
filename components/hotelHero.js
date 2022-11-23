@@ -1,7 +1,9 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
+import { loadImage } from "@lib/image";
+
 
 export default function HotelHero(props) {
     var settings = {
@@ -18,14 +20,9 @@ export default function HotelHero(props) {
         <hr className="horiLine"/>
           <div className="sliderContainer">
             <Slider className="sliderMain" {...settings}>
-              {props.hotelDetails?.image?.map((item, key)=> 
-                <div key={key}>
-                <img 
-              className="destinationImageTile"
-              src={item}
-              />
-        </div>
-        )}
+            {props.hotelDetails.image?.map((img, key)=> 
+                  <ImageElement key = {key} item={img}/>
+          )}
       </Slider>
           </div>
         
@@ -33,4 +30,28 @@ export default function HotelHero(props) {
       );
     }
   
-  
+    const ImageElement = (props) => {
+      const {item} = props
+      const [image, setImage] = useState()
+
+      
+    useEffect(()=>{
+        const fetchImage = async () => {
+            if(!item) return
+            const url = await loadImage(item)
+            setImage(url)
+        }
+
+        fetchImage()
+    },[item])
+
+    return(
+      <div>
+          <img 
+            className="destinationImageTile"
+            src={image}
+          />
+      </div>
+    )
+
+    }

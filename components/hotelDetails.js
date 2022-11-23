@@ -5,6 +5,7 @@ import {AiFillHeart , AiFillInfoCircle ,AiFillCar} from 'react-icons/ai'
 import {FaHotTub} from 'react-icons/fa'
 
 export default function HotelDetails(props) {
+    
 
   const[isHidden,setisHidden] = useState(false)
 
@@ -13,23 +14,24 @@ export default function HotelDetails(props) {
       e.preventDefault()
       router.push('/hotelCheckout')
   }
+
+    if(!props.hotelDetails) return <></>
+
       return (
         <div>
             <div className="destDetail" style={{fontFamily:'rubik',fontWeight:300}}> 
             
                <div className="destDetailsMain">
-                {
-                    props.hotelDetails.map((item, key)=>
-                    <div key={key} className="destDetailsLeft">
-                        <h2>{item.locationName}</h2>
-                        <p>{item.locationDistrict}</p>
+                    <div className="destDetailsLeft">
+                        <h2>{props.hotelDetails.name}</h2>
+                        <p>{props.hotelDetails.district}</p>
 
-                        <h1 className="destRating">Rs.{item.price} per/day </h1>
+                        <h1 className="destRating">Rs.{props.hotelDetails.price} per/day </h1>
 
-                        <h3 className="destRating">Rating {item.rating}</h3>
+                        <h3 className="destRating">Rating {props.hotelDetails.rating}</h3>
 
                         <h3 className="destAbout">About Place</h3>
-                        <p>{item.description}</p>
+                        <p>{props.hotelDetails.description}</p>
 
                          <div className="destImportantInfo">
                             <AiFillInfoCircle/>
@@ -97,7 +99,7 @@ export default function HotelDetails(props) {
                             <button type="button" onClick={handleClick} className="destHotelsNearbyButton">Book Hotel</button>
                             <button className="destHotelsAddReviewsButton">Add Review</button>
                          </div>
-                    </div>)}
+                    </div>
                     <div className="destShareLikeButtonsMain">
                         <button className="destShareButton"><MdIosShare/></button>
                         <button className="destLikeButton"><AiFillHeart/></button>
