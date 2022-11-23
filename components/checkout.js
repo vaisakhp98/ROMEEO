@@ -52,7 +52,7 @@ export default function Checkout(props) {
     const convinenece = 3000
     const total = price + tax + convinenece
     const checkInDate = new Date(checkin);
-    const checkOutDate= new Date(checkin)
+    const checkOutDate= new Date(checkout)
 
       return (
         <div className="checkoutSection" style={{fontFamily:'rubik',fontWeight:300}}>
