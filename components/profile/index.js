@@ -8,6 +8,8 @@ import AddDestination from "./addDestination";
 import ViewDestination from "./viewDestination";
 import Profile from "./profile";
 import LikedLocations from "./LikedLocations";
+import HotelBookings from './HotelBookings'
+
 
 Auth.updateUserAttributes
 const Tabs=(props)=> {
@@ -48,12 +50,12 @@ const Tabs=(props)=> {
         >
           User Details
         </button>
-        {/* <button
+        <button
           className={toggleState === 2 ? "tabs active-tabs" : "tabs"}
           onClick={() => toggleTab(2)}
         >
           Bookings
-        </button> */}
+        </button>
         <button
           className={toggleState === 3 ? "tabs active-tabs" : "tabs"}
           onClick={() => toggleTab(3)}
@@ -83,50 +85,11 @@ const Tabs=(props)=> {
 
         </div>
 
-        {/* <div
+        <div
           className={toggleState === 2 ? "content  active-content" : "content"}
         >
-          <h2>Your Bookings</h2>
-          <hr />
-          {props.profileBookings.map((item,key)=> 
-          <div key={key} className="tabsContentBookingsSection h-52">
-            <div className="tabsContentBookingsMain">
-              <div className="tabsContentBookingsMain-Image">Image</div>
-              <div className="tabsContentBookingsMain-Details">
-                <div>
-                  <p>Hotel Name :</p>
-                  <h4>{item.hotelName}</h4>
-                </div>
-                <div>
-                  <p>Location</p>
-                  <h4>{item.hotelLocation}</h4>
-                </div>
-                <div>
-                  <div>
-                    Check In :
-                    <p>{item.cindate}</p>
-
-                    Check In :
-                    <p>{item.coutdate}</p>
-                  </div>
-
-                  <div>
-                    <b>Room Details :</b>
-                    <div>
-                      <p>{item.noOfRooms} Room : {item.typeofRoom}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="tabsContentBookingsMain-Buttons">
-                <button onClick={handleviewHotelClick}  className="tabsContentBookingsMainViewHotel">View Hotel</button>
-                <button onClick={canceledAlert} className="tabsContentBookingsMainCancel">Cancel</button>
-              </div>
-            </div>
-          </div>
-          )}
-          
-        </div> */}
+          {toggleState === 2 && <HotelBookings/>}
+        </div>
 
 
 

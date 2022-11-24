@@ -62,7 +62,7 @@ export default function HotelAdminCheckedOut(props) {
                     </div>
 
               <div className='adminNewHotelMainContentButtons'>
-                  <button className="adminNewHotelMainContentButtonsApprove"> Completed</button>
+                  <button className="adminNewHotelMainContentButtonsApprove uppercase"> {item.status}</button>
                   <button className="adminNewHotelMainContentButtonsOk">OK</button>
               </div>
 
