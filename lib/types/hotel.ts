@@ -40,7 +40,7 @@ export type THotelBooking = {
     id?: number
     userId: string
     name: string
-    phone_number: number
+    phone_number: string
     email: string
     rooms: number
     ac: boolean
@@ -54,4 +54,5 @@ export type THotelBooking = {
     status: string
     hotel?: THotel
     hotelBookingsId: string
+    createdAt?: string
 }

@@ -8,6 +8,7 @@ import { UserContext } from '@lib/context/authContext';
 import {THotel, THotelBooking} from '@lib/types/hotel'
 import ToastMessage from "@components/Toast"
 import { BookHotel } from "@lib/helpers/hotels";
+import { useRouter } from "next/router";
 
 
 type MyProps = {
@@ -23,6 +24,7 @@ type MyProps = {
  */
 export default function Checkout(props: MyProps) {
     const context = useContext(UserContext)
+    const router = useRouter()
     const {hotel } = props
 
     const [rooms, setRooms] = useState("1")
@@ -62,17 +64,18 @@ export default function Checkout(props: MyProps) {
             payment: target.payment.value,
             userId: context.user.sub,
             name: context.user.name,
-            phone_number: +context.user.phone_number,
+            phone_number: context.user.phone_number,
             email: context.user.email,
         }
 
         if(!target.terms.checked) return ToastMessage("Terms not checked", {type: "error"})
 
         BookHotel(data)
-        .then((res)=>(console.log(res)))
+        .then((res)=>{
+            ToastMessage("Hotel Booked", {type: "success"})
+            router.push('/hotelCheckedOut')
+        })
         .catch((err)=> console.log(err))
-
-       
         // upload to api
       }
   

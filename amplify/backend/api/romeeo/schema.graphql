@@ -237,7 +237,7 @@ type HotelBooking @model @auth(
     id: ID!
     userId: String
     name: String
-    phone_number: Long
+    phone_number: String
     email: String
     rooms: Int
     ac: Boolean

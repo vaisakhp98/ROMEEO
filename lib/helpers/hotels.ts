@@ -32,7 +32,7 @@ export const BookHotel = (data:{
     payment: string,
     userId: string
     name: string
-    phone_number: number
+    phone_number: string
     email: string
 }) => {
     const {rooms, checkin, checkout, hotel, ac, payment, id, userId, name, phone_number, email} = data
@@ -79,7 +79,9 @@ export const BookHotel = (data:{
         try{
             await API.graphql({
                 query: createHotelBooking,
-                variables: {input: data}
+                variables: {input: data},
+            authMode: 'AMAZON_COGNITO_USER_POOLS',
+
             })
 
             resolve(true)
