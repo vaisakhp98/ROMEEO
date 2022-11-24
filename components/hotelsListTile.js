@@ -56,8 +56,8 @@ export default function HotelsListTile(props) {
     }
 
     return (
-        <Link className="mostVisitedTiles relative" href={`/hotel/${item.id}`} passHref>
-            <a>
+        <Link href={`/hotel/${item.id}`} passHref>
+            <a className="mostVisitedTiles relative">
 
             <div className="mostVisitedTilesImagesDiv">
                 <img 

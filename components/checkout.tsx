@@ -5,6 +5,15 @@ import { FaGooglePay } from "react-icons/fa";
 import { useContext, useEffect, useState } from "react";
 import { loadImage } from "@lib/image";
 import { UserContext } from '@lib/context/authContext';
+import {THotel, THotelBooking} from '@lib/types/hotel'
+import ToastMessage from "@components/Toast"
+import { BookHotel } from "@lib/helpers/hotels";
+
+
+type MyProps = {
+    id: string,
+    hotel: THotel
+}
 
 /**
  * 
@@ -12,14 +21,14 @@ import { UserContext } from '@lib/context/authContext';
  * @param {object} hotel 
  * @returns 
  */
-export default function Checkout(props) {
+export default function Checkout(props: MyProps) {
     const context = useContext(UserContext)
     const {hotel } = props
 
-    const [rooms, setRooms] = useState(1)
-    const [ac, setAc] = useState(true)
-    const [checkin, setCheckIn] = useState()
-    const [checkout, setCheckout] = useState()
+    const [rooms, setRooms] = useState("1")
+    const [ac, setAc] = useState("")
+    const [checkin, setCheckIn] = useState<string>()
+    const [checkout, setCheckout] = useState<string>()
 
     useEffect(() => {
         const current = new Date().toISOString().split("T")[0];
@@ -27,7 +36,7 @@ export default function Checkout(props) {
         setCheckout(current) 
     }, [])
 
-    const [image, setImage] = useState()  
+    const [image, setImage] = useState<string | false>()  
     useEffect(()=>{
         const fetchImage = async () => {
             if(!hotel.image) return
@@ -38,21 +47,52 @@ export default function Checkout(props) {
         fetchImage()
     },[hotel])
 
-    const handleSubmit = (e) => {
+    
+    const handleSubmit: React.FormEventHandler = (e) => {
         e.preventDefault()
+        const target = e.target as any
 
+        const data= {
+            id: props.id,
+            rooms: +rooms,
+            checkin: checkin,
+            checkout: checkout,
+            ac: ac=="true",
+            hotel: props.hotel,
+            payment: target.payment.value,
+            userId: context.user.sub,
+            name: context.user.name,
+            phone_number: +context.user.phone_number,
+            email: context.user.email,
+        }
 
-    } 
+        if(!target.terms.checked) return ToastMessage("Terms not checked", {type: "error"})
+
+        BookHotel(data)
+        .then((res)=>(console.log(res)))
+        .catch((err)=> console.log(err))
+
+       
+        // upload to api
+      }
+  
+  
     
     if(!hotel) return<>No Hotel found</>
 
+    const checkInDate = new Date(checkin);
+    const checkOutDate= new Date(checkout)
+     // To calculate the time difference of two dates
+    var Difference_In_Time = checkOutDate.getTime() - checkInDate.getTime();
+      
+    // To calculate the no. of days between two dates
+    var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
+
     const ac_charge = ac=="true" ? 500 : 0
-    const price = (hotel.price + ac_charge) * rooms
+    const price = ((hotel.price + ac_charge) * +rooms) * (Difference_In_Days || 1)
     const tax = price * 0.12
     const convinenece = 3000
     const total = price + tax + convinenece
-    const checkInDate = new Date(checkin);
-    const checkOutDate= new Date(checkout)
 
       return (
         <div className="checkoutSection" style={{fontFamily:'rubik',fontWeight:300}}>
@@ -126,8 +166,8 @@ export default function Checkout(props) {
                     <h5 className="text-l text-gray-500">Choose type of Room:</h5>
                         <br/>
                         <select value={ac} onChange={(e) => setAc(e.target.value)} className="p-3 border ml-2 -mt-3" name="cars" id="cars">
-                            <option value={true}>A/C</option>
-                            <option value={false}>Non-A/C</option>
+                            <option value={"true"}>A/C</option>
+                            <option value={"false"}>Non-A/C</option>
                             
                         </select>
                         <br/>
@@ -173,7 +213,7 @@ export default function Checkout(props) {
                                 <label>UPI Payment</label>
                             </div>
                         
-                            <input className="" type="radio" id="html" name="fav_language" value="HTML"/>
+                            <input className="" type="radio" id="html" name="payment" value="upi" checked/>
                         </div>
                         
                         
@@ -183,7 +223,7 @@ export default function Checkout(props) {
                                 <label>Net Banking</label>
                                 
                             </div>
-                            <input type="radio" id="html" name="fav_language" value="HTML"/>
+                            <input type="radio" id="html" name="payment" value="net"/>
                         </div>
 
                         <div className="paymentMethodDivs w-full p-2">
@@ -192,7 +232,7 @@ export default function Checkout(props) {
                                 <label>Google Pay</label>
                             </div>
                             
-                            <input type="radio" id="html" name="fav_language" value="HTML"/>
+                            <input type="radio" id="html" name="payment" value="pay"/>
                         </div>
 
                     </div>

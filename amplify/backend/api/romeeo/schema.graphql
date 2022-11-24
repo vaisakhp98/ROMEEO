@@ -74,6 +74,7 @@ type Hotel @model @auth(
   rating: Int
   review: [HotelReview] @hasMany
   like: [HotelLike] @hasMany
+  bookings: [HotelBooking] @hasMany
   approval: String
   reviewCount: Int
 }
@@ -211,5 +212,42 @@ type HotelLike @model @auth(
     id: ID!
     userId: String
     status: Boolean
+    hotel: Hotel @belongsTo
+}
+
+type HotelBooking @model @auth(
+    rules : [
+        # allow all authenticated users the ability to create posts
+        # allow owners ability to update and delete their posts
+        {
+            allow : owner  
+        },
+
+        # allow all authenticated users to read posts
+        {
+            allow : private, operations: [create, update, read, delete]
+        },
+
+        # allow all guest users (not authenticated) to read posts
+        {
+            allow : public, operations: [read]
+        },
+    ]
+) {
+    id: ID!
+    userId: String
+    name: String
+    phone_number: Long
+    email: String
+    rooms: Int
+    ac: Boolean
+    checkIn: String
+    checkOut: String
+    price: Int
+    tax: Int
+    convinenece: Int
+    total: Int
+    payment: String
+    status: String
     hotel: Hotel @belongsTo
 }

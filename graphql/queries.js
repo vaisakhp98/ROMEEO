@@ -197,6 +197,30 @@ export const getHotel = /* GraphQL */ `
         }
         nextToken
       }
+      bookings {
+        items {
+          id
+          userId
+          name
+          phone_number
+          email
+          rooms
+          ac
+          checkIn
+          checkOut
+          price
+          tax
+          convinenece
+          total
+          payment
+          status
+          createdAt
+          updatedAt
+          hotelBookingsId
+          owner
+        }
+        nextToken
+      }
       approval
       reviewCount
       createdAt
@@ -246,6 +270,9 @@ export const listHotels = /* GraphQL */ `
           nextToken
         }
         like {
+          nextToken
+        }
+        bookings {
           nextToken
         }
         approval
@@ -520,6 +547,9 @@ export const getHotelReview = /* GraphQL */ `
         like {
           nextToken
         }
+        bookings {
+          nextToken
+        }
         approval
         reviewCount
         createdAt
@@ -620,6 +650,9 @@ export const getHotelLike = /* GraphQL */ `
         like {
           nextToken
         }
+        bookings {
+          nextToken
+        }
         approval
         reviewCount
         createdAt
@@ -667,6 +700,127 @@ export const listHotelLikes = /* GraphQL */ `
         createdAt
         updatedAt
         hotelLikeId
+        owner
+      }
+      nextToken
+    }
+  }
+`;
+export const getHotelBooking = /* GraphQL */ `
+  query GetHotelBooking($id: ID!) {
+    getHotelBooking(id: $id) {
+      id
+      userId
+      name
+      phone_number
+      email
+      rooms
+      ac
+      checkIn
+      checkOut
+      price
+      tax
+      convinenece
+      total
+      payment
+      status
+      hotel {
+        id
+        name
+        district
+        pincode
+        tags
+        price
+        desciption
+        max
+        userId
+        image
+        location {
+          id
+          name
+          district
+          pincode
+          Tags
+          description
+          userId
+          image
+          rating
+          approval
+          reviewCount
+          createdAt
+          updatedAt
+          stateLocationId
+          owner
+        }
+        rating
+        review {
+          nextToken
+        }
+        like {
+          nextToken
+        }
+        bookings {
+          nextToken
+        }
+        approval
+        reviewCount
+        createdAt
+        updatedAt
+        locationHotelId
+        owner
+      }
+      createdAt
+      updatedAt
+      hotelBookingsId
+      owner
+    }
+  }
+`;
+export const listHotelBookings = /* GraphQL */ `
+  query ListHotelBookings(
+    $filter: ModelHotelBookingFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listHotelBookings(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        userId
+        name
+        phone_number
+        email
+        rooms
+        ac
+        checkIn
+        checkOut
+        price
+        tax
+        convinenece
+        total
+        payment
+        status
+        hotel {
+          id
+          name
+          district
+          pincode
+          tags
+          price
+          desciption
+          max
+          userId
+          image
+          rating
+          approval
+          reviewCount
+          createdAt
+          updatedAt
+          locationHotelId
+          owner
+        }
+        createdAt
+        updatedAt
+        hotelBookingsId
         owner
       }
       nextToken
